@@ -1,0 +1,197 @@
+{
+    "key": "group_5eb0278820b9e",
+    "title": "Answers",
+    "fields": [
+        {
+            "key": "field_5eb02790f5dc1",
+            "label": "Type of Answer",
+            "name": "type_of_anser",
+            "type": "select",
+            "instructions": "Choose if this question has a text or image type of answer",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Select": "Select",
+                "Image Options": "Image Options",
+                "Text Options": "Text Options"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5eb027fef5dc2",
+            "label": "Image Options",
+            "name": "image_options",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5eb02790f5dc1",
+                        "operator": "==",
+                        "value": "Image Options"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5eb02815f5dc3",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Answer",
+            "sub_fields": [
+                {
+                    "key": "field_5eb02815f5dc3",
+                    "label": "Option",
+                    "name": "image_answer",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5eb02853f5dc4",
+                    "label": "Correct Answer",
+                    "name": "correct_answer",
+                    "type": "checkbox",
+                    "instructions": "Mark this if this option is the correct answer for this question",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "correct": "This is the correct answer!"
+                    },
+                    "allow_custom": 0,
+                    "default_value": [],
+                    "layout": "vertical",
+                    "toggle": 0,
+                    "return_format": "value",
+                    "save_custom": 0
+                }
+            ]
+        },
+        {
+            "key": "field_5eb028ccf5dc5",
+            "label": "Text Options",
+            "name": "text_options",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5eb02790f5dc1",
+                        "operator": "==",
+                        "value": "Text Options"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5eb028e1f5dc6",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Answer",
+            "sub_fields": [
+                {
+                    "key": "field_5eb028e1f5dc6",
+                    "label": "Option",
+                    "name": "text_answer",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5eb02909f5dc7",
+                    "label": "Correct Answer",
+                    "name": "correct_answer",
+                    "type": "checkbox",
+                    "instructions": "Mark this if this option is the correct answer for this question",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "correct": "This is the correct answer!"
+                    },
+                    "allow_custom": 0,
+                    "default_value": [],
+                    "layout": "vertical",
+                    "toggle": 0,
+                    "return_format": "value",
+                    "save_custom": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "question"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1588603544
+}
