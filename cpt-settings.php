@@ -46,7 +46,7 @@ function question_taxonomy() {
     'labels' => $labels,
     'hierarchical' => true,
   );
-  register_taxonomy( 'question_taxonomy', 'question', $args );
+  register_taxonomy( 'question_category', 'question', $args );
 }
 add_action( 'init', 'question_taxonomy', 0 );
 
@@ -73,6 +73,6 @@ function enem_simulator_menu() {
     'Question Categories',
     __( 'Question Categories', 'enem-simulator' ),
     'manage_options',
-    'edit-tags.php?taxonomy=question_taxonomy&post_type=question'
+    'edit-tags.php?taxonomy=question_category&post_type=question'
   );
 }
