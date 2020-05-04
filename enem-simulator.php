@@ -25,3 +25,34 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 include ( 'acf-settings.php' );
 include ( 'cpt-settings.php' );
+
+function enem_simulator_shortcode( $atts ) {
+    extract( shortcode_atts( 
+        array(
+            'categories' => ''
+    ), $atts ));
+
+    if ( strpos( $categories, ',') !== false) {
+        $categories = explode( ',', $categories );
+    }
+
+    $questions = new WP_Query( array(
+        'post_type'       => 'question',
+        'taxy_query'      => array( 
+            'relation' => 'AND',
+            array(
+                'taxonomy'  => 'question_category',
+                'field'     => 'slug',
+                'terms'     => $categories
+            )
+        )
+    ) );
+
+    while ( $questions->have_posts() ) {    
+        $questions->the_post();
+        the_content();
+    }
+    
+
+}
+add_shortcode( 'enem-simulator', 'enem_simulator_shortcode' );
