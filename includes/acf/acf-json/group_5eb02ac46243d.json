@@ -1,0 +1,47 @@
+{
+    "key": "group_5eb02ac46243d",
+    "title": "Questions",
+    "fields": [
+        {
+            "key": "field_5eb02ac918c41",
+            "label": "Active Question",
+            "name": "active_question",
+            "type": "checkbox",
+            "instructions": "Mark this to activate this question",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "active": "Active question"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "question"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1588603672
+}
