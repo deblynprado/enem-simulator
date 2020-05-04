@@ -1,30 +1,4 @@
-<?php
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
-
-/**
-* Enem Simulator
-*
-* @package           EnemSimulator
-* @author            Deblyn Prado, Walfrido Oliveira
-* @copyright         2019 Deblyn Prado, Walfrido Oliveira
-* @license           GPL-2.0-or-later
-*
-* @wordpress-plugin
-* Plugin Name:       Enem Simulator
-* Plugin URI:        https://github.com/deblynprado/enem-simulator
-* Description:       Allows your users to generate random tests and check their knowledge.
-* Version:           1.0.0
-* Requires at least: 5.0
-* Requires PHP:      7.2
-* Author:            Deblyn Prado, Walfrido Oliveira
-* Author URI:        https://example.com
-* Text Domain:       enem-simulator
-* License:           GPL v2 or later
-* License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
-*/
-
-include ( 'acf-settings.php' );
-
+<?php 
 function question_cpt() {
   $labels = array(
     'name'               => _x( 'Questions', 'question type general name' ),
@@ -76,31 +50,29 @@ function question_taxonomy() {
 }
 add_action( 'init', 'question_taxonomy', 0 );
 
-add_action('admin_menu', 'my_admin_menu'); 
-function my_admin_menu() { 
-    #add_submenu_page('edit.php', 'question', 'question', 'manage_options', 'edit-tags.phptaxonomy=question_taxonomy&post_type=question'); 
-    add_menu_page(
-      'Enem Simulator',
-      __( 'Enem Simulator', 'enem-simulator' ),
-      'manage_options',
-      'enem-simulator-main',
-      'my_menu_function'
-    );
-
-    add_submenu_page(
-      'enem-simulator-main',
-      'Add Question',
-      __( 'Add Question', 'enem-simulator' ),
-      'manage_options',
-      'post-new.php?post_type=question'
-    );
-
-    add_submenu_page(
-      'enem-simulator-main',
-      'Question Categories',
-      __( 'Question Categories', 'enem-simulator' ),
-      'manage_options',
-      'edit-tags.php?taxonomy=question_taxonomy&post_type=question'
-    );
-
-} 
+add_action( 'admin_menu', 'enem_simulator_menu' );
+function enem_simulator_menu() { 
+  add_menu_page(
+    'Enem Simulator',
+    __( 'Enem Simulator', 'enem-simulator' ),
+    'manage_options',
+    'enem-simulator-main',
+    'my_menu_function'
+  );
+  
+  add_submenu_page(
+    'enem-simulator-main',
+    'Add Question',
+    __( 'Add Question', 'enem-simulator' ),
+    'manage_options',
+    'post-new.php?post_type=question'
+  );
+  
+  add_submenu_page(
+    'enem-simulator-main',
+    'Question Categories',
+    __( 'Question Categories', 'enem-simulator' ),
+    'manage_options',
+    'edit-tags.php?taxonomy=question_taxonomy&post_type=question'
+  );
+}
