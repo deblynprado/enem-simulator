@@ -24,9 +24,10 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 */
 
 $dir = plugin_dir_path( __FILE__ );
+$dir_url = plugin_dir_url( __FILE__ );
 
 define( 'ACF_PATH', $dir . '/includes/acf/' );
-define( 'ACF_URL', $dir . '/includes/acf/' );
+define( 'ACF_URL', $dir_url . '/includes/acf/' );
 
 include_once( ACF_PATH . 'acf.php' );
 
