@@ -40,3 +40,16 @@ function acf_settings_url( $url ) {
 function acf_settings_show_admin( $show_admin ) {
   return false;
 }
+
+add_filter('acf/settings/save_json', 'custom_acf_json_save_point');
+function custom_acf_json_save_point( $path ) {
+  $path = ACF_PATH . '/acf-json';
+  return $path;
+}
+
+add_filter('acf/settings/load_json', 'custom_acf_json_load_point');
+function custom_acf_json_load_point( $paths ) {
+  unset($paths[0]);
+  $paths[] = ACF_PATH . '/acf-json';
+  return $paths;
+}
