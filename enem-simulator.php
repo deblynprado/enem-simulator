@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 * Requires PHP:      7.2
 * Author:            Deblyn Prado, Walfrido Oliveira
 * Author URI:        https://example.com
-* Text Domain:       plugin-slug
+* Text Domain:       enem-simulator
 * License:           GPL v2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
 */
