@@ -36,23 +36,32 @@ function enem_simulator_shortcode( $atts ) {
         $categories = explode( ',', $categories );
     }
 
-    $questions = new WP_Query( array(
-        'post_type'       => 'question',
-        'taxy_query'      => array( 
-            'relation' => 'AND',
+    $args = array(
+        'post_type' => 'question',
+        'tax_query' => array(
             array(
-                'taxonomy'  => 'question_category',
-                'field'     => 'slug',
-                'terms'     => $categories
-            )
-        )
-    ) );
+                'taxonomy' => 'question_category',
+                'field' => 'slug',
+                'terms'    => $categories,
+            ),
+        ),
+    );
 
-    while ( $questions->have_posts() ) {    
-        $questions->the_post();
-        the_content();
+    $questions = new WP_Query( $args );
+
+    if ( $questions->have_posts( ) ) {
+
+        while ( $questions->have_posts() ) {  
+
+            $questions->the_post();
+
+            $fields = get_field( 'text_options', get_the_ID() ); 
+
+            include ( 'includes/partials/content-answer.php' );
+        }
     }
-    
 
+    wp_reset_postdata();
+    
 }
 add_shortcode( 'enem-simulator', 'enem_simulator_shortcode' );
