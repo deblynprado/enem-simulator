@@ -27,41 +27,41 @@ include ( 'acf-settings.php' );
 include ( 'cpt-settings.php' );
 
 function enem_simulator_shortcode( $atts ) {
-    extract( shortcode_atts( 
+  extract( shortcode_atts( 
+    array(
+          'categories' => ''
+    ), $atts )); 
+
+  if ( strpos( $categories, ',') !== false) {
+      $categories = explode( ',', $categories );
+  }
+
+  $args = array(
+    'post_type' => 'question',
+    'tax_query' => array(
         array(
-            'categories' => ''
-    ), $atts ));
-
-    if ( strpos( $categories, ',') !== false) {
-        $categories = explode( ',', $categories );
-    }
-
-    $args = array(
-        'post_type' => 'question',
-        'tax_query' => array(
-            array(
-                'taxonomy' => 'question_category',
-                'field' => 'slug',
-                'terms'    => $categories,
-            ),
+          'taxonomy' => 'question_category',
+          'field' => 'slug',
+          'terms'    => $categories,
         ),
-    );
+    ),
+  );
 
-    $questions = new WP_Query( $args );
+  $questions = new WP_Query( $args );
 
-    if ( $questions->have_posts( ) ) {
+  if ( $questions->have_posts( ) ) {
 
-        while ( $questions->have_posts() ) {  
+    while ( $questions->have_posts() ) {  
 
-            $questions->the_post();
+      $questions->the_post();
 
-            $fields = get_field( 'text_options', get_the_ID() ); 
+      $fields = get_field( 'text_options', get_the_ID() ); 
 
-            include ( 'includes/partials/content-answer.php' );
-        }
+      include ( 'includes/partials/content-answer.php' );
     }
+  }
 
-    wp_reset_postdata();
+  wp_reset_postdata();
     
 }
 add_shortcode( 'enem-simulator', 'enem_simulator_shortcode' );
