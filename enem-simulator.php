@@ -27,7 +27,15 @@ include ( 'acf-settings.php' );
 include ( 'cpt-settings.php' );
 include ( 'acf-options.php' );
 
+function enqueue_styles() {
+  wp_enqueue_style( 'bootstrap', plugins_url( 'includes/assets/bootstrap/css/bootstrap.min.css', __FILE__ ) );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
+
 function enem_simulator_shortcode( $atts ) {
+
+  include ( 'includes/partials/content-initial.php' );
+
   extract( shortcode_atts( 
     array(
           'categories' => ''
