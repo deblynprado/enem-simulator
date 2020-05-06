@@ -61,7 +61,7 @@
                     "add_term": 1,
                     "save_terms": 0,
                     "load_terms": 0,
-                    "return_format": "id",
+                    "return_format": "object",
                     "multiple": 0
                 },
                 {
@@ -204,5 +204,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1588765664
+    "modified": 1588771390
 }
