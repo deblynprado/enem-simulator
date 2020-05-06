@@ -25,6 +25,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 include ( 'acf-settings.php' );
 include ( 'cpt-settings.php' );
+include ( 'acf-options.php' );
 
 function enem_simulator_shortcode( $atts ) {
   extract( shortcode_atts( 
