@@ -27,9 +27,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 <div>
 	<h4><?php the_title() ?></h4>
-    <p>
-        <?php the_content() ?>
-    </p>
+    <p> <?php the_content() ?> </p>
     <div>
         <?php if( $fields ): ?>
             <ul>
