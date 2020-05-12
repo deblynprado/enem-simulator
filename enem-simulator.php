@@ -29,6 +29,7 @@ include ( 'acf-options.php' );
 
 function enqueue_styles() {
   wp_enqueue_style( 'bootstrap', plugins_url( 'includes/assets/bootstrap/css/bootstrap.min.css', __FILE__ ) );
+  wp_enqueue_script( 'bootstrap-js', plugins_url( 'includes/assets/bootstrap/js/bootstrap.min.js', __FILE__ ), null, null, true );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
 
