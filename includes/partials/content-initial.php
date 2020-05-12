@@ -34,7 +34,6 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
     </div>
     <div class="col-12">
       <select class="form-control form-control-lg" name="question_category" id="question_category">
-        <option selected value=""></option>
         <?php
           $categories = get_field( 'question_categories', 'option' ); 
           foreach ($categories as $value) : ?>
@@ -43,7 +42,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
       </select>
     </div>
     <div class="col-12">
-      <button class="btn btn-primary"><?php echo __( 'Start Simulator', 'enem-simulator' ) ?></button>
+      <button class="btn btn-primary" id="start-simulator"><?php echo __( 'Start Simulator', 'enem-simulator' ) ?></button>
     </div>
   </div>
   <div class="row">
