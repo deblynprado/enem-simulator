@@ -33,17 +33,21 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
         <p> <?php echo __('Choose a desired category to start') ?> </p>
     </div>
     <div class="col-12">
-      <select class="form-control form-control-lg" name="" id="">
+      <select class="form-control form-control-lg" name="question_category" id="question_category">
+        <option selected value=""></option>
         <?php
           $categories = get_field( 'question_categories', 'option' ); 
           foreach ($categories as $value) : ?>
             <option value="<?php echo $value[ 'question_category' ]->term_id ?>"><?php echo $value[ 'question_category' ]->name ?></option>
           <?php endforeach; ?>
-        ?>
       </select>
     </div>
     <div class="col-12">
       <button class="btn btn-primary"><?php echo __( 'Start Simulator', 'enem-simulator' ) ?></button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 content-answer">
     </div>
   </div>
 </div>
