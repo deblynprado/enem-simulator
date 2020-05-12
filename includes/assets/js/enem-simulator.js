@@ -14,24 +14,43 @@ jQuery(document).ready(function( $ ) {
       success: function( response ) {
         $('.content-question').empty();
         $('.content-question').html( response );
-        $('.question').eq(0).show();
+        
+        $('.question').eq(0).show('slow');
+
         $('.nav').show();
       }
     })
   });
 
+  $('.question').each(function(e) {
+    if (e != 0) $(this).hide('slow');
+  })
+
   $('#next-question').on('click', function(e) {
     e.preventDefault();
-    $('.question').hide();
-    $('.question').next().show();
+
+    if ($('.question:visible').next().length != 0)
+      $('.question:visible').next().show('slow').prev().hide('slow');
+    else {
+      $('.question:visible').hide('slow');
+      $('.question:first').show('slow');
+    }
+    return false;
 
   });
 
   $('#previous-question').on('click', function(e) {
     e.preventDefault();
-    $('.question').hide();
-    $('.question').prev().show();
+    
+    if ($('.question:visible').prev().length != 0)
+      $('.question:visible').prev().show('slow').next().hide('slow');
+    else {
+      $('.question:visible').hide('slow');
+      $('.question:last').show('slow');
+    }
+    return false;
 
   });
-	
+
 });
+
