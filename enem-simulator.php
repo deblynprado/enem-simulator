@@ -34,7 +34,7 @@ add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
 
 function enqueue_scripts() {
   wp_enqueue_script( 'jQuery' );
-  wp_enqueue_script( 'enem-simulator', plugins_url( 'includes/assets/bootstrap/js/enem-simulator.js', __FILE__ ), null, null, true );
+  wp_enqueue_script( 'enem-simulator', plugins_url( 'includes/assets/js/enem-simulator.js', __FILE__ ), null, null, true );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
