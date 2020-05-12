@@ -1,8 +1,8 @@
 jQuery(document).ready(function( $ ) {
 	
-	$('#question_category').on('change', function() {
+	$('#start-simulator').on('click', function() {
 
-    var category = $(this).children('option:selected').val();
+    var category = $('#question_category').children('option:selected').val();
 
     $.ajax({
       type: 'POST',
