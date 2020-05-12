@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 ?>
 
-<div class="question" style="display:none">
+<div class="question" style="display:none" id="question-<?php echo $index ?>">
 	<h4><?php the_title() ?></h4>
     <p> <?php the_content() ?> </p>
     <div>
