@@ -20,8 +20,15 @@ jQuery(document).ready(function( $ ) {
         $('.nav').show('slow');
 
         $('.content-simulator').hide('slow');
+
+        $('.end-simulator').show('slow');
+
       }
-    })
+    });
+  });
+
+  $('#end-simulator').on('click', function() {
+    
   });
 
   $('.question').each(function(e) {
