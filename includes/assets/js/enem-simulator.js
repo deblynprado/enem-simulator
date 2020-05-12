@@ -14,8 +14,24 @@ jQuery(document).ready(function( $ ) {
       success: function( response ) {
         $('.content-answer').empty();
         $('.content-answer').html( response );
+        $('.answer').eq(0).show();
+        $('.nav').show();
       }
     })
+  });
+
+  $('#next-question').on('click', function(e) {
+    e.preventDefault();
+    $('.answer').hide();
+    $('.answer').next().show();
+
+  });
+
+  $('#previous-question').on('click', function(e) {
+    e.preventDefault();
+    $('.answer').hide();
+    $('.answer').prev().show();
+
   });
 	
 });
