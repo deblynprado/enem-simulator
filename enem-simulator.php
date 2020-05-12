@@ -99,6 +99,8 @@ function enem_simulator_get_question_category_callback() {
 
   $questions = new WP_Query( $args );
 
+  $index = 0;
+
   if ( $questions->have_posts( ) ) {
 
     while ( $questions->have_posts() ) {  
@@ -108,6 +110,8 @@ function enem_simulator_get_question_category_callback() {
       $fields = get_field( 'text_options', get_the_ID() ); 
 
       include ( 'includes/partials/content-question.php' );
+
+      $index++;
     }
   }
 
