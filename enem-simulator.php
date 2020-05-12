@@ -87,6 +87,7 @@ function enem_simulator_get_question_category_callback() {
   if ( isset($_POST['category'] )) $categories[] = $_POST['category'];
 
   $args = array(
+    'orderby' => 'rand',
     'post_type' => 'question',
     'tax_query' => array(
         array(
@@ -108,16 +109,22 @@ function enem_simulator_get_question_category_callback() {
       $questions->the_post();
 
       $fields = get_field( 'text_options', get_the_ID() ); 
+      shuffle( $fields );
 
       include ( 'includes/partials/content-question.php' );
-
+      
       $index++;
     }
   }
 
+  var_dump($json );
+
+  wp_localize_script( 'enem-simulator-js', 'teste', $json );
+  wp_enqueue_script( 'enem-simulator-js' );
+
   wp_reset_postdata();
 
-   wp_die();
+  wp_die();
 }
 
 add_action( 'wp_ajax_enem_simulator_get_question_category', 'enem_simulator_get_question_category_callback' );
