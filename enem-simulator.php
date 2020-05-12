@@ -41,7 +41,7 @@ add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
 function enem_simulator_shortcode( $atts ) {
 
-  include ( 'includes/partials/content-initial.php' );
+  include ( 'includes/partials/content-simulator.php' );
 
   extract( shortcode_atts( 
     array(
@@ -107,7 +107,7 @@ function enem_simulator_get_question_category_callback() {
 
       $fields = get_field( 'text_options', get_the_ID() ); 
 
-      include ( 'includes/partials/content-answer.php' );
+      include ( 'includes/partials/content-question.php' );
     }
   }
 

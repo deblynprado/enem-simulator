@@ -12,9 +12,9 @@ jQuery(document).ready(function( $ ) {
               category: category
             },
       success: function( response ) {
-        $('.content-answer').empty();
-        $('.content-answer').html( response );
-        $('.answer').eq(0).show();
+        $('.content-question').empty();
+        $('.content-question').html( response );
+        $('.question').eq(0).show();
         $('.nav').show();
       }
     })
@@ -22,15 +22,15 @@ jQuery(document).ready(function( $ ) {
 
   $('#next-question').on('click', function(e) {
     e.preventDefault();
-    $('.answer').hide();
-    $('.answer').next().show();
+    $('.question').hide();
+    $('.question').next().show();
 
   });
 
   $('#previous-question').on('click', function(e) {
     e.preventDefault();
-    $('.answer').hide();
-    $('.answer').prev().show();
+    $('.question').hide();
+    $('.question').prev().show();
 
   });
 	

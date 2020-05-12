@@ -46,7 +46,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
     </div>
   </div>
   <div class="row">
-    <div class="col-12 content-answer">
+    <div class="col-12 content-question">
     </div>
     <div class="col-12 nav" style="display: none">
       <nav aria-label="Page navigation example">
