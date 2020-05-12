@@ -17,7 +17,9 @@ jQuery(document).ready(function( $ ) {
         
         $('.question').eq(0).show('slow');
 
-        $('.nav').show();
+        $('.nav').show('slow');
+
+        $('.content-simulator').hide('slow');
       }
     })
   });

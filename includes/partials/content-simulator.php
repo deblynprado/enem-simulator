@@ -26,7 +26,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 ?>
 
 <div class="contaner">
-  <div class="row">
+  <div class="row content-simulator">
     <div class="col-12">
         <h2><?php echo __( 'Enem Simulator', 'enem-simulator' ) ?></h2>
         <p> <?php the_field( 'initial_message', 'option' ) ?> </p>
@@ -49,7 +49,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
     <div class="col-12 content-question">
     </div>
     <div class="col-12 nav" style="display: none">
-      <nav aria-label="Page navigation example">
+      <nav>
         <ul class="pagination">
           <li class="page-item">
             <a class="page-link" href="#" aria-label="Previous" id="previous-question">
