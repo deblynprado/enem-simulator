@@ -46,8 +46,11 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
     </div>
   </div>
   <div class="row">
-    <div class="col-12 content-question">
-    </div>
+    <form name="content-question-form" id="content-question-form" enctype="multipart/form-data" method="post">
+      <div class="col-12 content-question">
+        
+      </div>
+    </form>
     <div class="col-12 nav" style="display: none">
       <nav>
         <ul class="pagination">
@@ -65,6 +68,11 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
           </li>
         </ul>
       </nav>
+    </div>
+  </div>
+  <div class="row end-simulator" style="display: none">
+    <div class="col-12">
+      <button  type="submit" class="btn btn-primary" id="end-simulator"><?php echo __( 'End Simulator', 'enem-simulator' ) ?></button>
     </div>
   </div>
 </div>
