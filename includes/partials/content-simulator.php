@@ -26,22 +26,21 @@
     <div class="col-10 mt-4">
       <button class="btn btn-primary" id="start-simulator"><i class="fa fa-book"></i> <?php echo __( 'Start Simulator', 'enem-simulator' ) ?></button>
     </div><!-- /.col -->
-  </div>
-</div><!-- /.simulator-category-options -->
+  </div><!-- /.simulator-category-options -->
 
-<div class="row">
-  <form name="content-question-form" id="content-question-form" enctype="multipart/form-data" method="post">
-    <div class="col-10 content-question">
-      
-    </div>
-  </form>
-  <!-- pagination -->
-  <?php include ( 'simulator-pagination.php' ); ?>
-  <!-- /pagination -->
-</div>
-<div class="row end-simulator" style="display: none">
-  <div class="col-10">
-    <button  type="submit" class="btn btn-primary" id="end-simulator"><?php echo __( 'End Simulator', 'enem-simulator' ) ?></button>
+  <div class="row">
+    <form name="content-question-form" id="content-question-form" enctype="multipart/form-data" method="post">
+      <div class="col-10 content-question">
+        
+      </div>
+    </form>
+    <!-- pagination -->
+    <?php include ( 'simulator-pagination.php' ); ?>
+    <!-- /pagination -->
   </div>
-</div>
+  <div class="row end-simulator" style="display: none">
+    <div class="col-10">
+      <button  type="submit" class="btn btn-primary" id="end-simulator"><?php echo __( 'End Simulator', 'enem-simulator' ) ?></button>
+    </div>
+  </div>
 </div>
