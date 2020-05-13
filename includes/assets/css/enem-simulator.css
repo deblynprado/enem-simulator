@@ -11,3 +11,22 @@
 .question h4, h3 {
   margin: .5rem auto .5rem !important;
 }
+
+.custom-control-label {
+  font-weight: bolder !important;
+  font-size: 2rem;
+}
+
+.custom-control-label::before {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.custom-control-label::after {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.custom-checkbox {
+  margin-bottom: 1rem;
+}
