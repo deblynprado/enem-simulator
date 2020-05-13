@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-13 00:26-0300\n"
-"PO-Revision-Date: 2020-05-13 00:25-0300\n"
+"POT-Creation-Date: 2020-05-13 18:27+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Deblyn Prado <deblynprado@gmail.com>\n"
 "Language-Team: Deblyn Prado <deblynprado@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: enem-simulator.php\n"
@@ -22,103 +22,10 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: includes/assets\n"
 "X-Poedit-SearchPathExcluded-2: includes/acf\n"
-
-#: cpt-settings.php:4
-msgctxt "question type general name"
-msgid "Questions"
-msgstr ""
-
-#: cpt-settings.php:5
-msgctxt "question type singular name"
-msgid "Question"
-msgstr ""
-
-#: cpt-settings.php:6
-msgctxt "book"
-msgid "Add New"
-msgstr ""
-
-#: cpt-settings.php:7
-msgid "Add New Question"
-msgstr ""
-
-#: cpt-settings.php:8
-msgid "Edit Question"
-msgstr ""
-
-#: cpt-settings.php:9
-msgid "New Question"
-msgstr ""
-
-#: cpt-settings.php:10
-msgid "All Questions"
-msgstr ""
-
-#: cpt-settings.php:11
-msgid "View Question"
-msgstr ""
-
-#: cpt-settings.php:12
-msgid "Search Questions"
-msgstr ""
-
-#: cpt-settings.php:13
-msgid "No questions found"
-msgstr ""
-
-#: cpt-settings.php:14
-msgid "No question found in the Trash"
-msgstr ""
-
-#: cpt-settings.php:33
-msgctxt "taxonomy general name"
-msgid "Question Categories"
-msgstr ""
-
-#: cpt-settings.php:34
-msgctxt "taxonomy singular name"
-msgid "Question Category"
-msgstr ""
-
-#: cpt-settings.php:35
-msgid "Search Question Categories"
-msgstr ""
-
-#: cpt-settings.php:36
-msgid "All Question Categories"
-msgstr ""
-
-#: cpt-settings.php:37
-msgid "Parent Question Category"
-msgstr ""
-
-#: cpt-settings.php:38
-msgid "Parent Question Category:"
-msgstr ""
-
-#: cpt-settings.php:39
-msgid "Edit Question Category"
-msgstr ""
-
-#: cpt-settings.php:40
-msgid "Update Question Category"
-msgstr ""
-
-#: cpt-settings.php:41
-msgid "Add New Question Category"
-msgstr ""
-
-#: cpt-settings.php:42
-msgid "New Question Category"
-msgstr ""
-
-#: cpt-settings.php:43 cpt-settings.php:74
-msgid "Question Categories"
-msgstr ""
+"Language: "
 
 #. Plugin Name of the plugin/theme
-#: cpt-settings.php:57 includes/partials/content-initial.php:32
-#: includes/partials/content-simulator.php:31
+#: cpt-settings.php:57 includes/partials/content-simulator.php:6
 msgid "Enem Simulator"
 msgstr ""
 
@@ -126,26 +33,44 @@ msgstr ""
 msgid "Add Question"
 msgstr ""
 
-#: includes/partials/content-initial.php:34
-#: includes/partials/content-simulator.php:33
+#: cpt-settings.php:74
+msgid "Question Categories"
+msgstr ""
+
+#: includes/partials/content-simulator.php:8
+msgid ""
+"Do as many simulated tests wish for you to have a good performance on the "
+"day of exam."
+msgstr ""
+
+#: includes/partials/content-simulator.php:9
 msgid "Choose a desired category to start"
 msgstr ""
 
-#: includes/partials/content-initial.php:47
-#: includes/partials/content-simulator.php:45
+#: includes/partials/content-simulator.php:27
 msgid "Start Simulator"
 msgstr ""
 
-#: includes/partials/content-simulator.php:75
+#: includes/partials/content-simulator.php:44
 msgid "End Simulator"
 msgstr ""
 
-#. Plugin URI of the plugin/theme
-msgid "https://github.com/deblynprado/enem-simulator"
+#: includes/partials/simulator-pagination.php:7
+msgctxt "Navigation to Previous Question"
+msgid "Previous"
+msgstr ""
+
+#: includes/partials/simulator-pagination.php:13
+msgctxt "Navigation to Next Question"
+msgid "Next"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid "Allows your users to generate random tests and check their knowledge."
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/deblynprado/enem-simulator"
 msgstr ""
 
 #. Author of the plugin/theme
