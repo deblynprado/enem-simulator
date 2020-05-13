@@ -54,7 +54,10 @@ add_shortcode( 'enem-simulator', 'enem_simulator_shortcode' );
 
 function enem_simulator_get_question_category_callback() {
 
-  if ( isset($_POST['category'] )) $categories[] = $_POST['category'];
+  if ( isset($_POST['category'] )) {
+    $categories[] = $_POST['category']['value'];
+    $categoryName = $_POST['category']['name'];
+  }
 
   $args = array(
     'orderby' => 'rand',
