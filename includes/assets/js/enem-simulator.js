@@ -1,16 +1,16 @@
 jQuery(document).ready(function( $ ) {
-	
+	console.log(enem_simulator.ajaxurl)
 	$('#start-simulator').on('click', function() {
 
     var category = $('#question_category').children('option:selected').val();
 
     $.ajax({
       type: 'POST',
-      url: 'http://wordpress/wp-admin/admin-ajax.php',
+      url: enem_simulator.ajaxurl,
       data: {
-              action : 'enem_simulator_get_question_category',
-              category: category
-            },
+          action : 'enem_simulator_get_question_category',
+          category: category
+      },
       success: function( response ) {
         $('.content-question').empty();
         $('.content-question').html( response );

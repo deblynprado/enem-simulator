@@ -43,7 +43,13 @@ add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
 function enqueue_scripts() {
   wp_enqueue_script( 'jQuery' );
   wp_enqueue_script( 'enem-simulator', plugins_url( 'includes/assets/js/enem-simulator.js', __FILE__ ), null, null, true );
+  wp_localize_script( 'enem-simulator', 'enem_simulator',
+      array( 
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+      )
+  );
 }
+
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
 function enem_simulator_shortcode( $atts ) {
@@ -123,12 +129,6 @@ function enem_simulator_get_question_category_callback() {
       $index++;
     }
   }
-
-  var_dump($json );
-
-  wp_localize_script( 'enem-simulator-js', 'teste', $json );
-  wp_enqueue_script( 'enem-simulator-js' );
-
   wp_reset_postdata();
 
   wp_die();
