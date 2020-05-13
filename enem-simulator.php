@@ -19,6 +19,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 * Author:            Deblyn Prado, Walfrido Oliveira
 * Author URI:        https://example.com
 * Text Domain:       enem-simulator
+* Domain Path:       /languages/
 * License:           GPL v2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
 */
@@ -26,6 +27,12 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 include ( 'acf-settings.php' );
 include ( 'cpt-settings.php' );
 include ( 'acf-options.php' );
+
+add_action( 'plugins_loaded', 'enem_simulator_load_text_domain' );
+function enem_simulator_load_text_domain() {
+  load_plugin_textdomain( 'enem-simulator', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
 
 function enqueue_styles() {
   wp_enqueue_style( 'bootstrap', plugins_url( 'includes/assets/bootstrap/css/bootstrap.min.css', __FILE__ ) );
