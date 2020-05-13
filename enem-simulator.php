@@ -29,12 +29,19 @@ include ( 'acf-options.php' );
 
 function enqueue_styles() {
   wp_enqueue_style( 'bootstrap', plugins_url( 'includes/assets/bootstrap/css/bootstrap.min.css', __FILE__ ) );
+  wp_enqueue_script( 'bootstrap-js', plugins_url( 'includes/assets/bootstrap/js/bootstrap.min.js', __FILE__ ), null, null, true );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
 
+function enqueue_scripts() {
+  wp_enqueue_script( 'jQuery' );
+  wp_enqueue_script( 'enem-simulator', plugins_url( 'includes/assets/js/enem-simulator.js', __FILE__ ), null, null, true );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
+
 function enem_simulator_shortcode( $atts ) {
 
-  include ( 'includes/partials/content-initial.php' );
+  include ( 'includes/partials/content-simulator.php' );
 
   extract( shortcode_atts( 
     array(
@@ -66,7 +73,7 @@ function enem_simulator_shortcode( $atts ) {
 
       $fields = get_field( 'text_options', get_the_ID() ); 
 
-      include ( 'includes/partials/content-answer.php' );
+      //include ( 'includes/partials/content-answer.php' );
     }
   }
 
@@ -74,3 +81,51 @@ function enem_simulator_shortcode( $atts ) {
     
 }
 add_shortcode( 'enem-simulator', 'enem_simulator_shortcode' );
+
+function enem_simulator_get_question_category_callback() {
+
+  if ( isset($_POST['category'] )) $categories[] = $_POST['category'];
+
+  $args = array(
+    'orderby' => 'rand',
+    'post_type' => 'question',
+    'tax_query' => array(
+        array(
+          'taxonomy' => 'question_category',
+          'field' => 'id',
+          'terms'    => $categories,
+        ),
+    ),
+  );
+
+  $questions = new WP_Query( $args );
+
+  $index = 0;
+
+  if ( $questions->have_posts( ) ) {
+
+    while ( $questions->have_posts() ) {  
+
+      $questions->the_post();
+
+      $fields = get_field( 'text_options', get_the_ID() ); 
+      shuffle( $fields );
+
+      include ( 'includes/partials/content-question.php' );
+      
+      $index++;
+    }
+  }
+
+  var_dump($json );
+
+  wp_localize_script( 'enem-simulator-js', 'teste', $json );
+  wp_enqueue_script( 'enem-simulator-js' );
+
+  wp_reset_postdata();
+
+  wp_die();
+}
+
+add_action( 'wp_ajax_enem_simulator_get_question_category', 'enem_simulator_get_question_category_callback' );
+add_action( 'wp_ajax_nopriv_enem_simulator_get_question_category', 'enem_simulator_get_question_category_callback' );
