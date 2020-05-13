@@ -22,7 +22,8 @@ jQuery(document).ready(function( $ ) {
 
         $('.nav').show('slow');
 
-        $('.simulator-header').parent().hide('slow');
+        $('.simulator-header').hide('slow');
+        $('.simulator-category-options').hide('slow');
 
         $('.end-simulator').show('slow');
 
