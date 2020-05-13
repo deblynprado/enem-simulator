@@ -2,7 +2,10 @@ jQuery(document).ready(function( $ ) {
 	console.log(enem_simulator.ajaxurl)
 	$('#start-simulator').on('click', function() {
 
-    var category = $('#question_category').children('option:selected').val();
+    var category = { 
+                      name:  $('#question_category').children('option:selected').text() , 
+                      value: $('#question_category').children('option:selected').val() 
+                    };
 
     $.ajax({
       type: 'POST',
