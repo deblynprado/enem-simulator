@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="row simulator-header">
-    <div class="col">
+    <div class="col-10">
       <h2><?php echo __( 'Enem Simulator', 'enem-simulator' ) ?></h2>
       <p> <?php the_field( 'initial_message', 'option' ) ?> </p>
       <p> <?php echo __('Do as many simulated tests wish for you to have a good performance on the day of exam.', 'enem-simulator') ?> </p>
@@ -12,8 +12,8 @@
     
   <div class="row simulator-category-options">
     <?php if( get_field( 'question_categories', 'option' ) ) : ?>
-      <div class="col">  
-        <select class="form-control form-control-lg" name="question_category" id="question_category">
+      <div class="col-10">  
+        <select class="custom-select" name="question_category" id="question_category">
           <?php
           $categories = get_field( 'question_categories', 'option' ); 
           foreach ($categories as $value) : ?>
@@ -23,8 +23,8 @@
       </div><!-- /.col -->
     <?php endif; ?>
 
-    <div class="col">
-      <button class="btn btn-primary" id="start-simulator"><?php echo __( 'Start Simulator', 'enem-simulator' ) ?></button>
+    <div class="col-10 mt-4">
+      <button class="btn btn-primary" id="start-simulator"><i class="fa fa-book"></i> <?php echo __( 'Start Simulator', 'enem-simulator' ) ?></button>
     </div><!-- /.col -->
   </div>
 </div><!-- /.simulator-category-options -->
