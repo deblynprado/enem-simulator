@@ -46,45 +46,7 @@ function enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
 function enem_simulator_shortcode( $atts ) {
-
   include ( 'includes/partials/content-simulator.php' );
-
-  extract( shortcode_atts( 
-    array(
-          'categories' => ''
-    ), $atts )); 
-
-  if ( strpos( $categories, ',') !== false) {
-      $categories = explode( ',', $categories );
-  }
-
-  $args = array(
-    'post_type' => 'question',
-    'tax_query' => array(
-        array(
-          'taxonomy' => 'question_category',
-          'field' => 'slug',
-          'terms'    => $categories,
-        ),
-    ),
-  );
-
-  $questions = new WP_Query( $args );
-
-  if ( $questions->have_posts( ) ) {
-
-    while ( $questions->have_posts() ) {  
-
-      $questions->the_post();
-
-      $fields = get_field( 'text_options', get_the_ID() ); 
-
-      //include ( 'includes/partials/content-answer.php' );
-    }
-  }
-
-  wp_reset_postdata();
-    
 }
 add_shortcode( 'enem-simulator', 'enem_simulator_shortcode' );
 
