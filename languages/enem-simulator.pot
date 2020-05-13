@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-13 18:27+0000\n"
+"POT-Creation-Date: 2020-05-13 20:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Deblyn Prado <deblynprado@gmail.com>\n"
 "Language-Team: Deblyn Prado <deblynprado@gmail.com>\n"
@@ -51,8 +51,12 @@ msgstr ""
 msgid "Start Simulator"
 msgstr ""
 
-#: includes/partials/content-simulator.php:44
+#: includes/partials/content-simulator.php:43
 msgid "End Simulator"
+msgstr ""
+
+#: includes/partials/simulator-pagination.php:6
+msgid "Previous"
 msgstr ""
 
 #: includes/partials/simulator-pagination.php:7
@@ -60,9 +64,18 @@ msgctxt "Navigation to Previous Question"
 msgid "Previous"
 msgstr ""
 
+#: includes/partials/simulator-pagination.php:12
+msgid "Next"
+msgstr ""
+
 #: includes/partials/simulator-pagination.php:13
+#: includes/partials/simulator-pagination.php:19
 msgctxt "Navigation to Next Question"
 msgid "Next"
+msgstr ""
+
+#: includes/partials/simulator-pagination.php:18
+msgid "Revise"
 msgstr ""
 
 #. Description of the plugin/theme

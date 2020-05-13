@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-13 18:27+0000\n"
-"PO-Revision-Date: 2020-05-13 18:34+0000\n"
+"POT-Creation-Date: 2020-05-13 20:54+0000\n"
+"PO-Revision-Date: 2020-05-13 20:54+0000\n"
 "Language-Team: Português do Brasil\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,19 +54,32 @@ msgstr "Escolha a Categoria Desejada para Iniciar"
 msgid "Start Simulator"
 msgstr "Iniciar Simulado"
 
-#: includes/partials/content-simulator.php:44
+#: includes/partials/content-simulator.php:43
 msgid "End Simulator"
 msgstr "Terminar Simulado"
+
+#: includes/partials/simulator-pagination.php:6
+msgid "Previous"
+msgstr "Anterior"
 
 #: includes/partials/simulator-pagination.php:7
 msgctxt "Navigation to Previous Question"
 msgid "Previous"
 msgstr ""
 
+#: includes/partials/simulator-pagination.php:12
+msgid "Next"
+msgstr "Próxima"
+
 #: includes/partials/simulator-pagination.php:13
+#: includes/partials/simulator-pagination.php:19
 msgctxt "Navigation to Next Question"
 msgid "Next"
 msgstr ""
+
+#: includes/partials/simulator-pagination.php:18
+msgid "Revise"
+msgstr "Corrigir"
 
 #. Description of the plugin/theme
 msgid "Allows your users to generate random tests and check their knowledge."
