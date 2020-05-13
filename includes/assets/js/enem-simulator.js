@@ -19,7 +19,7 @@ jQuery(document).ready(function( $ ) {
 
         $('.nav').show('slow');
 
-        $('.content-simulator').hide('slow');
+        $('.simulator-header').parent().hide('slow');
 
         $('.end-simulator').show('slow');
 
