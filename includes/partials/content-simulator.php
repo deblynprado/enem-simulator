@@ -31,7 +31,7 @@
 
 <div class="row">
   <form name="content-question-form" id="content-question-form" enctype="multipart/form-data" method="post">
-    <div class="col-12 content-question">
+    <div class="col-10 content-question">
       
     </div>
   </form>
@@ -40,7 +40,7 @@
   <!-- /pagination -->
 </div>
 <div class="row end-simulator" style="display: none">
-  <div class="col-12">
+  <div class="col-10">
     <button  type="submit" class="btn btn-primary" id="end-simulator"><?php echo __( 'End Simulator', 'enem-simulator' ) ?></button>
   </div>
 </div>
