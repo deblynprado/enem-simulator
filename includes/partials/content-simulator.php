@@ -38,9 +38,4 @@
     <?php include ( 'simulator-pagination.php' ); ?>
     <!-- /pagination -->
   </div>
-  <div class="row end-simulator" style="display: none">
-    <div class="col-10">
-      <button  type="submit" class="btn btn-primary" id="end-simulator"><?php echo __( 'End Simulator', 'enem-simulator' ) ?></button>
-    </div>
-  </div>
 </div>
