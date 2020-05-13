@@ -33,23 +33,16 @@ function enem_simulator_load_text_domain() {
   load_plugin_textdomain( 'enem-simulator', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
-
-function enqueue_styles() {
-  wp_enqueue_style( 'bootstrap', plugins_url( 'includes/assets/bootstrap/css/bootstrap.min.css', __FILE__ ) );
-  wp_enqueue_script( 'bootstrap-js', plugins_url( 'includes/assets/bootstrap/js/bootstrap.min.js', __FILE__ ), null, null, true );
-}
-add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
-
 function enqueue_scripts() {
-  wp_enqueue_script( 'jQuery' );
-  wp_enqueue_script( 'enem-simulator', plugins_url( 'includes/assets/js/enem-simulator.js', __FILE__ ), null, null, true );
+  wp_enqueue_style( 'bootstrap', plugins_url( 'includes/assets/bootstrap/css/bootstrap.min.css', __FILE__ ) );
+  wp_enqueue_script( 'bootstrap-js', plugins_url( 'includes/assets/bootstrap/js/bootstrap.min.js', __FILE__ ), array( 'jquery' ), null, true );
+  wp_enqueue_script( 'enem-simulator', plugins_url( 'includes/assets/js/enem-simulator.js', __FILE__ ), array( 'jquery', 'bootstrap-js'), null, true );
   wp_localize_script( 'enem-simulator', 'enem_simulator',
       array( 
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
       )
   );
 }
-
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
 function enem_simulator_shortcode( $atts ) {
