@@ -5,7 +5,8 @@
     <div class="col">
       <h2><?php echo __( 'Enem Simulator', 'enem-simulator' ) ?></h2>
       <p> <?php the_field( 'initial_message', 'option' ) ?> </p>
-      <p> <?php echo __('Choose a desired category to start') ?> </p>
+      <p> <?php echo __('Do as many simulated tests wish for you to have a good performance on the day of exam.', 'enem-simulator') ?> </p>
+      <p> <?php echo __('Choose a desired category to start', 'enem-simulator') ?> </p>
     </div>
   </div><!-- /.simulator-header -->
     
