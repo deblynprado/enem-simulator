@@ -38,9 +38,12 @@ ul, ol {
   margin-bottom: 1rem;
 }
 
+.page-item:not(.disabled) .page-link {
+  color: rgb(55, 58, 60) !important;
+}
+
 .page-item .page-link {
   border-radius: .5rem !important;
-  color: rgb(55, 58, 60) !important;
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
 }
 
