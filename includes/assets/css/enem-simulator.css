@@ -67,3 +67,11 @@ ul, ol {
 .progress-bar[aria-valuenow="0"], .progress-bar[aria-valuenow="2"] {
   min-width: 30px;
 }
+
+.question-thumbnail {
+  width: 100%;
+}
+
+.question-thumbnail img {
+  width: 100%;
+}
