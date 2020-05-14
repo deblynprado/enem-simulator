@@ -150,7 +150,7 @@ jQuery(document).ready(function( $ ) {
 
       result = h + ':' + m + ':' + s;
 
-      timer.html(result);
+      timer.find('p').html(result);
 
       if(maxiumTime == 0) return;
 
