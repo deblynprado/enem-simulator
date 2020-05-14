@@ -21,6 +21,7 @@ jQuery(document).ready(function( $ ) {
         $('.question').eq(0).show('slow');
 
         $('.nav').show('slow');
+        $('.progress').show('slow');
 
         $('.simulator-header').hide('slow');
         $('.simulator-category-options').hide('slow');
