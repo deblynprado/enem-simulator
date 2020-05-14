@@ -1,9 +1,18 @@
 <?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' ); ?>
 
 <div class="question" style="display:none" id="question-<?php echo $index ?>">
-  <h3><?php echo $categoryName; ?></h4>
-	<h4><?php the_title(); echo (' '); echo $index+1; ?></h4>
-  <p> <?php the_content() ?> </p>
+  <h3 class="question-category"><?php echo $categoryName; ?></h4>
+	<h4 class="question-title"><?php the_title(); echo (' '); echo $index+1; ?></h4>
+  <p class="question-content"> <?php the_content() ?> </p>
+  <div class="figure question-thumbnail">
+    <?php the_post_thumbnail( 'post-thumbnail', 
+            array(
+              'class' => 'rounded',
+              'title' => $questions->title
+          )); 
+    ?>
+    <figcaption class="figure-caption text-right"><?php the_post_thumbnail_caption(); ?></figcaption>
+  </div>
   <div>
     <?php 
       if( $fields ): $name = substr( md5( serialize( $fields ) ), 0, 8 ); 
