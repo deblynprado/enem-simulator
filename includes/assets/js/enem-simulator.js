@@ -32,7 +32,7 @@ jQuery(document).ready(function( $ ) {
     });
   });
 
-  $('#end-simulator').on('click', function() {
+  $('#revise-question').on('click', function() {
     
   });
 
@@ -50,6 +50,12 @@ jQuery(document).ready(function( $ ) {
       $('.question:first').show('slow');
     }
 
+    $(this).parent().removeClass('disabled');
+    $(this).parent().prev().removeClass('disabled');
+
+    if ($('.question:visible').next().next().length == 0)
+      $(this).parent().addClass('disabled');
+
     scroollTo($('.content-question'));
 
     return false;
@@ -65,6 +71,12 @@ jQuery(document).ready(function( $ ) {
       $('.question:visible').hide('slow');
       $('.question:last').show('slow');
     }
+
+    $(this).parent().removeClass('disabled');
+    $(this).parent().next().removeClass('disabled');
+
+    if ($('.question:visible').prev().prev().length == 0)
+      $(this).parent().addClass('disabled');      
 
     scroollTo($('.content-question'));
 
