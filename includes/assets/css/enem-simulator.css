@@ -38,6 +38,10 @@ ul, ol {
   margin-bottom: 1rem;
 }
 
+.page-link {
+  padding: 1rem 1rem;
+}
+
 .page-item:not(.disabled) .page-link {
   color: rgb(55, 58, 60) !important;
 }
@@ -53,6 +57,10 @@ ul, ol {
 
 .pagination {
   margin: 0;
+}
+
+.pagination .revise {
+  margin-left: 6.5rem !important;
 }
 
 .progress {
@@ -77,4 +85,18 @@ ul, ol {
 
 .question-thumbnail img {
   width: 100%;
+}
+
+.timer {
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
+  font-weight: bolder;
+  font-size: 3.5rem;
+  color: rgb(55, 58, 60) !important;
+  text-align: right;
+}
+
+.timer p {
+  margin-bottom: 0;
+  line-height: 3.5rem !important;
+  width: 200px;
 }
