@@ -28,6 +28,8 @@ jQuery(document).ready(function( $ ) {
 
         scroollTo($('.entry-content'));
 
+        setTimer();
+
       }
     });
   });
@@ -121,6 +123,40 @@ jQuery(document).ready(function( $ ) {
     $('html, body').animate({
       scrollTop: element.offset().top
     }, 2000);
+  }
+
+  function setTimer() {
+    let timer = $('.timer');
+
+    timer.show();
+
+    let s, m, h;
+    let maxiumTime = enem_simulator.maximum_time;
+
+    console.log(maxiumTime);
+
+    var x = setInterval(function() {
+     
+      m = parseInt(maxiumTime / 60);
+      h = parseInt(m / 60);
+      s =  maxiumTime % 60;
+
+      if(h < 10) 
+        h = '0' + h;
+      if(m < 10) 
+        m = '0' + m;
+      if(s < 10) 
+        s = '0' + s;
+
+      result = h + ':' + m + ':' + s;
+
+      timer.html(result);
+
+      if(maxiumTime == 0) return;
+
+      maxiumTime--;
+    
+  }, 1000);
   }
 
 });
