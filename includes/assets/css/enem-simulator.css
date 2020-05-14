@@ -11,12 +11,16 @@ ul, ol {
   height: auto;
 }
 
+.simulator-title, .simulator-initial-message, #question_category, .question{
+  color: rgb(55, 58, 60) !important;
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
+}
+
 .question h4, h3 {
   margin: .5rem auto .5rem !important;
 }
 
 .custom-control-label {
-  font-weight: bolder !important;
   font-size: 2rem;
 }
 
@@ -36,9 +40,8 @@ ul, ol {
 
 .page-item .page-link {
   border-radius: .5rem !important;
-  border-color: #3333;
-  color: #333;
-  font-weight: bolder;
+  color: rgb(55, 58, 60) !important;
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
 }
 
 .pagination a:focus, .pagination a:hover {
