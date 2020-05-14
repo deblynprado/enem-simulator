@@ -60,6 +60,8 @@ ul, ol {
 .progress-bar {
   font-size: 2rem;
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
+  -webkit-transition: width 2.5s ease !important;
+  transition: width 2.5s ease !important;
 }
 
 .progress-bar[aria-valuenow="0"], .progress-bar[aria-valuenow="2"] {
