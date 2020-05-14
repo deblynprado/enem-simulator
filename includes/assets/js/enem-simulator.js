@@ -50,7 +50,6 @@ jQuery(document).ready(function( $ ) {
       $('.question:first').show('slow');
     }
 
-    setProgressbar();
     scroollTo($('.content-question'));
 
     return false;
@@ -67,7 +66,6 @@ jQuery(document).ready(function( $ ) {
       $('.question:last').show('slow');
     }
 
-    setProgressbar();
     scroollTo($('.content-question'));
 
     return false;
@@ -84,6 +82,9 @@ jQuery(document).ready(function( $ ) {
     } else {
       $box.prop('checked', false);
     }
+
+    setProgressbar();
+
   });
 
   function setProgressbar() {
