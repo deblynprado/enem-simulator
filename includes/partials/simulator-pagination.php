@@ -1,3 +1,5 @@
+<?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' ); ?>
+
 <div class="col-12 nav" style="display: none">
   <nav>
     <ul class="pagination">
