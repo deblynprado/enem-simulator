@@ -13,7 +13,7 @@
     ?>
     <figcaption class="figure-caption text-right"><?php the_post_thumbnail_caption(); ?></figcaption>
   </div>
-  <div>
+  <div class="question-options">
     <?php 
       if( $fields ): $name = substr( md5( serialize( $fields ) ), 0, 8 ); 
       $indexField = 0;
@@ -27,5 +27,5 @@
       <?php endforeach; ?>
     </div>
     <?php endif; ?>
-	</div>
+  </div>
 </div>
