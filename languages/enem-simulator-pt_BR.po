@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-13 20:54+0000\n"
-"PO-Revision-Date: 2020-05-13 20:54+0000\n"
+"POT-Creation-Date: 2020-05-14 18:36+0000\n"
+"PO-Revision-Date: 2020-05-14 18:36+0000\n"
 "Language-Team: Português do Brasil\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +38,7 @@ msgstr "Adicionar Questão"
 msgid "Question Categories"
 msgstr "Categorias de Questão"
 
-#: includes/partials/content-simulator.php:8
+#: includes/partials/content-simulator.php:9
 msgid ""
 "Do as many simulated tests wish for you to have a good performance on the "
 "day of exam."
@@ -46,17 +46,13 @@ msgstr ""
 "Faça quantos testes simulados desejarem para ter um bom desempenho no dia do "
 "exame"
 
-#: includes/partials/content-simulator.php:9
+#: includes/partials/content-simulator.php:10
 msgid "Choose a desired category to start"
 msgstr "Escolha a Categoria Desejada para Iniciar"
 
-#: includes/partials/content-simulator.php:27
+#: includes/partials/content-simulator.php:29
 msgid "Start Simulator"
 msgstr "Iniciar Simulado"
-
-#: includes/partials/content-simulator.php:43
-msgid "End Simulator"
-msgstr "Terminar Simulado"
 
 #: includes/partials/simulator-pagination.php:6
 msgid "Previous"
@@ -72,7 +68,6 @@ msgid "Next"
 msgstr "Próxima"
 
 #: includes/partials/simulator-pagination.php:13
-#: includes/partials/simulator-pagination.php:19
 msgctxt "Navigation to Next Question"
 msgid "Next"
 msgstr ""
@@ -80,6 +75,15 @@ msgstr ""
 #: includes/partials/simulator-pagination.php:18
 msgid "Revise"
 msgstr "Corrigir"
+
+#: includes/partials/simulator-pagination.php:19
+msgctxt "Revise simulator"
+msgid "Revise"
+msgstr ""
+
+#: includes/partials/simulator-timer.php:4
+msgid "Time"
+msgstr "TEMPO"
 
 #. Description of the plugin/theme
 msgid "Allows your users to generate random tests and check their knowledge."

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-13 20:54+0000\n"
+"POT-Creation-Date: 2020-05-14 18:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Deblyn Prado <deblynprado@gmail.com>\n"
 "Language-Team: Deblyn Prado <deblynprado@gmail.com>\n"
@@ -37,22 +37,18 @@ msgstr ""
 msgid "Question Categories"
 msgstr ""
 
-#: includes/partials/content-simulator.php:8
+#: includes/partials/content-simulator.php:9
 msgid ""
 "Do as many simulated tests wish for you to have a good performance on the "
 "day of exam."
 msgstr ""
 
-#: includes/partials/content-simulator.php:9
+#: includes/partials/content-simulator.php:10
 msgid "Choose a desired category to start"
 msgstr ""
 
-#: includes/partials/content-simulator.php:27
+#: includes/partials/content-simulator.php:29
 msgid "Start Simulator"
-msgstr ""
-
-#: includes/partials/content-simulator.php:43
-msgid "End Simulator"
 msgstr ""
 
 #: includes/partials/simulator-pagination.php:6
@@ -69,13 +65,21 @@ msgid "Next"
 msgstr ""
 
 #: includes/partials/simulator-pagination.php:13
-#: includes/partials/simulator-pagination.php:19
 msgctxt "Navigation to Next Question"
 msgid "Next"
 msgstr ""
 
 #: includes/partials/simulator-pagination.php:18
 msgid "Revise"
+msgstr ""
+
+#: includes/partials/simulator-pagination.php:19
+msgctxt "Revise simulator"
+msgid "Revise"
+msgstr ""
+
+#: includes/partials/simulator-timer.php:4
+msgid "Time"
 msgstr ""
 
 #. Description of the plugin/theme
