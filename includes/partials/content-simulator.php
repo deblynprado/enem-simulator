@@ -39,6 +39,9 @@
     <!-- progress -->
     <?php include ('simulator-progress.php'); ?>
     <!-- /progress -->
+    <!-- timer -->
+    <?php include ('simulator-timer.php'); ?>
+    <!-- /timer -->
     <!-- pagination -->
     <?php include ( 'simulator-pagination.php' ); ?>
     <!-- /pagination -->
