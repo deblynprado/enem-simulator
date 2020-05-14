@@ -61,3 +61,7 @@ ul, ol {
   font-size: 2rem;
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
 }
+
+.progress-bar[aria-valuenow="0"], .progress-bar[aria-valuenow="2"] {
+  min-width: 30px;
+}
