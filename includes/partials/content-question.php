@@ -7,7 +7,7 @@
   <div class="figure question-thumbnail">
     <?php the_post_thumbnail( 'post-thumbnail', 
             array(
-              'class' => 'rounded',
+              'class' => 'rounded, image-fluid',
               'title' => $questions->title
           )); 
     ?>
