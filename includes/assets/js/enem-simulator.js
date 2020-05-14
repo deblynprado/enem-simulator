@@ -26,7 +26,7 @@ jQuery(document).ready(function( $ ) {
         $('.simulator-header').hide('slow');
         $('.simulator-category-options').hide('slow');
 
-        $('.end-simulator').show('slow');
+        scroollTo($('.entry-content'));
 
       }
     });
@@ -49,7 +49,10 @@ jQuery(document).ready(function( $ ) {
       $('.question:visible').hide('slow');
       $('.question:first').show('slow');
     }
+
     setProgressbar();
+    scroollTo($('.content-question'));
+
     return false;
 
   });
@@ -63,7 +66,10 @@ jQuery(document).ready(function( $ ) {
       $('.question:visible').hide('slow');
       $('.question:last').show('slow');
     }
+
     setProgressbar();
+    scroollTo($('.content-question'));
+
     return false;
 
   });
@@ -81,32 +87,27 @@ jQuery(document).ready(function( $ ) {
   });
 
   function setProgressbar() {
+    let questionsChecked = $('.question input[type=checkbox]:checked');
     let questions = $('.question');
     let progressBar = $(".progress-bar");
     let count = questions.length;
-    let index =  $('.question:visible').index();
+    let checked =  questionsChecked.length;
 
-    let percent = 100 / count * (index + 1);
+    console.log(count);
+    console.log(checked);
+
+    let percent = parseInt(100 / count * checked);
 
     progressBar.attr('aria-valuenow', percent);
-    progressBar.html(percent);
+    progressBar.html(percent + '%');
+    progressBar.css('width', percent + '%');
+    
+  }
 
-    let delay = 500;
-    progressBar.each(function(i) {
-      $(this).delay(delay * i).animate({
-        width: $(this).attr('aria-valuenow') + '%'
-      }, delay);
-
-      $(this).prop('Counter', 0).animate({
-        Counter: $(this).text()
-      }, {
-        duration: delay,
-        // easing: 'swing',
-        step: function(now) {
-          $(this).text(Math.ceil(now) + '%');
-        }
-      });
-    });
+  function scroollTo(element) {
+    $('html, body').animate({
+      scrollTop: element.offset().top
+    }, 2000);
   }
 
 });
