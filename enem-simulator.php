@@ -40,10 +40,12 @@ function enqueue_scripts() {
   wp_enqueue_script( 'bootstrap-js', plugins_url( 'includes/assets/bootstrap/js/bootstrap.min.js', __FILE__ ), array( 'jquery' ), null, true );
   wp_enqueue_script( 'enem-simulator', plugins_url( 'includes/assets/js/enem-simulator.js', __FILE__ ), array( 'jquery', 'bootstrap-js'), null, true );
   $maximumTime = get_field('maximum_time', 'option');
+  $alertTime = get_field('alert_time', 'option');
   wp_localize_script( 'enem-simulator', 'enem_simulator',
       array( 
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
         'maximum_time' => $maximumTime,
+        'alert_time' => $alertTime,
       )
   );
 }
