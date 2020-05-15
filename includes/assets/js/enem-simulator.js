@@ -16,8 +16,10 @@ jQuery(document).ready(function( $ ) {
       },
       success: function( response ) {
 
-        $('.content-question').empty();
-        $('.content-question').html( response );
+        let container = $( response );
+        let result = setAnswerStorage( container );
+
+        $('.content-question').empty().html( result );
         
         $('.question').eq(0).show('slow');
 
@@ -162,6 +164,38 @@ jQuery(document).ready(function( $ ) {
 
   function stopTimer() {
     clearInterval(timerInterval);
+  }
+
+  function setAnswerStorage(elements) {
+
+    let questionsOptions = elements.find('.question-options');
+    let questions = new Array();
+
+    questionsOptions.each(function(e) {
+      var question = {
+        post_id: '',
+        correct_answer: {
+          number: '',
+          text: ''
+        }
+      }
+      question.post_id = $(this).attr('data-question-id');
+
+      var correctAnswer = $(this).find('input[type=hidden]');
+      correctAnswer.each(function(e) {
+        if($(this).val() == 'correct') 
+          question.correct_answer = {
+            number: $(this).next().val(),
+            text: $(this).next().next().text(),
+          }
+      }).remove();
+      questions.push(question);
+    });
+
+    localStorage.setItem('enem_simulator_question', JSON.stringify(questions)); 
+    console.log(JSON.parse(localStorage.getItem('enem_simulator_question'))[0].correct_answer.number);
+
+    return elements;
   }
 
 });
