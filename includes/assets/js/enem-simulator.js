@@ -1,5 +1,5 @@
 jQuery(document).ready(function( $ ) {
-	console.log(enem_simulator.ajaxurl)
+
 	$('#start-simulator').on('click', function() {
 
     var category = { 
@@ -15,6 +15,7 @@ jQuery(document).ready(function( $ ) {
           category: category
       },
       success: function( response ) {
+
         $('.content-question').empty();
         $('.content-question').html( response );
         
@@ -34,8 +35,11 @@ jQuery(document).ready(function( $ ) {
     });
   });
 
-  $('#revise-question').on('click', function() {
-    
+  $('#revise-question').on('click', function(e) {
+    e.preventDefault();
+    stopTimer();
+    $('input[type=checkbox]').attr('disabled', 'disabled');
+    $('.page-item').addClass('disabled');
   });
 
   $('.question').each(function(e) {
@@ -108,9 +112,6 @@ jQuery(document).ready(function( $ ) {
     let count = questions.length;
     let checked =  questionsChecked.length;
 
-    console.log(count);
-    console.log(checked);
-
     let percent = parseInt(100 / count * checked);
 
     progressBar.attr('aria-valuenow', percent);
@@ -124,6 +125,8 @@ jQuery(document).ready(function( $ ) {
       scrollTop: element.offset().top
     }, 2000);
   }
+ 
+  var timerInterval;
 
   function setTimer() {
     let timer = $('.timer');
@@ -133,9 +136,7 @@ jQuery(document).ready(function( $ ) {
     let s, m, h;
     let maxiumTime = enem_simulator.maximum_time;
 
-    console.log(maxiumTime);
-
-    var x = setInterval(function() {
+    timerInterval = setInterval(function() {
      
       m = parseInt(maxiumTime / 60);
       h = parseInt(m / 60);
@@ -156,7 +157,11 @@ jQuery(document).ready(function( $ ) {
 
       maxiumTime--;
     
-  }, 1000);
+    }, 1000);
+  }
+
+  function stopTimer() {
+    clearInterval(timerInterval);
   }
 
 });
