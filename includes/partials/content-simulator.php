@@ -19,7 +19,7 @@
           <?php
           $categories = get_field( 'question_categories', 'option' ); 
           foreach ($categories as $value) : ?>
-          <option value="<?php echo $value[ 'question_category' ]->term_id ?>"><?php echo $value[ 'question_category' ]->name ?></option>
+          <option value="<?php echo $value[ 'question_category' ]->slug ?>"><?php echo $value[ 'question_category' ]->name ?></option>
           <?php endforeach; ?>
         </select>
       </div><!-- /.col -->
@@ -31,11 +31,9 @@
   </div><!-- /.simulator-category-options -->
 
   <div class="row">
-    <form name="content-question-form" id="content-question-form" enctype="multipart/form-data" method="post">
-      <div class="col-10 content-question">
-        
-      </div>
-    </form>
+    <div class="col-12 simulator-categories">
+      
+    </div>
     <!-- progress -->
     <?php include ('simulator-progress.php'); ?>
     <!-- /progress -->
