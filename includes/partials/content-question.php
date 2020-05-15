@@ -13,7 +13,7 @@
     ?>
     <figcaption class="figure-caption text-right"><?php the_post_thumbnail_caption(); ?></figcaption>
   </div>
-  <div class="question-options">
+  <div class="question-options" data-question-id="<?php echo get_the_ID(); ?>">
     <?php 
       if( $fields ): 
         $name = substr( md5( serialize( $fields ) ), 0, 8 ); 
