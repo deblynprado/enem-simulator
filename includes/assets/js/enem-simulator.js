@@ -151,12 +151,27 @@ jQuery(document).ready(function( $ ) {
 
     let s, m, h;
     let maxiumTime = enem_simulator.maximum_time;
+    let alertTime = enem_simulator.alert_time;
+
+    mAlertTime = parseInt(alertTime / 60);
+    hAlertTime = parseInt(mAlertTime / 60);
+    sAlertTime =  alertTime % 60;
 
     timerInterval = setInterval(function() {
      
       m = parseInt(maxiumTime / 60);
       h = parseInt(m / 60);
       s =  maxiumTime % 60;
+
+      let p = timer.find('p');
+
+      if(hAlertTime === h && mAlertTime === m && sAlertTime === s) {
+        p.stop(true, true).addClass('text-danger', 1000);
+        setInterval(function() {
+          p.fadeOut(500);
+          p.fadeIn(500);
+        }, 500);
+      }
 
       if(h < 10) 
         h = '0' + h;
@@ -167,7 +182,7 @@ jQuery(document).ready(function( $ ) {
 
       result = h + ':' + m + ':' + s;
 
-      timer.find('p').html(result);
+      p.html(result);
 
       if(maxiumTime == 0) return;
 
