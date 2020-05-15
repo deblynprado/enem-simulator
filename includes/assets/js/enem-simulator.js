@@ -41,10 +41,10 @@ jQuery(document).ready(function( $ ) {
     e.preventDefault();
     stopTimer();
 
-    $('input[type=checkbox]').attr('disabled', 'disabled');
-    $('.page-item').addClass('disabled');
+    $(this).parent().addClass('disabled');
 
-    
+    checkAnswers();
+
   });
 
   $('.question').each(function(e) {
@@ -75,12 +75,14 @@ jQuery(document).ready(function( $ ) {
 
   $('#previous-question').on('click', function(e) {
     e.preventDefault();
+
+    scroollTo($('.content-question'));
     
     if ($('.question:visible').prev().length != 0)
-      $('.question:visible').prev().show('slow').next().hide('slow');
+      $('.question:visible').prev().show('fast').next().hide('fast');
     else {
-      $('.question:visible').hide('slow');
-      $('.question:last').show('slow');
+      $('.question:visible').hide('fast');
+      $('.question:last').show('fast');
     }
 
     $(this).parent().removeClass('disabled');
@@ -88,8 +90,6 @@ jQuery(document).ready(function( $ ) {
 
     if ($('.question:visible').prev().prev().length == 0)
       $(this).parent().addClass('disabled');      
-
-    scroollTo($('.content-question'));
 
     return false;
 
@@ -203,6 +203,31 @@ jQuery(document).ready(function( $ ) {
     setItemStorage(questions); 
 
     return elements;
+  }
+
+  function checkAnswers() {
+    let questions = $('.question-options');
+    let questionsStorage = getItemStorage();
+
+    questions.each(function(e) {
+      var questionIndex = $(this).attr('data-question-index');
+      var userAnswer = $(this).find('input[type=checkbox]');
+
+      userAnswer.each(function(e) {
+        var number = $(this).val();
+
+        if($(this).is(':checked')) {
+          if(questionsStorage[questionIndex].correct_answer.number === number) {
+            $(this).addClass('is-valid');
+          } else {
+            $(this).addClass('is-invalid');
+          }
+        } else if(questionsStorage[questionIndex].correct_answer.number === number) {
+          $(this).addClass('is-valid');
+        }
+      });
+
+    });
   }
 
   function questionFactory() {
