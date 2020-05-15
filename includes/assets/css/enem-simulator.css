@@ -42,6 +42,10 @@ ul, ol {
   background-color: #34ce57 !important;
 }
 
+.custom-control-input.is-invalid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before {
+  background-color: #e4606d !important;
+}
+
 .page-link {
   padding: 1rem 1rem;
 }
