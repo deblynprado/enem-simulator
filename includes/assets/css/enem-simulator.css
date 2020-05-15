@@ -38,6 +38,10 @@ ul, ol {
   margin-bottom: 1rem;
 }
 
+.custom-control-input.is-valid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:valid:checked ~ .custom-control-label::before {
+  background-color: #34ce57 !important;
+}
+
 .page-link {
   padding: 1rem 1rem;
 }
