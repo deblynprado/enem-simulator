@@ -57,43 +57,63 @@ function enem_simulator_shortcode( $atts ) {
 add_shortcode( 'enem-simulator', 'enem_simulator_shortcode' );
 
 function enem_simulator_get_question_category_callback() {
+  $option = get_field( 'question_categories', 'option' ); 
+  $categories = [];
 
-  if ( isset($_POST['category'] )) {
-    $categories[] = $_POST['category']['value'];
-    $categoryName = $_POST['category']['name'];
+  foreach ($option as $value) {
+    $categories[] = [
+                'slug' => $value[ 'question_category' ]->slug,
+                'name' => $value[ 'question_category' ]->name,
+    ];
   }
 
-  $args = array(
-    'orderby' => 'rand',
-    'post_type' => 'question',
-    'tax_query' => array(
-        array(
-          'taxonomy' => 'question_category',
-          'field' => 'id',
-          'terms'    => $categories,
-        ),
-    ),
-  );
+  if ( isset($_POST['category'] )) 
+    $category = $_POST['category'];
 
-  $questions = new WP_Query( $args );
+  foreach ($categories as $key => $value) {
 
-  $index = 0;
+    $args = array(
+      'orderby' => 'rand',
+      'post_type' => 'question',
+      'tax_query' => array(
+          array(
+            'taxonomy' => 'question_category',
+            'field' => 'slug',
+            'terms'    => $value['slug'],
+          ),
+      ),
+    );
+  
+    $questions = new WP_Query( $args );
+  
+    $index = 0;
+    $categoryName = $value['name'];
+  
+    if ( $questions->have_posts( ) ) {
 
-  if ( $questions->have_posts( ) ) {
-
-    while ( $questions->have_posts() ) {  
-
-      $questions->the_post();
-
-      $fields = get_field( 'text_options', get_the_ID() ); 
-      shuffle( $fields );
-
-      include ( 'includes/partials/content-question.php' );
-      
-      $index++;
+      ?>
+  
+      <div class="col-10 content-question" data-category-index="<?php echo $key ?>" 
+          id="<?php echo $value['slug'] ?>" <?php echo $category == $value['slug'] ? '' : 'style="display:none;"' ?> >
+  
+      <?php while ( $questions->have_posts() ) {  
+  
+        $questions->the_post();
+  
+        $fields = get_field( 'text_options', get_the_ID() ); 
+        shuffle( $fields );
+  
+        include ( 'includes/partials/content-question.php' );
+        
+        $index++;
+      }
+  
+      ?>
+      </div>
+      <?php
     }
+    wp_reset_postdata();
   }
-  wp_reset_postdata();
 
   wp_die();
 }
