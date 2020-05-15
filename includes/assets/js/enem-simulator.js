@@ -1,3 +1,7 @@
+var timerInterval;
+var alertTimeInterval;
+var endSimulator = false;
+
 jQuery(document).ready(function( $ ) {
 
 	$('#start-simulator').on('click', function() {
@@ -39,10 +43,9 @@ jQuery(document).ready(function( $ ) {
 
   $('#revise-question').on('click', function(e) {
     e.preventDefault();
-    stopTimer();
-
     $(this).parent().addClass('disabled');
 
+    stopTimer(); 
     checkAnswers();
 
   });
@@ -96,6 +99,8 @@ jQuery(document).ready(function( $ ) {
   });
 
   $(document).on('click', 'input[type=checkbox]', function(e) {
+    if(endSimulator) return false;
+
     let $box = $(this);
 
     if ($box.is(':checked')) {
@@ -141,8 +146,6 @@ jQuery(document).ready(function( $ ) {
       scrollTop: element.offset().top
     }, 2000);
   }
- 
-  var timerInterval;
 
   function setTimer() {
     let timer = $('.timer');
@@ -167,10 +170,12 @@ jQuery(document).ready(function( $ ) {
 
       if(hAlertTime === h && mAlertTime === m && sAlertTime === s) {
         p.stop(true, true).addClass('text-danger', 1000);
-        setInterval(function() {
-          p.fadeOut(500);
-          p.fadeIn(500);
-        }, 500);
+        if(!alertTimeInterval) {
+          alertTimeInterval = setInterval(function() {
+            p.fadeOut(500);
+            p.fadeIn(500);
+          }, 1000);
+        }
       }
 
       if(h < 10) 
@@ -184,7 +189,13 @@ jQuery(document).ready(function( $ ) {
 
       p.html(result);
 
-      if(maxiumTime == 0) return;
+      if(maxiumTime == 0) {
+        $('.revise').addClass('disabled');
+        stopTimer();
+        checkAnswers();
+        endSimulator = true;
+        return;
+      }
 
       maxiumTime--;
     
@@ -193,6 +204,7 @@ jQuery(document).ready(function( $ ) {
 
   function stopTimer() {
     clearInterval(timerInterval);
+    clearInterval(alertTimeInterval);
   }
 
   function setCorrectAnswers(elements) {
