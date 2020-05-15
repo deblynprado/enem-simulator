@@ -17,7 +17,7 @@ jQuery(document).ready(function( $ ) {
       success: function( response ) {
 
         let container = $( response );
-        let result = setAnswerStorage( container );
+        let result = setCorrectAnswers( container );
 
         $('.content-question').empty().html( result );
         
@@ -40,8 +40,11 @@ jQuery(document).ready(function( $ ) {
   $('#revise-question').on('click', function(e) {
     e.preventDefault();
     stopTimer();
+
     $('input[type=checkbox]').attr('disabled', 'disabled');
     $('.page-item').addClass('disabled');
+
+    
   });
 
   $('.question').each(function(e) {
@@ -102,6 +105,17 @@ jQuery(document).ready(function( $ ) {
     } else {
       $box.prop('checked', false);
     }
+
+    let questions = getItemStorage();
+    let questionIndex = $(this).parent().parent().attr('data-question-index');
+    let question = questions[questionIndex];
+
+    question.user_answer.number = $(this).val();
+    question.user_answer.text = $(this).next().text();
+
+    questions[questionIndex] = question;
+
+    setItemStorage(questions);
 
     setProgressbar();
 
@@ -166,19 +180,13 @@ jQuery(document).ready(function( $ ) {
     clearInterval(timerInterval);
   }
 
-  function setAnswerStorage(elements) {
+  function setCorrectAnswers(elements) {
 
     let questionsOptions = elements.find('.question-options');
     let questions = new Array();
 
     questionsOptions.each(function(e) {
-      var question = {
-        post_id: '',
-        correct_answer: {
-          number: '',
-          text: ''
-        }
-      }
+      var question = questionFactory();
       question.post_id = $(this).attr('data-question-id');
 
       var correctAnswer = $(this).find('input[type=hidden]');
@@ -192,10 +200,31 @@ jQuery(document).ready(function( $ ) {
       questions.push(question);
     });
 
-    localStorage.setItem('enem_simulator_question', JSON.stringify(questions)); 
-    console.log(JSON.parse(localStorage.getItem('enem_simulator_question'))[0].correct_answer.number);
+    setItemStorage(questions); 
 
     return elements;
+  }
+
+  function questionFactory() {
+    return {
+      post_id:'',
+      correct_answer: {
+        number:'',
+        text:''
+      },
+      user_answer: {
+        number:'',
+        text:''
+      }
+    }
+  }
+
+  function setItemStorage(item) {
+    localStorage.setItem('enem_simulator_question', JSON.stringify(item)); 
+  }
+
+  function getItemStorage() {
+    return JSON.parse(localStorage.getItem('enem_simulator_question'));
   }
 
 });
