@@ -6,7 +6,7 @@ li {
   margin: 0.5rem 2rem 0 0 !important;
 }
 
-p, h1, h2, h3, h4, h5, select, span, label {
+p, h1, h2, h3, h4, h5, select, span, labe, li, a {
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
   color: rgb(55, 58, 60) !important;
 }
