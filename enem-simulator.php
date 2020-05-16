@@ -95,7 +95,7 @@ function enem_simulator_get_question_category_callback() {
 
       ?>
   
-      <div class="col-10 content-question" data-category-index="<?php echo $key ?>" 
+      <div class="content-question" data-category-index="<?php echo $key ?>" 
           id="<?php echo $value['slug'] ?>" <?php echo $category == $value['slug'] ? '' : 'style="display:none;"' ?> >
   
       <?php while ( $questions->have_posts() ) {  
