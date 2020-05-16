@@ -58,8 +58,9 @@ function enem_simulator_shortcode( $atts ) {
 }
 add_shortcode( 'enem-simulator', 'enem_simulator_shortcode' );
 
-function enem_simulator_get_question_category_callback() {
+function enem_simulator_get_categories() {
   $option = get_field( 'question_categories', 'option' ); 
+
   $categories = [];
 
   foreach ($option as $value) {
@@ -69,24 +70,34 @@ function enem_simulator_get_question_category_callback() {
     ];
   }
 
+  return $categories;
+}
+
+function enem_simulator_get_questions($slug, $orderby) {
+  $args = array(
+    'orderby' => $orderby,
+    'post_type' => 'question',
+    'tax_query' => array(
+        array(
+          'taxonomy' => 'question_category',
+          'field' => 'slug',
+          'terms'    => $slug,
+        ),
+    ),
+  );
+
+  return new WP_Query( $args );
+}
+
+function enem_simulator_get_question_category_callback() {
+  $categories = enem_simulator_get_categories();
+  
   if ( isset($_POST['category'] )) 
     $category = $_POST['category'];
 
   foreach ($categories as $key => $value) {
-
-    $args = array(
-      'orderby' => 'rand',
-      'post_type' => 'question',
-      'tax_query' => array(
-          array(
-            'taxonomy' => 'question_category',
-            'field' => 'slug',
-            'terms'    => $value['slug'],
-          ),
-      ),
-    );
-  
-    $questions = new WP_Query( $args );
+    
+    $questions = enem_simulator_get_questions($value['slug'], 'rand');
   
     $index = 0;
     $categoryName = $value['name'];
@@ -122,3 +133,51 @@ function enem_simulator_get_question_category_callback() {
 
 add_action( 'wp_ajax_enem_simulator_get_question_category', 'enem_simulator_get_question_category_callback' );
 add_action( 'wp_ajax_nopriv_enem_simulator_get_question_category', 'enem_simulator_get_question_category_callback' );
+
+function enem_simulator_get_nav_callback() {
+  $categories = enem_simulator_get_categories();
+  
+  foreach ($categories as $key => $value) {
+    
+    $questions = enem_simulator_get_questions($value['slug'], 'name');
+  
+    $index = 0;
+  
+    if ( $questions->have_posts( ) ) {
+
+      ?>
+      <div class="content-category" data-category-index="<?php echo $key ?>">
+        <h5 class="simulator-title"><?php echo $value['name'] ?></h5>
+        <div class="progress mt-4 progress-category">
+          <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+        </div>
+        <p class="simulator-title mt-3"><?php echo __('Click on the question to navigate', 'enem-simulator') ?></p>
+        <div class="question-nav">
+      <?php while ( $questions->have_posts() ) {  
+  
+        $questions->the_post();
+        ?>
+
+        <div class="d-inline p-4 border <?php echo $index == 0 ? 'rounded-left' : ''; ?> 
+          <?php echo ($index+1) == $questions->found_posts ? 'rounded-right' : ''; ?>">
+          <a href="#"><?php echo $index+1; ?></a>
+        </div>
+
+        <?php
+        
+        $index++;
+      }
+  
+      ?>
+      </div>
+      </div>
+      <?php
+    }
+    wp_reset_postdata();
+  }
+
+  wp_die();
+}
+
+add_action( 'wp_ajax_enem_simulator_get_nav', 'enem_simulator_get_nav_callback' );
+add_action( 'wp_ajax_nopriv_enem_simulator_get_nav', 'enem_simulator_get_nav_callback' );
