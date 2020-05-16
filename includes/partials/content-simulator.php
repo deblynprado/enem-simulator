@@ -48,7 +48,7 @@
     <!-- /footer -->
   </div>
   <!-- nav -->
-  <div class="row simulator-nav">
+  <div class="row simulator-nav" style="display: none;">
     <div class="col-10">
       <h3 class="simulator-title"><?php echo __( 'Browse in the test', 'enem-simulator' ) ?></h3>
       <ul>

@@ -26,6 +26,7 @@ jQuery(document).ready(function( $ ) {
 
         $('.simulator-pagination').show('slow');
         $('.simulator-progress').show('slow');
+        $('.simulator-footer').show('slow');
 
         $('.simulator-header').hide('slow');
         $('.simulator-category-options').hide('slow');
