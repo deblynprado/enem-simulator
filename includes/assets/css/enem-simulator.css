@@ -60,6 +60,10 @@ p, h1, h2, h3, h4, h5, select, span, label {
   color: rgb(55, 58, 60) !important;
 }
 
+.page-item.disabled .page-link span {
+  color: #6c757d !important;
+}
+
 .page-item .page-link {
   border-radius: .5rem !important;
   font-size: 2rem;
