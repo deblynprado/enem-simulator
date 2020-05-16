@@ -24,8 +24,8 @@ jQuery(document).ready(function( $ ) {
         
         $('.content-question:visible .question').eq(0).show('slow');
 
-        $('.nav').show('slow');
-        $('.progress').show('slow');
+        $('.simulator-pagination').show('slow');
+        $('.simulator-progress').show('slow');
 
         $('.simulator-header').hide('slow');
         $('.simulator-category-options').hide('slow');
