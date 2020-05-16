@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-14 18:36+0000\n"
-"PO-Revision-Date: 2020-05-14 18:36+0000\n"
+"POT-Creation-Date: 2020-05-16 16:13+0000\n"
+"PO-Revision-Date: 2020-05-16 16:14+0000\n"
 "Language-Team: Português do Brasil\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,34 +54,38 @@ msgstr "Escolha a Categoria Desejada para Iniciar"
 msgid "Start Simulator"
 msgstr "Iniciar Simulado"
 
-#: includes/partials/simulator-pagination.php:6
+#: includes/partials/simulator-footer.php:14
+msgid "New Simulator"
+msgstr "Nova Prova"
+
+#: includes/partials/simulator-pagination.php:8
 msgid "Previous"
 msgstr "Anterior"
 
-#: includes/partials/simulator-pagination.php:7
+#: includes/partials/simulator-pagination.php:9
 msgctxt "Navigation to Previous Question"
 msgid "Previous"
 msgstr ""
 
-#: includes/partials/simulator-pagination.php:12
+#: includes/partials/simulator-pagination.php:14
 msgid "Next"
 msgstr "Próxima"
 
-#: includes/partials/simulator-pagination.php:13
+#: includes/partials/simulator-pagination.php:15
 msgctxt "Navigation to Next Question"
 msgid "Next"
 msgstr ""
 
-#: includes/partials/simulator-pagination.php:18
+#: includes/partials/simulator-pagination.php:20
 msgid "Revise"
 msgstr "Corrigir"
 
-#: includes/partials/simulator-pagination.php:19
+#: includes/partials/simulator-pagination.php:21
 msgctxt "Revise simulator"
 msgid "Revise"
 msgstr ""
 
-#: includes/partials/simulator-timer.php:4
+#: includes/partials/simulator-timer.php:6
 msgid "Time"
 msgstr "TEMPO"
 
