@@ -31,7 +31,7 @@
   </div><!-- /.simulator-category-options -->
 
   <div class="row">
-    <div class="col-12 simulator-categories">
+    <div class="col-10 simulator-categories">
       
     </div>
     <!-- progress -->
@@ -43,5 +43,8 @@
     <!-- pagination -->
     <?php include ( 'simulator-pagination.php' ); ?>
     <!-- /pagination -->
+    <!-- footer -->
+    <?php include ( 'simulator-footer.php' ); ?>
+    <!-- /footer -->
   </div>
 </div>

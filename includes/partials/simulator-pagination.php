@@ -1,6 +1,6 @@
 <?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' ); ?>
 
-<div class="col-12 nav" style="display: none">
+<div class="col-10 simulator-pagination" style="display: none">
   <nav>
     <ul class="pagination">
       <li class="page-item disabled">
