@@ -6,6 +6,11 @@ li {
   margin: 0.5rem 2rem 0 0 !important;
 }
 
+.enem-simulator-font {
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
+  color: rgb(55, 58, 60) !important;
+}
+
 #start-simulator {
   width: 100%;
   font-size: 2rem;
@@ -15,11 +20,6 @@ li {
 #question_category {
   font-size: 2rem;
   height: auto;
-}
-
-.simulator-title, .simulator-initial-message, #question_category, .question, a{
-  color: rgb(55, 58, 60) !important;
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
 }
 
 .question h4, h3 {
@@ -62,7 +62,6 @@ li {
 
 .page-item .page-link {
   border-radius: .5rem !important;
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
   font-size: 2rem;
 }
 
@@ -86,8 +85,7 @@ li {
 
 .progress-bar {
   font-size: 2rem;
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
-  -webkit-transition: width 2.5s ease !important;
+ -webkit-transition: width 2.5s ease !important;
   transition: width 2.5s ease !important;
 }
 
@@ -104,10 +102,8 @@ li {
 }
 
 .timer {
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
   font-weight: bolder;
   font-size: 2.5rem;
-  color: rgb(55, 58, 60) !important;
   text-align: right;
 }
 
@@ -123,7 +119,6 @@ li {
   border: 1px solid #dee2e6 !important;
   background-color: #007bff !important;
   color: #fff;
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
   font-weight: 400;
   font-size: 1.5rem;
   text-transform: none;
@@ -138,8 +133,7 @@ li {
 }
 
 .simulator-nav li {
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
-  font-size: 1.4rem;
+ font-size: 1.4rem;
   font-weight: bolder;
   list-style-type: none;
   float: left;
