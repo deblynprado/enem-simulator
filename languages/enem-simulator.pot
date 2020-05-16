@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-16 16:13+0000\n"
+"POT-Creation-Date: 2020-05-16 19:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Deblyn Prado <deblynprado@gmail.com>\n"
 "Language-Team: Deblyn Prado <deblynprado@gmail.com>\n"
@@ -37,6 +37,10 @@ msgstr ""
 msgid "Question Categories"
 msgstr ""
 
+#: enem-simulator.php:156
+msgid "Click on the question to navigate"
+msgstr ""
+
 #: includes/partials/content-simulator.php:9
 msgid ""
 "Do as many simulated tests wish for you to have a good performance on the "
@@ -49,6 +53,14 @@ msgstr ""
 
 #: includes/partials/content-simulator.php:29
 msgid "Start Simulator"
+msgstr ""
+
+#: includes/partials/content-simulator.php:53
+msgid "Browse in the test"
+msgstr ""
+
+#: includes/partials/content-simulator.php:59
+msgid "Knowledge areas"
 msgstr ""
 
 #: includes/partials/simulator-footer.php:14
