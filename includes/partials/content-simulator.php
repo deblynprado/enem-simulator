@@ -1,6 +1,6 @@
 <?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' ); ?>
 
-<div class="container">
+<div class="container simulator-content">
   <div class="row simulator-header">
     <div class="col-10">
       <h2 class="simulator-title"><?php echo __( 'Enem Simulator', 'enem-simulator' ) ?></h2>
@@ -47,22 +47,26 @@
     <?php include ( 'simulator-footer.php' ); ?>
     <!-- /footer -->
   </div>
-  <!-- nav -->
-  <div class="row simulator-nav" style="display: none;">
-    <div class="col-10">
-      <h3 class="simulator-title"><?php echo __( 'Browse in the test', 'enem-simulator' ) ?></h3>
-      <ul>
-        <li class="text-success">RESPONDEU</li>
-        <li class="text-danger">NÃO VISUALIZADA</li>
-        <li class="text-warning">VISUALIZADA</li>
-      </ul>
-      <h4 class="simulator-title"><?php echo __( 'Knowledge areas', 'enem-simulator' ) ?></h4>
-    </div>
-    <div class="col-10">
-      <div class="simulator-nav-categories">
+</div>
+<div class="container">
+  <div class="row">
+    <!-- nav -->
+    <div class="row simulator-nav" style="display: none;">
+      <div class="col-10">
+        <h3 class="simulator-title"><?php echo __( 'Browse in the test', 'enem-simulator' ) ?></h3>
+        <ul>
+          <li class="text-success">RESPONDEU</li>
+          <li class="text-danger">NÃO VISUALIZADA</li>
+          <li class="text-warning">VISUALIZADA</li>
+        </ul>
+        <h4 class="simulator-title"><?php echo __( 'Knowledge areas', 'enem-simulator' ) ?></h4>
+      </div>
+      <div class="col-10">
+        <div class="simulator-nav-categories">
 
+        </div>
       </div>
     </div>
+    <!-- /nav -- -->
   </div>
-  <!-- /nav -- -->
 </div>
