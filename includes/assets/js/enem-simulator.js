@@ -135,6 +135,13 @@ jQuery(document).ready(function( $ ) {
 
   });
 
+  $('.simulator-category-list').on('click', function(e){
+    e.preventDefault();
+    $('.simulator-content').hide('slow');
+    $('.simulator-nav').show('slow');
+    scroollTo($('.entry-content'));
+  });
+
   function setProgressbar() {
     let questionsChecked = $('.question input[type=checkbox]:checked');
     let questions = $('.question');
