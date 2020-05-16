@@ -17,7 +17,7 @@ li {
   height: auto;
 }
 
-.simulator-title, .simulator-initial-message, #question_category, .question{
+.simulator-title, .simulator-initial-message, #question_category, .question, a{
   color: rgb(55, 58, 60) !important;
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
 }
@@ -131,4 +131,32 @@ li {
 
 .simulator-footer button:hover {
   background-color: #0059b9 !important;
+}
+
+.simulator-nav ul {
+  margin: 0;
+}
+
+.simulator-nav li {
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
+  font-size: 1.4rem;
+  font-weight: bolder;
+  list-style-type: none;
+  float: left;
+}
+
+.simulator-nav li:before {
+  content: "■";
+  font-size: 4rem;
+  vertical-align: sub;
+  line-height: 1.476;
+}
+
+.question-nav a {
+  text-decoration: none;
+  color: #007bff !important;
+}
+
+.question-nav div {
+  background-color: #fff;
 }
