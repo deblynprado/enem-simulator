@@ -52,7 +52,9 @@ function enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
 function enem_simulator_shortcode( $atts ) {
+  ob_start();
   include ( 'includes/partials/content-simulator.php' );
+  return ob_get_clean();
 }
 add_shortcode( 'enem-simulator', 'enem_simulator_shortcode' );
 
