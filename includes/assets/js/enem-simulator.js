@@ -15,7 +15,7 @@ jQuery(document).ready(function( $ ) {
           action : 'enem_simulator_get_question_category',
           category: category
       },
-      success: function( response ) {
+      success: function(response) {
 
         let container = $( '<div class="categories">' + response + '</div>' );
         let result = setQuestion( container );
@@ -34,6 +34,17 @@ jQuery(document).ready(function( $ ) {
 
         setTimer();
 
+      }
+    });
+
+    $.ajax({
+      type: 'POST',
+      url: enem_simulator.ajaxurl,
+      data: {
+          action : 'enem_simulator_get_nav'
+      },
+      success: function(response){
+        $('.simulator-nav-categories').empty().html(response);
       }
     });
   });
