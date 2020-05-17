@@ -147,11 +147,11 @@ function enem_simulator_get_nav_callback() {
 
       ?>
       <div class="content-category" data-category-index="<?php echo $key ?>">
-        <h5 class="simulator-title"><?php echo $value['name'] ?></h5>
+        <h5><?php echo $value['name'] ?></h5>
         <div class="progress mt-4 progress-category">
           <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
         </div>
-        <p class="simulator-title mt-3"><?php echo __('Click on the question to navigate', 'enem-simulator') ?></p>
+        <p class="mt-3"><?php echo __('Click on the question to navigate', 'enem-simulator') ?></p>
         <div class="question-nav">
       <?php while ( $questions->have_posts() ) {  
   
