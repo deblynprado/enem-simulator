@@ -138,7 +138,21 @@ jQuery(document).ready(function( $ ) {
   $('.simulator-category-list').on('click', function(e){
     e.preventDefault();
     $('.simulator-content').hide('slow');
+    $('.question').hide();
+    $('.content-question').hide();
     $('.simulator-nav').show('slow');
+    scroollTo($('.entry-content'));
+  });
+
+  $(document).on('click', '.question-nav-item', function(e){
+    let id = $(this).attr('data-question-id');
+    let name = $(this).attr('data-category-name');
+    let question = $('#' + id);
+    let category = $('#' + name);
+    $('.simulator-content').show('slow');
+    $('.simulator-nav').hide('slow');
+    category.show('slow');
+    question.show('slow');
     scroollTo($('.entry-content'));
   });
 
