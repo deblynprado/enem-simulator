@@ -97,7 +97,7 @@ function enem_simulator_get_question_category_callback() {
 
   foreach ($categories as $key => $value) {
     
-    $questions = enem_simulator_get_questions($value['slug'], 'rand');
+    $questions = enem_simulator_get_questions($value['slug'], 'name');
   
     $index = 0;
     $categoryName = $value['name'];
@@ -105,20 +105,16 @@ function enem_simulator_get_question_category_callback() {
     if ( $questions->have_posts( ) ) : ?>
       <div class="content-question" data-category-index="<?php echo $key ?>" 
         id="<?php echo $value['slug'] ?>" <?php echo $category == $value['slug'] ? '' : 'style="display:none;"' ?> >
-  
-      <?php while ( $questions->have_posts() ) {  
-  
+      <?php while ( $questions->have_posts() ) :  
         $questions->the_post();
-  
+
         $fields = get_field( 'text_options', get_the_ID() ); 
         shuffle( $fields );
   
         include ( 'includes/partials/content-question.php' );
         
         $index++;
-      }
-  
-      ?>
+      endwhile; ?>
       </div>
     <?php endif;
     wp_reset_postdata();
