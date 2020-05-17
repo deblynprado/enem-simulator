@@ -1,6 +1,6 @@
 <?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' ); ?>
 
-<div class="question" style="display:none">
+<div class="question" style="display:none" id="<?php echo get_the_ID(); ?>">
   <h3 class="question-category"><?php echo $categoryName; ?></h4>
 	<h4 class="question-title"><?php the_title(); echo (' '); echo $index+1; ?></h4>
   <p class="question-message"> <?php the_content() ?> </p>
@@ -13,7 +13,7 @@
     ?>
     <figcaption class="figure-caption text-right"><?php the_post_thumbnail_caption(); ?></figcaption>
   </div>
-  <div class="question-options" data-question-id="<?php echo get_the_ID(); ?>" data-question-index="<?php echo $index ?>">
+  <div class="question-options" data-question-index="<?php echo $index ?>">
     <?php 
       if( $fields ): 
         $name = substr( md5( serialize( $fields ) ), 0, 8 ); 
