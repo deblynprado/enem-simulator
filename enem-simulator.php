@@ -146,7 +146,7 @@ function enem_simulator_get_nav_callback() {
     if ( $questions->have_posts( ) ) {
 
       ?>
-      <div class="content-category" data-category-index="<?php echo $key ?>">
+      <div class="content-category m-4" data-category-index="<?php echo $key ?>">
         <h5><?php echo $value['name'] ?></h5>
         <div class="progress mt-4 progress-category">
           <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
