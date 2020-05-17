@@ -81,14 +81,10 @@ jQuery(document).ready(function( $ ) {
 
     scroollTo($('.entry-content'));
 
-    return false;
-
   });
 
   $('#previous-question').on('click', function(e) {
     e.preventDefault();
-
-    scroollTo($('.entry-content'));
     
     if ($('.question:visible').prev().length != 0)
       $('.question:visible').prev().show('fast').next().hide('fast');
@@ -103,7 +99,7 @@ jQuery(document).ready(function( $ ) {
     if ($('.question:visible').prev().prev().length == 0)
       $(this).parent().addClass('disabled');      
 
-    return false;
+    scroollTo($('.entry-content'));
 
   });
 
@@ -151,6 +147,12 @@ jQuery(document).ready(function( $ ) {
     let category = $('#' + name);
     $('.simulator-content').show('slow');
     $('.simulator-nav').hide('slow');
+    
+    if(category.find('.question').length > 1) 
+      $('#next-question').parent().removeClass('disabled');
+    else
+      $('#next-question').parent().addClass('disabled');
+
     category.show('slow');
     question.show('slow');
     scroollTo($('.entry-content'));
@@ -158,7 +160,6 @@ jQuery(document).ready(function( $ ) {
   });
 
   function setProgressbar(parent) {
-    console.log(parent);
     let questionsChecked = parent.find('.question input[type=checkbox]:checked');
     let questions = parent.find('.question');
     let progressBar = $(".progress-bar");
