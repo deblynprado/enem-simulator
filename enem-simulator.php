@@ -102,12 +102,9 @@ function enem_simulator_get_question_category_callback() {
     $index = 0;
     $categoryName = $value['name'];
   
-    if ( $questions->have_posts( ) ) {
-
-      ?>
-  
+    if ( $questions->have_posts( ) ) : ?>
       <div class="content-question" data-category-index="<?php echo $key ?>" 
-          id="<?php echo $value['slug'] ?>" <?php echo $category == $value['slug'] ? '' : 'style="display:none;"' ?> >
+        id="<?php echo $value['slug'] ?>" <?php echo $category == $value['slug'] ? '' : 'style="display:none;"' ?> >
   
       <?php while ( $questions->have_posts() ) {  
   
@@ -123,8 +120,7 @@ function enem_simulator_get_question_category_callback() {
   
       ?>
       </div>
-      <?php
-    }
+    <?php endif;
     wp_reset_postdata();
   }
 
@@ -140,12 +136,9 @@ function enem_simulator_get_nav_callback() {
   foreach ($categories as $key => $value) {
     
     $questions = enem_simulator_get_questions($value['slug'], 'name');
-  
     $index = 0;
   
-    if ( $questions->have_posts( ) ) {
-
-      ?>
+    if ( $questions->have_posts( ) ) :?>
       <div class="content-category m-4" data-category-index="<?php echo $key ?>">
         <h5><?php echo $value['name'] ?></h5>
         <div class="progress mt-4 progress-category">
@@ -153,26 +146,18 @@ function enem_simulator_get_nav_callback() {
         </div>
         <p class="mt-3"><?php echo __('Click on the question to navigate', 'enem-simulator') ?></p>
         <div class="question-nav">
-      <?php while ( $questions->have_posts() ) {  
-  
-        $questions->the_post();
-        ?>
-
+      <?php while ( $questions->have_posts() ) : $questions->the_post(); ?>
         <div class="d-inline p-4 border <?php echo $index == 0 ? 'rounded-left' : ''; ?> 
           <?php echo ($index+1) == $questions->found_posts ? 'rounded-right' : ''; ?>">
           <a href="#" class="question-nav-item" data-question-id="<?php echo get_the_ID(); ?>" data-category-name="<?php echo $value['slug']; ?>"><?php echo $index+1; ?></a>
         </div>
-
         <?php
-        
         $index++;
-      }
-  
-      ?>
+      endwhile; ?>
+        </div>
       </div>
-      </div>
-      <?php
-    }
+    <?php endif;
+    
     wp_reset_postdata();
   }
 
