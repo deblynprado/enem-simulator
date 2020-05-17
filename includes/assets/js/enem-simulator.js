@@ -131,7 +131,7 @@ jQuery(document).ready(function( $ ) {
 
     setItemStorage(categories);
 
-    setProgressbar();
+    setProgressbar($(this).parent().parent().parent().parent());
 
   });
 
@@ -154,11 +154,13 @@ jQuery(document).ready(function( $ ) {
     category.show('slow');
     question.show('slow');
     scroollTo($('.entry-content'));
+    setProgressbar(category);
   });
 
-  function setProgressbar() {
-    let questionsChecked = $('.question input[type=checkbox]:checked');
-    let questions = $('.question');
+  function setProgressbar(parent) {
+    console.log(parent);
+    let questionsChecked = parent.find('.question input[type=checkbox]:checked');
+    let questions = parent.find('.question');
     let progressBar = $(".progress-bar");
     let count = questions.length;
     let checked =  questionsChecked.length;
