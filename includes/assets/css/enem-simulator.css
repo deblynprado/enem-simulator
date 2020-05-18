@@ -152,7 +152,7 @@ p, h1, h2, h3, h4, h5, select, span, label, li, a {
 
 .question-nav a {
   text-decoration: none;
-  color: #007bff !important;
+  font-weight: bold;
 }
 
 .question-nav div {
