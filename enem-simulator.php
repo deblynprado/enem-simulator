@@ -131,7 +131,7 @@ function enem_simulator_get_nav_callback() {
   
   foreach ($categories as $key => $value) {
     
-    $questions = enem_simulator_get_questions($value['slug'], 'name');
+    $questions = enem_simulator_get_questions($value['slug'], 'rand');
     $index = 0;
   
     if ( $questions->have_posts( ) ) :?>
