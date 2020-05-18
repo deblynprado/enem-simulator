@@ -97,7 +97,7 @@ function enem_simulator_get_question_category_callback() {
 
   foreach ($categories as $key => $value) {
     
-    $questions = enem_simulator_get_questions($value['slug'], 'name');
+    $questions = enem_simulator_get_questions($value['slug'], 'rand');
   
     $index = 0;
     $categoryName = $value['name'];
@@ -142,7 +142,9 @@ function enem_simulator_get_nav_callback() {
         </div>
         <p class="mt-3"><?php echo __('Click on the question to navigate', 'enem-simulator') ?></p>
         <div class="question-nav">
-      <?php while ( $questions->have_posts() ) : $questions->the_post(); ?>
+        <?php $qIds = array(); ?>
+      <?php while ( $questions->have_posts() ) : $questions->the_post(); 
+      array_push( $qIds, get_the_id() ); ?>
         <div class="d-inline p-4 border <?php echo $index == 0 ? 'rounded-left' : ''; ?> 
           <?php echo ($index+1) == $questions->found_posts ? 'rounded-right' : ''; ?>">
           <a href="#" class="question-nav-item" data-question-id="<?php echo get_the_ID(); ?>" data-category-name="<?php echo $value['slug']; ?>"><?php echo $index+1; ?></a>
