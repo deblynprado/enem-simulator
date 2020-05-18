@@ -18,7 +18,7 @@ jQuery(document).ready(function( $ ) {
       success: function(response) {
 
         let container = $( '<div class="categories">' + response + '</div>' );
-        let result = setQuestion( container );
+        let result = setQuestionContainer( container );
 
         $('.simulator-categories').empty().html( result );
         
@@ -34,6 +34,11 @@ jQuery(document).ready(function( $ ) {
         scroollTo($('.entry-content'));
 
         setTimer();
+
+        let categoryIndex = $('.question:visible').parent().attr('data-category-index');
+        let questionIndex = $('.question:visible .question-options').attr('data-question-index');
+
+        setVisitedQuestion(categoryIndex, questionIndex);
 
       }
     });
@@ -81,6 +86,11 @@ jQuery(document).ready(function( $ ) {
 
     scroollTo($('.entry-content'));
 
+    let categoryIndex = $('.question:visible').parent().attr('data-category-index');
+    let questionIndex = $('.question:visible .question-options').attr('data-question-index');
+
+    setVisitedQuestion(categoryIndex, questionIndex);
+
   });
 
   $('#previous-question').on('click', function(e) {
@@ -116,27 +126,27 @@ jQuery(document).ready(function( $ ) {
       $box.prop('checked', false);
     }
 
-    let categories = getItemStorage();
     let categoryIndex = $(this).parent().parent().parent().parent().attr('data-category-index');
     let questionIndex = $(this).parent().parent().attr('data-question-index');
-    let question = categories[categoryIndex].questions[questionIndex];
+    let question = getQuestion(categoryIndex, questionIndex);
 
     question.user_answer.number = $(this).val();
 
-    categories[categoryIndex].questions[questionIndex] = question;
-
-    setItemStorage(categories);
-
+    setQuestion(categoryIndex, questionIndex, question);
+    
     setProgressbar($(this).parent().parent().parent().parent());
 
   });
 
   $('.simulator-category-list').on('click', function(e){
     e.preventDefault();
+
     $('.simulator-content').hide('slow');
     $('.question').hide();
     $('.content-question').hide();
     $('.simulator-nav').show('slow');
+    
+    setNav();
     scroollTo($('.entry-content'));
   });
 
@@ -145,6 +155,7 @@ jQuery(document).ready(function( $ ) {
     let name = $(this).attr('data-category-name');
     let question = $('#' + id);
     let category = $('#' + name);
+    
     $('.simulator-content').show('slow');
     $('.simulator-nav').hide('slow');
     
@@ -155,8 +166,15 @@ jQuery(document).ready(function( $ ) {
 
     category.show('slow');
     question.show('slow');
+
     scroollTo($('.entry-content'));
     setProgressbar(category);
+
+    let categoryIndex = category.attr('data-category-index');
+    let questionIndex = question.find('.question-options').attr('data-question-index');
+
+    setVisitedQuestion(categoryIndex, questionIndex);
+
   });
 
   function setProgressbar(parent) {
@@ -240,7 +258,7 @@ jQuery(document).ready(function( $ ) {
     clearInterval(alertTimeInterval);
   }
 
-  function setQuestion(elements) {
+  function setQuestionContainer(elements) {
 
     let categories = new Array();
     
@@ -277,10 +295,40 @@ jQuery(document).ready(function( $ ) {
     return elements;
   }
 
+  function setNav() {
+    $('.question-nav-item').each(function(e) {
+
+      let id = $(this).attr('data-question-id');
+      let name = $(this).attr('data-category-name');
+      let question = $('#' + id);
+      let category = $('#' + name);
+
+      let categoryIndex = category.attr('data-category-index');
+      let questionIndex = question.find('.question-options').attr('data-question-index');
+
+      let item = getQuestion(categoryIndex, questionIndex);
+
+      if(item.user_answer.number) {
+        $(this).addClass('text-success');
+        $(this).removeClass('text-warning');
+        $(this).removeClass('text-danger');
+      }
+       else if(item.visited) {
+        $(this).addClass('text-warning');
+        $(this).removeClass('text-success');
+        $(this).removeClass('text-danger');
+      }
+      else {
+        $(this).addClass('text-danger');
+        $(this).removeClass('text-warning');
+        $(this).removeClass('text-success');
+      }
+    });
+  }
+
   function checkAnswers() {
     let categoryIndex = $('.content-question:visible').attr('data-category-index');
     let questions = $('.content-question:visible .question-options');
-    let categories = getItemStorage();
 
     questions.each(function(e) {
       var questionIndex = $(this).attr('data-question-index');
@@ -290,12 +338,12 @@ jQuery(document).ready(function( $ ) {
         var number = $(this).val();
 
         if($(this).is(':checked')) {
-          if(categories[categoryIndex].questions[questionIndex].correct_answer.number === number) {
+          if(getQuestion(categoryIndex, questionIndex).correct_answer.number === number) {
             $(this).addClass('is-valid');
           } else {
             $(this).addClass('is-invalid');
           }
-        } else if(categories[categoryIndex].questions[questionIndex].correct_answer.number === number) {
+        } else if(getQuestion(categoryIndex, questionIndex).correct_answer.number === number) {
           $(this).addClass('is-valid');
         }
       });
@@ -311,8 +359,26 @@ jQuery(document).ready(function( $ ) {
       },
       user_answer: {
         number:'',
-      }
+      },
+      visited: 0
     }
+  }
+  
+  function setVisitedQuestion(categoryIndex, questionIndex) {
+    let question = getQuestion(categoryIndex, questionIndex);
+    question.visited = 1;
+    setQuestion(categoryIndex, questionIndex, question);
+  }
+
+  function setQuestion(categoryIndex, questionIndex, question) {
+    let categories = getItemStorage();
+    categories[categoryIndex].questions[questionIndex] = question;
+    setItemStorage(categories);
+  }
+
+  function getQuestion(categoryIndex, questionIndex) {
+    let categories = getItemStorage();
+    return categories[categoryIndex].questions[questionIndex];
   }
 
   function setItemStorage(item) {
