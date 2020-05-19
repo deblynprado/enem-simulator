@@ -134,7 +134,7 @@ jQuery(document).ready(function( $ ) {
 
     setQuestion(categoryIndex, questionIndex, question);
     
-    setProgressbar($(this).parent().parent().parent().parent());
+    setProgressbar($(this).parent().parent().parent().parent(), $(".progress-bar"));
 
   });
 
@@ -168,7 +168,7 @@ jQuery(document).ready(function( $ ) {
     question.show('slow');
 
     scroollTo($('.entry-content'));
-    setProgressbar(category);
+    setProgressbar(category, $(".progress-bar"));
 
     let categoryIndex = category.attr('data-category-index');
     let questionIndex = question.find('.question-options').attr('data-question-index');
@@ -177,10 +177,9 @@ jQuery(document).ready(function( $ ) {
 
   });
 
-  function setProgressbar(parent) {
+  function setProgressbar(parent, progressBar) {
     let questionsChecked = parent.find('.question input[type=checkbox]:checked');
     let questions = parent.find('.question');
-    let progressBar = $(".progress-bar");
     let count = questions.length;
     let checked =  questionsChecked.length;
 
@@ -323,6 +322,13 @@ jQuery(document).ready(function( $ ) {
         $(this).removeClass('text-warning');
         $(this).removeClass('text-success');
       }
+    });
+
+    $('.progress-bar-nav').each(function() {
+      let name = $(this).attr('data-category-name');
+      let category = $('#' + name);
+
+      setProgressbar(category, $(this));
     });
   }
 
