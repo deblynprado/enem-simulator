@@ -1,14 +1,18 @@
-ul, ol {
+.simulator-content, .simulator-nav {
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
+  color: rgb(55, 58, 60) !important;
+}
+
+.simulator-nav h4 {
+  margin-top: 12.5rem !important;
+}
+
+.simulator-content ul, ol {
   margin: 0;
 }
 
-li {
+.simulator-content li {
   margin: 0.5rem 2rem 0 0 !important;
-}
-
-p, h1, h2, h3, h4, h5, select, span, label, li, a {
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
-  color: rgb(55, 58, 60) !important;
 }
 
 #start-simulator {
