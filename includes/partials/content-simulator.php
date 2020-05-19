@@ -53,13 +53,13 @@
     <!-- nav -->
     <div class="row simulator-nav" style="display: none;">
       <div class="col-10">
-        <h3 class="simulator-title"><?php echo __( 'Browse in the test', 'enem-simulator' ) ?></h3>
+        <h3><?php echo __( 'Browse in the test', 'enem-simulator' ) ?></h3>
         <ul>
           <li class="text-success">RESPONDEU</li>
           <li class="text-danger">NÃO VISUALIZADA</li>
           <li class="text-warning">VISUALIZADA</li>
         </ul>
-        <h4 class="simulator-title"><?php echo __( 'Knowledge areas', 'enem-simulator' ) ?></h4>
+        <h4><?php echo __( 'Knowledge areas', 'enem-simulator' ) ?></h4>
       </div>
       <div class="col-10">
         <div class="simulator-nav-categories">
