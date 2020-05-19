@@ -17,9 +17,9 @@
       <div class="col-10">  
         <select class="custom-select" name="question_category" id="question_category">
           <?php
-          $categories = get_field( 'question_categories', 'option' ); 
-          foreach ($categories as $value) : ?>
-          <option value="<?php echo $value[ 'question_category' ]->slug ?>"><?php echo $value[ 'question_category' ]->name ?></option>
+          $categories = enem_simulator_get_categories(); 
+          foreach ($categories as $value) : var_dump($categories);?>
+          <option value="<?php echo $value[ 'slug' ] ?>"><?php echo $value[ 'name' ] ?></option>
           <?php endforeach; ?>
         </select>
       </div><!-- /.col -->

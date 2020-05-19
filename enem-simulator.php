@@ -64,16 +64,18 @@ function enem_simulator_get_categories() {
   $categories = [];
 
   foreach ($option as $value) {
-    $categories[] = [
-                'slug' => $value[ 'question_category' ]->slug,
-                'name' => $value[ 'question_category' ]->name,
-    ];
+    $questions = enem_simulator_get_questions( $value[ 'question_category' ]->slug );
+    if ( $questions->have_posts( ) ) 
+      $categories[] = [
+                  'slug' => $value[ 'question_category' ]->slug,
+                  'name' => $value[ 'question_category' ]->name,
+      ];
   }
 
   return $categories;
 }
 
-function enem_simulator_get_questions($slug, $orderby) {
+function enem_simulator_get_questions($slug, $orderby = 'name') {
   $args = array(
     'orderby' => $orderby,
     'post_type' => 'question',
@@ -97,14 +99,14 @@ function enem_simulator_get_question_category_callback() {
 
   foreach ($categories as $key => $value) {
     
-    $questions = enem_simulator_get_questions($value['slug'], 'rand');
+    $questions = enem_simulator_get_questions( $value['slug'], 'rand' );
   
-    $index = 0;
-    $categoryName = $value['name'];
-  
-    if ( $questions->have_posts( ) ) : ?>
+    if ( $questions->have_posts( ) ) : 
+      $index = 0;
+      $categoryName = $value['name'];
+    ?>
       <div class="content-question" data-category-index="<?php echo $key ?>" 
-        id="<?php echo $value['slug'] ?>" <?php echo $category == $value['slug'] ? '' : 'style="display:none;"' ?> >
+        id="<?php echo $value['slug'] ?>" <?php echo $category == $value[ 'slug' ] ? '' : 'style="display:none;"' ?> >
       <?php while ( $questions->have_posts() ) :  
         $questions->the_post();
 
@@ -132,9 +134,8 @@ function enem_simulator_get_nav_callback() {
   foreach ($categories as $key => $value) {
     
     $questions = enem_simulator_get_questions($value['slug'], 'rand');
-    $index = 0;
   
-    if ( $questions->have_posts( ) ) :?>
+    if ( $questions->have_posts( ) ) : $index = 0;?>
       <div class="content-category m-4" data-category-index="<?php echo $key ?>">
         <h5><?php echo $value['name'] ?></h5>
         <div class="progress mt-4 progress-category">
