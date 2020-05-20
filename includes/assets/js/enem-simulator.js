@@ -65,6 +65,7 @@ jQuery(document).ready(function( $ ) {
 
     stopTimer(); 
     checkAnswers();
+    setResults();
     scroollTo($('.entry-content'));
 
   });
@@ -305,7 +306,7 @@ jQuery(document).ready(function( $ ) {
   }
 
   function setNav() {
-    $('.question-nav-item').each(function(e) {
+    $('.simulator-nav .question-nav-item').each(function(e) {
 
       let id = $(this).attr('data-question-id');
       let name = $(this).attr('data-category-name');
@@ -340,6 +341,39 @@ jQuery(document).ready(function( $ ) {
 
       setProgressbar(category, $(this));
     });
+  }
+
+  function setResults() {
+    $('.simulator-result .question-nav-item').each(function(e) {
+
+      let id = $(this).attr('data-question-id');
+      let name = $(this).attr('data-category-name');
+      let question = $('#' + id);
+      let category = $('#' + name);
+
+      let categoryIndex = category.attr('data-category-index');
+      let questionIndex = question.find('.question-options').attr('data-question-index');
+
+      let item = getQuestion(categoryIndex, questionIndex);
+
+      if(item.user_answer.number === item.correct_answer.number) {
+        $(this).addClass('text-success');
+        $(this).removeClass('text-warning');
+        $(this).removeClass('text-danger');
+      }
+      else if(!item.user_answer.number) {
+        $(this).addClass('text-warning');
+        $(this).removeClass('text-danger');
+        $(this).removeClass('text-success');
+      }
+       else if(item.user_answer.number !== item.correct_answer.number) {
+        $(this).addClass('text-danger');
+        $(this).removeClass('text-warning');
+        $(this).removeClass('text-danger');
+      }
+      
+    });
+
   }
 
   function checkAnswers() {
