@@ -59,17 +59,8 @@ jQuery(document).ready(function( $ ) {
 
   $('#finisish-simulator').on('click', function(e) {
     e.preventDefault();
-
-    $('#enem-simulator-revise').parent().addClass('disabled');
     $('#enem-simulator-modal-finish').modal('toggle');
-    $('.simulator-content').hide('slow');
-    $('.simulator-result').show('slow');
-
-    stopTimer(); 
-    checkAnswers();
-    setResults();
-    scroollTo($('.entry-content'));
-
+    finishSimulator();
   });
 
   $('.question').each(function(e) {
@@ -202,6 +193,17 @@ jQuery(document).ready(function( $ ) {
 
   });
 
+  function finishSimulator() {
+    $('#enem-simulator-revise').parent().addClass('disabled');
+    $('.simulator-content').hide('slow');
+    $('.simulator-result').show('slow');
+
+    stopTimer(); 
+    checkAnswers();
+    setResults();
+    scroollTo($('.entry-content'));
+  }
+
   function setProgressbar(parent, progressBar) {
     let questionsChecked = parent.find('.question input[type=checkbox]:checked');
     let questions = parent.find('.question');
@@ -265,10 +267,8 @@ jQuery(document).ready(function( $ ) {
       p.html(result);
 
       if(maxiumTime == 0) {
-        $('.revise').addClass('disabled');
-        stopTimer();
-        checkAnswers();
         window.endSimulator = true;
+        finishSimulator();
         return;
       }
 
