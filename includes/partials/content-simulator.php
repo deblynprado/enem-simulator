@@ -71,7 +71,7 @@
 <div class="container">
   <div class="row">
     <!-- simulator-result -->
-    <div class="simulator-result">
+    <div class="simulator-result" style="display: none;">
       <div class="col-12">
         <h3><?php echo __( 'Simulator Result', 'enem-simulator' ) ?></h3>
         <ul class="mb-5">
