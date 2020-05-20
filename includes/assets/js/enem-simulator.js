@@ -62,6 +62,8 @@ jQuery(document).ready(function( $ ) {
 
     $('#enem-simulator-revise').parent().addClass('disabled');
     $('#enem-simulator-modal-finish').modal('toggle');
+    $('.simulator-content').hide('slow');
+    $('.simulator-result').show('slow');
 
     stopTimer(); 
     checkAnswers();
@@ -150,9 +152,13 @@ jQuery(document).ready(function( $ ) {
     $('.simulator-content').hide('slow');
     $('.question').hide();
     $('.content-question').hide();
-    $('.simulator-nav').show('slow');
-    
-    setNav();
+
+    if(!window.endSimulator) {
+      $('.simulator-nav').show('slow');
+      setNav();
+    } else {
+      $('.simulator-result').show('slow');
+    }
     scroollTo($('.entry-content'));
   });
 
@@ -164,6 +170,14 @@ jQuery(document).ready(function( $ ) {
     
     $('.simulator-content').show('slow');
     $('.simulator-nav').hide('slow');
+    $('.question').hide();
+    $('.simulator-result').hide('slow');
+
+    if(window.endSimulator) {
+      $('.timer').hide();
+      $('.simulator-progress').hide();
+      $('.revise ').hide();
+    }
     
     if(question.next().length != 0) 
       $('#next-question').parent().removeClass('disabled');
@@ -254,7 +268,7 @@ jQuery(document).ready(function( $ ) {
         $('.revise').addClass('disabled');
         stopTimer();
         checkAnswers();
-        endSimulator = true;
+        window.endSimulator = true;
         return;
       }
 
@@ -266,6 +280,7 @@ jQuery(document).ready(function( $ ) {
   function stopTimer() {
     clearInterval(timerInterval);
     clearInterval(alertTimeInterval);
+    window.endSimulator = true;
   }
 
   function setQuestionContainer(elements) {
