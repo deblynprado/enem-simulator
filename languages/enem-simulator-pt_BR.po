@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-20 13:59+0000\n"
-"PO-Revision-Date: 2020-05-20 13:59+0000\n"
+"POT-Creation-Date: 2020-05-20 16:18+0000\n"
+"PO-Revision-Date: 2020-05-20 16:20+0000\n"
 "Language-Team: Português do Brasil\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +38,7 @@ msgstr "Adicionar Questão"
 msgid "Question Categories"
 msgstr "Categorias de Questão"
 
-#: enem-simulator.php:145
+#: enem-simulator.php:146
 msgid "Click on the question to navigate"
 msgstr "CLIQUE SOBRE A QUESTÃO PARA NAVEGAR"
 
@@ -54,53 +54,77 @@ msgstr ""
 msgid "Choose a desired category to start"
 msgstr "Escolha a Categoria Desejada para Iniciar"
 
-#: includes/partials/content-simulator.php:29
+#: includes/partials/content-simulator.php:27
 msgid "Start Simulator"
 msgstr "Iniciar Simulado"
 
-#: includes/partials/content-simulator.php:56
+#: includes/partials/content-simulator.php:54
 msgid "Browse in the test"
 msgstr "NAVEGAR PELA PROVA"
 
-#: includes/partials/content-simulator.php:62
-#: includes/partials/content-simulator.php:79
+#: includes/partials/content-simulator.php:56
+msgid "Answered"
+msgstr "RESPONDIDO"
+
+#: includes/partials/content-simulator.php:57
+msgid "Not viewed"
+msgstr "NÃO VISUALIZADA"
+
+#: includes/partials/content-simulator.php:58
+msgid "Viewed"
+msgstr "VISUALIZADO"
+
+#: includes/partials/content-simulator.php:60
+#: includes/partials/content-simulator.php:77
 msgid "Knowledge areas"
 msgstr "ÁREAS DE CONHECIMENTO"
 
-#: includes/partials/content-simulator.php:78
+#: includes/partials/content-simulator.php:76
 msgid "Simulator Result"
 msgstr "RESULTADO DA PROVA"
 
-#: includes/partials/content-simulator.php:84
+#: includes/partials/content-simulator.php:79
+msgid "Correct"
+msgstr "CORRETA"
+
+#: includes/partials/content-simulator.php:80
+msgid "Wrong"
+msgstr "ERRADA"
+
+#: includes/partials/content-simulator.php:81
+msgid "Not answered"
+msgstr "NÃO RESPONDIDA"
+
+#: includes/partials/content-simulator.php:86
 msgid "Description"
 msgstr "Descrição"
 
-#: includes/partials/content-simulator.php:85
+#: includes/partials/content-simulator.php:87
 msgid "Rate"
 msgstr "Nota"
 
-#: includes/partials/content-simulator.php:86
+#: includes/partials/content-simulator.php:88
 msgid "Successes"
 msgstr "Acertos"
 
-#: includes/partials/content-simulator.php:102
+#: includes/partials/content-simulator.php:103
 msgid "Click on question and check the result"
 msgstr "CLIQUE SOBRE A QUESTÃO E CONFIRA O GABARITO"
 
-#: includes/partials/content-simulator.php:114
+#: includes/partials/content-simulator.php:117
 msgid "Confirmation"
 msgstr "Confirmação"
 
-#: includes/partials/content-simulator.php:120
+#: includes/partials/content-simulator.php:123
 msgid "Do you really want end the current simulator and see the results?"
 msgstr ""
 "Tem certeza que deseja encerrar a prova atual e visualizar o resultado?"
 
-#: includes/partials/content-simulator.php:123
+#: includes/partials/content-simulator.php:126
 msgid "Finish"
 msgstr "Finalizar"
 
-#: includes/partials/content-simulator.php:124
+#: includes/partials/content-simulator.php:127
 msgid "Back"
 msgstr "Voltar"
 
