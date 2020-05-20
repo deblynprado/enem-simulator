@@ -91,7 +91,3 @@
   </div>
 </div>
 <!-- /modal -- -->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#enem-simulator-modal-finish">
-  Launch demo modal
-</button>
