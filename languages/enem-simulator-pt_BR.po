@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-20 11:30+0000\n"
-"PO-Revision-Date: 2020-05-20 11:39+0000\n"
+"POT-Creation-Date: 2020-05-20 13:53+0000\n"
+"PO-Revision-Date: 2020-05-20 13:54+0000\n"
 "Language-Team: Português do Brasil\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -63,23 +63,40 @@ msgid "Browse in the test"
 msgstr "NAVEGAR PELA PROVA"
 
 #: includes/partials/content-simulator.php:62
+#: includes/partials/content-simulator.php:79
 msgid "Knowledge areas"
 msgstr "ÁREAS DE CONHECIMENTO"
 
 #: includes/partials/content-simulator.php:78
+msgid "Simulator Result"
+msgstr "RESULTADO DA PROVA"
+
+#: includes/partials/content-simulator.php:84
+msgid "Description"
+msgstr "Descrição"
+
+#: includes/partials/content-simulator.php:85
+msgid "Rate"
+msgstr "Nota"
+
+#: includes/partials/content-simulator.php:86
+msgid "Successes"
+msgstr "Acertos"
+
+#: includes/partials/content-simulator.php:114
 msgid "Confirmation"
 msgstr "Confirmação"
 
-#: includes/partials/content-simulator.php:84
+#: includes/partials/content-simulator.php:120
 msgid "Do you really want end the current simulator and see the results?"
 msgstr ""
 "Tem certeza que deseja encerrar a prova atual e visualizar o resultado?"
 
-#: includes/partials/content-simulator.php:87
+#: includes/partials/content-simulator.php:123
 msgid "Finish"
 msgstr "Finalizar"
 
-#: includes/partials/content-simulator.php:88
+#: includes/partials/content-simulator.php:124
 msgid "Back"
 msgstr "Voltar"
 

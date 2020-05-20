@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-20 11:30+0000\n"
+"POT-Creation-Date: 2020-05-20 13:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Deblyn Prado <deblynprado@gmail.com>\n"
 "Language-Team: Deblyn Prado <deblynprado@gmail.com>\n"
@@ -60,22 +60,39 @@ msgid "Browse in the test"
 msgstr ""
 
 #: includes/partials/content-simulator.php:62
+#: includes/partials/content-simulator.php:79
 msgid "Knowledge areas"
 msgstr ""
 
 #: includes/partials/content-simulator.php:78
-msgid "Confirmation"
+msgid "Simulator Result"
 msgstr ""
 
 #: includes/partials/content-simulator.php:84
+msgid "Description"
+msgstr ""
+
+#: includes/partials/content-simulator.php:85
+msgid "Rate"
+msgstr ""
+
+#: includes/partials/content-simulator.php:86
+msgid "Successes"
+msgstr ""
+
+#: includes/partials/content-simulator.php:114
+msgid "Confirmation"
+msgstr ""
+
+#: includes/partials/content-simulator.php:120
 msgid "Do you really want end the current simulator and see the results?"
 msgstr ""
 
-#: includes/partials/content-simulator.php:87
+#: includes/partials/content-simulator.php:123
 msgid "Finish"
 msgstr ""
 
-#: includes/partials/content-simulator.php:88
+#: includes/partials/content-simulator.php:124
 msgid "Back"
 msgstr ""
 
