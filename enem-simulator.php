@@ -39,13 +39,13 @@ function enqueue_scripts() {
   wp_enqueue_style( 'enem-simulator', plugins_url( 'includes/assets/css/enem-simulator.css', __FILE__ ) );
   wp_enqueue_script( 'bootstrap-js', plugins_url( 'includes/assets/bootstrap/js/bootstrap.min.js', __FILE__ ), array( 'jquery' ), null, true );
   wp_enqueue_script( 'enem-simulator', plugins_url( 'includes/assets/js/enem-simulator.js', __FILE__ ), array( 'jquery', 'bootstrap-js'), null, true );
-  $maximumTime = get_field('maximum_time', 'option');
-  $alertTime = get_field('alert_time', 'option');
   wp_localize_script( 'enem-simulator', 'enem_simulator',
       array( 
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
-        'maximum_time' => $maximumTime,
-        'alert_time' => $alertTime,
+        'maximum_time' => enem_simulator_get_option( 'maximum_time' ),
+        'alert_time' => enem_simulator_get_option( 'alert_time' ),
+        'end_test_alert' => enem_simulator_get_option( 'end_test_alert' ),
+        'test_change_alert' => enem_simulator_get_option( 'test_change_alert' ),
       )
   );
 }
@@ -59,8 +59,12 @@ function enem_simulator_shortcode( $atts ) {
 }
 add_shortcode( 'enem-simulator', 'enem_simulator_shortcode' );
 
+function enem_simulator_get_option( $name ) {
+  return get_field( $name , 'option' );
+}
+
 function enem_simulator_get_categories() {
-  $option = get_field( 'question_categories', 'option' ); 
+  $option = enem_simulator_get_option( 'question_categories' ); 
 
   $categories = [];
 
@@ -70,16 +74,18 @@ function enem_simulator_get_categories() {
       $categories[] = [
                   'slug' => $value[ 'question_category' ]->slug,
                   'name' => $value[ 'question_category' ]->name,
+                  'category_amount' => $value[ 'category_amount' ],
       ];
   }
 
   return $categories;
 }
 
-function enem_simulator_get_questions($slug, $orderby = 'name') {
+function enem_simulator_get_questions($slug, $orderby = 'name', $limit = 0) {
   $args = array(
     'orderby' => $orderby,
     'post_type' => 'question',
+    'posts_per_page' => $limit,
     'tax_query' => array(
         array(
           'taxonomy' => 'question_category',
@@ -94,13 +100,13 @@ function enem_simulator_get_questions($slug, $orderby = 'name') {
 
 function enem_simulator_get_question_category_callback() {
   $categories = enem_simulator_get_categories();
-  
+
   if ( isset($_POST['category'] )) 
     $category = $_POST['category'];
 
   foreach ($categories as $key => $value) {
     
-    $questions = enem_simulator_get_questions( $value['slug'], 'name' );
+    $questions = enem_simulator_get_questions( $value['slug'], 'name', $value['category_amount'] );
   
     if ( $questions->have_posts( ) ) : 
       $index = 0;
@@ -134,7 +140,7 @@ function enem_simulator_get_nav_callback() {
   
   foreach ($categories as $key => $value) {
     
-    $questions = enem_simulator_get_questions($value['slug'], 'name');
+    $questions = enem_simulator_get_questions( $value['slug'], 'name', $value['category_amount'] );
   
     if ( $questions->have_posts( ) ) : $index = 0;?>
       <div class="content-category m-4" data-category-index="<?php echo $key ?>">
