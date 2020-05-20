@@ -336,28 +336,31 @@ jQuery(document).ready(function( $ ) {
   }
 
   function checkAnswers() {
-    let categoryIndex = $('.content-question:visible').attr('data-category-index');
-    let questions = $('.content-question:visible .question-options');
+    $('.categories').each(function(e) {
 
-    questions.each(function(e) {
-      var questionIndex = $(this).attr('data-question-index');
-      var userAnswer = $(this).find('input[type=checkbox]');
+      let categoryIndex = $(this).find('.content-question').attr('data-category-index');
+      let questions = $(this).find('.content-question .question-options');
 
-      userAnswer.each(function(e) {
-        var number = $(this).val();
+      questions.each(function(e) {
+        var questionIndex = $(this).attr('data-question-index');
+        var userAnswer = $(this).find('input[type=checkbox]');
 
-        if($(this).is(':checked')) {
-          if(getQuestion(categoryIndex, questionIndex).correct_answer.number === number) {
+        userAnswer.each(function(e) {
+          var number = $(this).val();
+
+          if($(this).is(':checked')) {
+            if(getQuestion(categoryIndex, questionIndex).correct_answer.number === number) {
+              $(this).addClass('is-valid');
+            } else {
+              $(this).addClass('is-invalid');
+            }
+          } else if(getQuestion(categoryIndex, questionIndex).correct_answer.number === number) {
             $(this).addClass('is-valid');
-          } else {
-            $(this).addClass('is-invalid');
           }
-        } else if(getQuestion(categoryIndex, questionIndex).correct_answer.number === number) {
-          $(this).addClass('is-valid');
-        }
-      });
+        });
 
-    });
+      });
+    })
   }
 
   function questionFactory() {
