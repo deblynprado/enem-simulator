@@ -148,11 +148,8 @@ function enem_simulator_get_nav_callback() {
         <?php $qIds = array(); ?>
       <?php while ( $questions->have_posts() ) : $questions->the_post(); 
       array_push( $qIds, get_the_id() ); ?>
-        <div class="d-inline p-4 border <?php echo $index == 0 ? 'rounded-left' : ''; ?> 
-          <?php echo ($index+1) == $questions->found_posts ? 'rounded-right' : ''; ?>">
-          <a href="#" class="question-nav-item" data-question-id="<?php echo get_the_ID(); ?>" 
+        <a href="#" class="question-nav-item p-4 border <?php echo $index == 0 ? 'rounded-left' : ''; ?> <?php echo ($index+1) == $questions->found_posts ? 'rounded-right' : ''; ?>" data-question-id="<?php echo get_the_ID(); ?>" 
             data-category-name="<?php echo $value['slug']; ?>"><?php echo $index+1; ?></a>
-        </div>
         <?php
         $index++;
       endwhile; ?>
