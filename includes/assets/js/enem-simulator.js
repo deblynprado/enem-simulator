@@ -245,7 +245,7 @@ jQuery(document).ready(function( $ ) {
 
       let p = timer.find('p');
 
-      if(hAlertTime === h && mAlertTime === m && sAlertTime === s) {
+      if(hAlertTime === h && mAlertTime === m && sAlertTime === s && enem_simulator.end_test_alert) {
         p.stop(true, true).addClass('text-danger', 1000);
         if(!alertTimeInterval) {
           alertTimeInterval = setInterval(function() {
