@@ -57,10 +57,6 @@
   font-size: 3.5rem;
 }
 
-.simulator-nav h4 {
-  margin-top: 12.5rem !important;
-}
-
 .simulator-content ul, ol {
   margin: 0;
 }
@@ -191,18 +187,18 @@
   background-color: #0059b9 !important;
 }
 
-.simulator-nav ul {
+.simulator-nav ul, .simulator-result ul {
   margin: 0;
 }
 
-.simulator-nav li {
- font-size: 1.4rem;
+.simulator-nav li, .simulator-result li {
+  font-size: 1.4rem;
   font-weight: bolder;
   list-style-type: none;
-  float: left;
+  display: inline;
 }
 
-.simulator-nav li:before {
+.simulator-nav li:before, .simulator-result li::before {
   content: "■";
   font-size: 4rem;
   vertical-align: sub;
