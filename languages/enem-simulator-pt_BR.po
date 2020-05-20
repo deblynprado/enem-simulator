@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-16 19:03+0000\n"
-"PO-Revision-Date: 2020-05-16 19:04+0000\n"
+"POT-Creation-Date: 2020-05-20 11:30+0000\n"
+"PO-Revision-Date: 2020-05-20 11:31+0000\n"
 "Language-Team: Português do Brasil\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: includes/assets\n"
 "X-Poedit-SearchPathExcluded-2: includes/acf\n"
 "Report-Msgid-Bugs-To: \n"
-"X-Loco-Version: 2.3.3; wp-5.4.1"
+"X-Loco-Version: 2.3.4; wp-5.4.1"
 
 #. Plugin Name of the plugin/theme
 #: cpt-settings.php:57 includes/partials/content-simulator.php:6
@@ -38,7 +38,7 @@ msgstr "Adicionar Questão"
 msgid "Question Categories"
 msgstr "Categorias de Questão"
 
-#: enem-simulator.php:156
+#: enem-simulator.php:145
 msgid "Click on the question to navigate"
 msgstr "CLIQUE SOBRE A QUESTÃO PARA NAVEGAR"
 
@@ -58,13 +58,30 @@ msgstr "Escolha a Categoria Desejada para Iniciar"
 msgid "Start Simulator"
 msgstr "Iniciar Simulado"
 
-#: includes/partials/content-simulator.php:53
+#: includes/partials/content-simulator.php:56
 msgid "Browse in the test"
 msgstr "NAVEGAR PELA PROVA"
 
-#: includes/partials/content-simulator.php:59
+#: includes/partials/content-simulator.php:62
 msgid "Knowledge areas"
 msgstr "ÁREAS DE CONHECIMENTO"
+
+#: includes/partials/content-simulator.php:78
+msgid "Confirmation"
+msgstr "Confirmação"
+
+#: includes/partials/content-simulator.php:84
+msgid "Do you really want end the current simulator and see the results?"
+msgstr ""
+"TEM CERTEZA QUE DESEJA ENCERRAR A PROVA ATUAL E VISUALIZAR O RESULTADO?"
+
+#: includes/partials/content-simulator.php:87
+msgid "Finish"
+msgstr "Finalizar"
+
+#: includes/partials/content-simulator.php:88
+msgid "Back"
+msgstr "Voltar"
 
 #: includes/partials/simulator-footer.php:14
 msgid "New Simulator"
@@ -77,7 +94,7 @@ msgstr "Anterior"
 #: includes/partials/simulator-pagination.php:9
 msgctxt "Navigation to Previous Question"
 msgid "Previous"
-msgstr ""
+msgstr "Anterior"
 
 #: includes/partials/simulator-pagination.php:14
 msgid "Next"
@@ -86,7 +103,7 @@ msgstr "Próxima"
 #: includes/partials/simulator-pagination.php:15
 msgctxt "Navigation to Next Question"
 msgid "Next"
-msgstr ""
+msgstr "Próximo"
 
 #: includes/partials/simulator-pagination.php:20
 msgid "Revise"
@@ -95,7 +112,7 @@ msgstr "Corrigir"
 #: includes/partials/simulator-pagination.php:21
 msgctxt "Revise simulator"
 msgid "Revise"
-msgstr ""
+msgstr "Revisar"
 
 #: includes/partials/simulator-timer.php:6
 msgid "Time"
@@ -109,12 +126,12 @@ msgstr ""
 
 #. Plugin URI of the plugin/theme
 msgid "https://github.com/deblynprado/enem-simulator"
-msgstr ""
+msgstr "https://github.com/deblynprado/enem-simulator"
 
 #. Author of the plugin/theme
 msgid "Deblyn Prado, Walfrido Oliveira"
-msgstr ""
+msgstr "Deblyn Prado, Walfrido Oliveira"
 
 #. Author URI of the plugin/theme
 msgid "https://example.com"
-msgstr ""
+msgstr "https://example.com"
