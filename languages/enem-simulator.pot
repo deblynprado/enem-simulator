@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-20 13:53+0000\n"
+"POT-Creation-Date: 2020-05-20 13:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Deblyn Prado <deblynprado@gmail.com>\n"
 "Language-Team: Deblyn Prado <deblynprado@gmail.com>\n"
@@ -78,6 +78,10 @@ msgstr ""
 
 #: includes/partials/content-simulator.php:86
 msgid "Successes"
+msgstr ""
+
+#: includes/partials/content-simulator.php:102
+msgid "Click on question and check the result"
 msgstr ""
 
 #: includes/partials/content-simulator.php:114
