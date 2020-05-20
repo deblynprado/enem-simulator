@@ -3,6 +3,60 @@
   color: rgb(55, 58, 60) !important;
 }
 
+.enem-simulator-modal button {
+  padding: 1rem .7rem 1rem .7rem;
+  border-radius: .5rem !important;
+  border: 1px solid #dee2e6 !important;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: none;
+}
+
+.enem-simulator-modal .modal-header .close {
+  padding: 1rem !important;
+  margin: -1rem -1rem -1rem auto;
+}
+
+.enem-simulator-modal .btn-primary {
+  background-color: #007bff !important;
+}
+
+.enem-simulator-modal .btn-primary:hover {
+  color: #fff;
+  background-color: #0069d9 !important;
+  border-color: #0062cc !important;
+}
+
+.enem-simulator-modal .btn-secondary:hover {
+  color: #0056b3;
+  text-decoration: none;
+  background-color: #7b8b9b !important;
+  border-color: #dee2e6 !important;
+}
+
+.enem-simulator-modal .btn-secondary {
+  background-color: #fff !important;
+  color: rgb(55, 58, 60) !important;
+}
+
+.enem-simulator-modal button .close {
+  background-color: #fff !important;
+}
+
+.enem-simulator-modal .modal-title {
+  margin: 0 !important;
+  line-height: 1.5;
+  padding: 1rem;
+}
+
+.enem-simulator-modal button.close {
+  padding: 0;
+  background-color: transparent !important;
+  border: 0;
+  -webkit-appearance: none;
+  font-size: 3.5rem;
+}
+
 .simulator-nav h4 {
   margin-top: 12.5rem !important;
 }
@@ -34,70 +88,70 @@
   font-size: 2rem;
 }
 
-.custom-control-label::before {
+.simulator-content .custom-control-label::before {
   width: 2.5rem;
   height: 2.5rem;
 }
 
-.custom-control-label::after {
+.simulator-content .custom-control-label::after {
   width: 2.5rem;
   height: 2.5rem;
 }
 
-.custom-checkbox {
+.simulator-content .custom-checkbox {
   margin-bottom: 1rem;
 }
 
-.custom-control-input.is-valid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:valid:checked ~ .custom-control-label::before {
+.simulator-content .custom-control-input.is-valid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:valid:checked ~ .custom-control-label::before {
   background-color: #34ce57 !important;
 }
 
-.custom-control-input.is-invalid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before {
+.simulator-content .custom-control-input.is-invalid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before {
   background-color: #e4606d !important;
 }
 
-.page-link {
+.simulator-content .page-link {
   padding: 1rem .7rem 1rem .5rem;
 }
 
-.page-item:not(.disabled) .page-link {
+.simulator-content .page-item:not(.disabled) .page-link {
   color: rgb(55, 58, 60) !important;
 }
 
-.page-item.disabled .page-link span {
+.simulator-content .page-item.disabled .page-link span {
   color: #6c757d !important;
 }
 
-.page-item .page-link {
+.simulator-content .page-item .page-link {
   border-radius: .5rem !important;
   font-size: 2rem;
 }
 
-.pagination a:focus, .pagination a:hover {
+.simulator-content .pagination a:focus, .pagination a:hover {
   text-decoration: none !important;
 }
 
-.pagination {
+.simulator-content .pagination {
   margin: 0;
 }
 
-.pagination .revise {
+.simulator-content .pagination .revise {
   margin-left: 8.5rem !important;
   margin-right: 0 !important;
 }
 
-.progress {
+.simulator-content .progress {
   height: 3rem;
   border-radius: .5rem;
 }
 
-.progress-bar {
+.simulator-content .progress-bar {
   font-size: 2rem;
  -webkit-transition: width 2.5s ease !important;
   transition: width 2.5s ease !important;
 }
 
-.progress-bar[aria-valuenow="0"], .progress-bar[aria-valuenow="2"] {
+.simulator-content .progress-bar[aria-valuenow="0"], .progress-bar[aria-valuenow="2"] {
   min-width: 30px;
 }
 
@@ -109,13 +163,13 @@
   width: 100%;
 }
 
-.timer {
+.simulator-content .timer {
   font-weight: bolder;
   font-size: 2.5rem;
   text-align: right;
 }
 
-.timer p {
+.simulator-content .timer p {
   margin-bottom: 0;
   line-height: 3.5rem !important;
   width: 200px;
