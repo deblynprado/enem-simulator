@@ -162,10 +162,15 @@ jQuery(document).ready(function( $ ) {
     $('.simulator-content').show('slow');
     $('.simulator-nav').hide('slow');
     
-    if(category.find('.question').length > 1) 
+    if(question.next().length != 0) 
       $('#next-question').parent().removeClass('disabled');
     else
       $('#next-question').parent().addClass('disabled');
+
+    if(question.prev().length != 0)
+      $('#previous-question').parent().removeClass('disabled');
+    else
+      $('#previous-question').parent().addClass('disabled');
 
     category.show('slow');
     question.show('slow');
