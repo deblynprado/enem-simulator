@@ -16,7 +16,7 @@
         </a>
       </li>
       <li class="page-item revise">
-        <a class="page-link" href="#" aria-label="Next" id="revise-question">
+        <a class="page-link" href="#" aria-label="Next" id="enem-simulator-revise" data-toggle="modal" data-target="#enem-simulator-modal-finish">
           <span aria-hidden="true"><?php echo __('Revise', 'enem-simulator'); ?> <i class="fa fa-check"></i></i></span>
           <span class="sr-only"><?php _ex( 'Revise', 'Revise simulator', 'enem-simulator') ?></span>
         </a>
