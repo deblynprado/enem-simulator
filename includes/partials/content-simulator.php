@@ -51,13 +51,13 @@
     <!-- simulator-nav -->
     <div class="simulator-nav" style="display: none;">
       <div class="col-12">
-        <h3><?php echo __( 'Browse in the test', 'enem-simulator' ) ?></h3>
+        <h3 class="text-uppercase"><?php echo __( 'Browse in the test', 'enem-simulator' ) ?></h3>
         <ul>
-          <li class="text-success"><?php echo __( 'Answered', 'enem-simulator' ) ?></li>
-          <li class="text-danger"><?php echo __( 'Not viewed', 'enem-simulator' ) ?></li>
-          <li class="text-warning"><?php echo __( 'Viewed', 'enem-simulator' ) ?></li>
+          <li class="text-success text-uppercase"><?php echo __( 'Answered', 'enem-simulator' ) ?></li>
+          <li class="text-danger text-uppercase"><?php echo __( 'Not viewed', 'enem-simulator' ) ?></li>
+          <li class="text-warning text-uppercase"><?php echo __( 'Viewed', 'enem-simulator' ) ?></li>
         </ul>
-        <h4><?php echo __( 'Knowledge areas', 'enem-simulator' ) ?></h4>
+        <h4 class="text-uppercase"><?php echo __( 'Knowledge areas', 'enem-simulator' ) ?></h4>
       </div>
       <div class="col-12">
         <div class="simulator-nav-categories">
@@ -73,11 +73,11 @@
     <!-- simulator-result -->
     <div class="simulator-result" style="display: none;">
       <div class="col-12">
-        <h3><?php echo __( 'Simulator Result', 'enem-simulator' ) ?></h3>
+        <h3 class="text-uppercase"><?php echo __( 'Simulator Result', 'enem-simulator' ) ?></h3>
         <ul class="mb-5">
-          <li class="text-success"><?php echo __( 'Correct', 'enem-simulator' ) ?></li>
-          <li class="text-danger"><?php echo __( 'Wrong', 'enem-simulator' ) ?></li>
-          <li class="text-warning"><?php echo __( 'Not answered', 'enem-simulator' ) ?></li>
+          <li class="text-success text-uppercase"><?php echo __( 'Correct', 'enem-simulator' ) ?></li>
+          <li class="text-danger text-uppercase"><?php echo __( 'Wrong', 'enem-simulator' ) ?></li>
+          <li class="text-warning text-uppercase"><?php echo __( 'Not answered', 'enem-simulator' ) ?></li>
         </ul>
         <h4><?php echo __( 'Knowledge areas', 'enem-simulator' ) ?></h4>
         <table class="simulator-result-table table">
@@ -100,7 +100,7 @@
         </table>
       </div>
       <div class="col-12">
-        <h4><?php echo __( 'Click on question and check the result', 'enem-simulator' ) ?></h4>
+        <h4 class="text-uppercase"><?php echo __( 'Click on question and check the result', 'enem-simulator' ) ?></h4>
         <div class="simulator-result-categories">
           
         </div>

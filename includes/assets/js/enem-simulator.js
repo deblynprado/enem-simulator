@@ -334,19 +334,19 @@ jQuery(document).ready(function( $ ) {
       let item = getQuestion(categoryIndex, questionIndex);
 
       if(item.user_answer.number) {
-        $(this).addClass('text-success');
-        $(this).removeClass('text-warning');
-        $(this).removeClass('text-danger');
+        $(this).addClass('bg-success');
+        $(this).removeClass('bg-warning');
+        $(this).removeClass('bg-danger');
       }
        else if(item.visited) {
-        $(this).addClass('text-warning');
-        $(this).removeClass('text-success');
-        $(this).removeClass('text-danger');
+        $(this).addClass('bg-warning');
+        $(this).removeClass('bg-success');
+        $(this).removeClass('bg-danger');
       }
       else {
-        $(this).addClass('text-danger');
-        $(this).removeClass('text-warning');
-        $(this).removeClass('text-success');
+        $(this).addClass('bg-danger');
+        $(this).removeClass('bg-warning');
+        $(this).removeClass('bg-success');
       }
     });
 

@@ -205,13 +205,10 @@
   line-height: 1.476;
 }
 
-.question-nav a {
-  text-decoration: none;
+.question-nav .question-nav-item {
+  text-decoration: none !important;
   font-weight: bold;
-}
-
-.question-nav div {
-  background-color: #fff;
+  color: #fff !important;
 }
 
 .simulator-title {
