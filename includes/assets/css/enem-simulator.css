@@ -140,18 +140,19 @@
   margin-right: 0 !important;
 }
 
-.simulator-content .progress {
+.simulator-content .progress, .simulator-nav .progress{
   height: 3rem;
   border-radius: .5rem;
 }
 
-.simulator-content .progress-bar {
+.simulator-content .progress-bar, .simulator-nav .progress-bar {
   font-size: 2rem;
  -webkit-transition: width 2.5s ease !important;
   transition: width 2.5s ease !important;
 }
 
-.simulator-content .progress-bar[aria-valuenow="0"], .progress-bar[aria-valuenow="2"] {
+.simulator-content .progress-bar[aria-valuenow="0"], .progress-bar[aria-valuenow="2"],
+.simulator-nav .progress-bar[aria-valuenow="0"], .progress-bar[aria-valuenow="2"] {
   min-width: 30px;
 }
 
