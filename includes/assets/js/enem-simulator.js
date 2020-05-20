@@ -279,14 +279,14 @@ jQuery(document).ready(function( $ ) {
 
       questionsOptions.each(function(e) {
         var question = questionFactory();
-        question.post_id = $(this).attr('data-question-id');
-
         var correctAnswer = $(this).find('input[type=hidden]');
+
         correctAnswer.each(function(e) {
-          if($(this).val() == 'correct') 
+          if($(this).val() == 'correct') {
             question.correct_answer = {
               number: $(this).next().val(),
             }
+          }
         }).remove();
         questions.push(question);
       });
@@ -392,14 +392,14 @@ jQuery(document).ready(function( $ ) {
   }
 
   function checkAnswers() {
-    $('.categories').each(function(e) {
+    $('.content-question').each(function(e) {
 
-      let categoryIndex = $(this).find('.content-question').attr('data-category-index');
-      let questions = $(this).find('.content-question .question-options');
+      let categoryIndex = $(this).attr('data-category-index');
+      let questions = $(this).find('.question-options');
 
       questions.each(function(e) {
-        var questionIndex = $(this).attr('data-question-index');
-        var userAnswer = $(this).find('input[type=checkbox]');
+        let questionIndex = $(this).attr('data-question-index');
+        let userAnswer = $(this).find('input[type=checkbox]');
 
         userAnswer.each(function(e) {
           var number = $(this).val();
@@ -421,7 +421,6 @@ jQuery(document).ready(function( $ ) {
 
   function questionFactory() {
     return {
-      post_id:'',
       correct_answer: {
         number:'',
       },
