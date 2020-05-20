@@ -16,9 +16,7 @@
     <?php if( get_field( 'question_categories', 'option' ) ) : ?>
       <div class="col-10">  
         <select class="custom-select" name="question_category" id="question_category">
-          <?php
-          $categories = enem_simulator_get_categories(); 
-          foreach ($categories as $value) : ?>
+          <?php foreach ($categories as $value) : ?>
           <option value="<?php echo $value[ 'slug' ] ?>"><?php echo $value[ 'name' ] ?></option>
           <?php endforeach; ?>
         </select>
@@ -55,9 +53,9 @@
       <div class="col-12">
         <h3><?php echo __( 'Browse in the test', 'enem-simulator' ) ?></h3>
         <ul>
-          <li class="text-success">RESPONDEU</li>
-          <li class="text-danger">NÃO VISUALIZADA</li>
-          <li class="text-warning">VISUALIZADA</li>
+          <li class="text-success"><?php echo __( 'Answered', 'enem-simulator' ) ?></li>
+          <li class="text-danger"><?php echo __( 'Not viewed', 'enem-simulator' ) ?></li>
+          <li class="text-warning"><?php echo __( 'Viewed', 'enem-simulator' ) ?></li>
         </ul>
         <h4><?php echo __( 'Knowledge areas', 'enem-simulator' ) ?></h4>
       </div>
@@ -77,7 +75,11 @@
       <div class="col-12">
         <h3><?php echo __( 'Simulator Result', 'enem-simulator' ) ?></h3>
         <h4><?php echo __( 'Knowledge areas', 'enem-simulator' ) ?></h4>
-        <?php $categories = enem_simulator_get_categories(); ?>
+        <ul class="mb-5">
+          <li class="text-success"><?php echo __( 'Correct', 'enem-simulator' ) ?></li>
+          <li class="text-danger"><?php echo __( 'Wrong', 'enem-simulator' ) ?></li>
+          <li class="text-warning"><?php echo __( 'Not answered', 'enem-simulator' ) ?></li>
+        </ul>
         <table class="simulator-result-table table">
           <thead>
             <tr>
