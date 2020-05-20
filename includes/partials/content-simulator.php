@@ -81,14 +81,14 @@
         <table class="simulator-result-table table">
           <thead>
             <tr>
-              <th style="width:100%;"><?php echo __( 'Description', 'enem-simulator' ) ?></th>
+              <th><?php echo __( 'Description', 'enem-simulator' ) ?></th>
               <th><?php echo __( 'Rate', 'enem-simulator' ) ?></th>
               <th><?php echo __( 'Successes', 'enem-simulator' ) ?></th>
             </tr>
           </thead>
           <tbody>
           <?php foreach ($categories as $value) : ?>
-            <tr>
+            <tr class="<?php echo $value['slug']; ?>">
               <td><?php echo $value[ 'name' ] ?></td>
               <td>0</td>
               <td>0</td>
@@ -98,8 +98,9 @@
         </table>
       </div>
       <div class="col-12">
+        <h4><?php echo __( 'Click on question and check the result', 'enem-simulator' ) ?></h4>
         <div class="simulator-result-categories">
-
+          
         </div>
       </div>
     </div>
