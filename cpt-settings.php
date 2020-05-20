@@ -1,17 +1,17 @@
 <?php 
 function question_cpt() {
   $labels = array(
-    'name'               => _x( 'Questions', 'question type general name' ),
-    'singular_name'      => _x( 'Question', 'question type singular name' ),
-    'add_new'            => _x( 'Add New', 'book' ),
-    'add_new_item'       => __( 'Add New Question' ),
-    'edit_item'          => __( 'Edit Question' ),
-    'new_item'           => __( 'New Question' ),
-    'all_items'          => __( 'All Questions' ),
-    'view_item'          => __( 'View Question' ),
-    'search_items'       => __( 'Search Questions' ),
-    'not_found'          => __( 'No questions found' ),
-    'not_found_in_trash' => __( 'No question found in the Trash' ), 
+    'name'               => _x( 'Questions', 'question type general name', 'enem-simulator' ),
+    'singular_name'      => _x( 'Question', 'question type singular name', 'enem-simulator' ),
+    'add_new'            => _x( 'Add New', 'book', 'enem-simulator' ),
+    'add_new_item'       => __( 'Add New Question', 'enem-simulator' ),
+    'edit_item'          => __( 'Edit Question', 'enem-simulator' ),
+    'new_item'           => __( 'New Question', 'enem-simulator' ),
+    'all_items'          => __( 'All Questions', 'enem-simulator' ),
+    'view_item'          => __( 'View Question', 'enem-simulator' ),
+    'search_items'       => __( 'Search Questions', 'enem-simulator' ),
+    'not_found'          => __( 'No questions found', 'enem-simulator' ),
+    'not_found_in_trash' => __( 'No question found in the Trash', 'enem-simulator' ), 
     'parent_item_colon'  => '',
     'menu_name'          => 'Questions'
   );
@@ -30,17 +30,17 @@ add_action( 'init', 'question_cpt' );
 
 function question_taxonomy() {
   $labels = array(
-    'name'              => _x( 'Question Categories', 'taxonomy general name' ),
-    'singular_name'     => _x( 'Question Category', 'taxonomy singular name' ),
-    'search_items'      => __( 'Search Question Categories' ),
-    'all_items'         => __( 'All Question Categories' ),
-    'parent_item'       => __( 'Parent Question Category' ),
-    'parent_item_colon' => __( 'Parent Question Category:' ),
-    'edit_item'         => __( 'Edit Question Category' ), 
-    'update_item'       => __( 'Update Question Category' ),
-    'add_new_item'      => __( 'Add New Question Category' ),
-    'new_item_name'     => __( 'New Question Category' ),
-    'menu_name'         => __( 'Question Categories' ),
+    'name'              => _x( 'Question Categories', 'taxonomy general name', 'enem-simulator' ),
+    'singular_name'     => _x( 'Question Category', 'taxonomy singular name', 'enem-simulator' ),
+    'search_items'      => __( 'Search Question Categories', 'enem-simulator' ),
+    'all_items'         => __( 'All Question Categories', 'enem-simulator' ),
+    'parent_item'       => __( 'Parent Question Category', 'enem-simulator' ),
+    'parent_item_colon' => __( 'Parent Question Category:', 'enem-simulator' ),
+    'edit_item'         => __( 'Edit Question Category', 'enem-simulator' ), 
+    'update_item'       => __( 'Update Question Category', 'enem-simulator' ),
+    'add_new_item'      => __( 'Add New Question Category', 'enem-simulator' ),
+    'new_item_name'     => __( 'New Question Category', 'enem-simulator' ),
+    'menu_name'         => __( 'Question Categories', 'enem-simulator' ),
   );
   $args = array(
     'labels' => $labels,
