@@ -344,34 +344,49 @@ jQuery(document).ready(function( $ ) {
   }
 
   function setResults() {
-    $('.simulator-result .question-nav-item').each(function(e) {
+    $('.simulator-result .question-nav').each(function() {
+      let correct = 0;
+      let wrong = 0;
+      let name;
 
-      let id = $(this).attr('data-question-id');
-      let name = $(this).attr('data-category-name');
-      let question = $('#' + id);
-      let category = $('#' + name);
+      $(this).find('.question-nav-item').each(function() {
+        let id = $(this).attr('data-question-id');
+        name = $(this).attr('data-category-name');
+        let question = $('#' + id);
+        let category = $('#' + name);
+        currentCategory = name;
 
-      let categoryIndex = category.attr('data-category-index');
-      let questionIndex = question.find('.question-options').attr('data-question-index');
+        let categoryIndex = category.attr('data-category-index');
+        let questionIndex = question.find('.question-options').attr('data-question-index');
 
-      let item = getQuestion(categoryIndex, questionIndex);
+        let item = getQuestion(categoryIndex, questionIndex);
 
-      if(item.user_answer.number === item.correct_answer.number) {
-        $(this).addClass('text-success');
-        $(this).removeClass('text-warning');
-        $(this).removeClass('text-danger');
-      }
-      else if(!item.user_answer.number) {
-        $(this).addClass('text-warning');
-        $(this).removeClass('text-danger');
-        $(this).removeClass('text-success');
-      }
-       else if(item.user_answer.number !== item.correct_answer.number) {
-        $(this).addClass('text-danger');
-        $(this).removeClass('text-warning');
-        $(this).removeClass('text-danger');
-      }
-      
+        if(item.user_answer.number === item.correct_answer.number) {
+          $(this).addClass('text-success');
+          $(this).removeClass('text-warning');
+          $(this).removeClass('text-danger');
+          correct++;
+        }
+        else if(!item.user_answer.number) {
+          $(this).addClass('text-warning');
+          $(this).removeClass('text-danger');
+          $(this).removeClass('text-success');
+        }
+        else if(item.user_answer.number !== item.correct_answer.number) {
+          $(this).addClass('text-danger');
+          $(this).removeClass('text-warning');
+          $(this).removeClass('text-danger');
+          wrong++;
+        }
+
+      });
+
+      $('.' + name + ' .enem-simulator-successes').html(correct);
+
+    });
+
+    $('.simulator-result .question-nav-item').each(function() {
+
     });
 
   }
