@@ -1,13 +1,13 @@
 {
     "key": "group_5eb1d244610de",
-    "title": "Enem Simulator Settings",
+    "title": "Configurações",
     "fields": [
         {
             "key": "field_5eb1d27b297e7",
-            "label": "Total Question",
+            "label": "Total de Questões",
             "name": "total_question",
             "type": "number",
-            "instructions": "Adding amount of question for simulator",
+            "instructions": "",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -25,10 +25,10 @@
         },
         {
             "key": "field_5eb1d416462f6",
-            "label": "Question Categories",
+            "label": "Categorias",
             "name": "question_categories",
             "type": "repeater",
-            "instructions": "Choose the categories of simulator",
+            "instructions": "",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -44,7 +44,7 @@
             "sub_fields": [
                 {
                     "key": "field_5eb1d53667fbf",
-                    "label": "Question Category",
+                    "label": "Categoria",
                     "name": "question_category",
                     "type": "taxonomy",
                     "instructions": "",
@@ -66,7 +66,7 @@
                 },
                 {
                     "key": "field_5eb1d4c267fbe",
-                    "label": "Amount",
+                    "label": "Quantidade",
                     "name": "category_amount",
                     "type": "number",
                     "instructions": "",
@@ -89,10 +89,10 @@
         },
         {
             "key": "field_5eb29ac0e6678",
-            "label": "Maximum Time (seconds)",
+            "label": "Tempo Máximo de Prova (Segundos)",
             "name": "maximum_time",
             "type": "number",
-            "instructions": "Value in seconds for maximum time of simulator",
+            "instructions": "",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -110,10 +110,10 @@
         },
         {
             "key": "field_5eb29b71d9526",
-            "label": "Alert Time (seconds)",
+            "label": "Tempo de Alerta de Fim de Prova (Segundos)",
             "name": "alert_time",
             "type": "number",
-            "instructions": "Value in seconds to display the end of simulation alert",
+            "instructions": "",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -131,10 +131,10 @@
         },
         {
             "key": "field_5eb29c298ef2a",
-            "label": "End of test alert",
+            "label": "Ativar alerta de fim de prova",
             "name": "end_test_alert",
             "type": "true_false",
-            "instructions": "Activate the end of test alert",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -150,10 +150,10 @@
         },
         {
             "key": "field_5eb29cb28ef2b",
-            "label": "Test change alert",
+            "label": "Ativar alerta de alteração de resposta",
             "name": "test_change_alert",
             "type": "true_false",
-            "instructions": "Activate the test change alert",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -169,10 +169,10 @@
         },
         {
             "key": "field_5eb29dff8ef2c",
-            "label": "Initial message",
+            "label": "Mensagem Inicial",
             "name": "initial_message",
             "type": "textarea",
-            "instructions": "A short message for displayed into the top of test",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -204,5 +204,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1588771390
+    "modified": 1590005002
 }
