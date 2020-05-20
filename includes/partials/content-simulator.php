@@ -92,8 +92,8 @@
           <?php foreach ($categories as $value) : ?>
             <tr class="<?php echo $value['slug']; ?>">
               <td><?php echo $value[ 'name' ] ?></td>
-              <td>0</td>
-              <td>0</td>
+              <td class="enem-simulator-rate">0</td>
+              <td class="enem-simulator-successes">0</td>
             </tr>
           <?php endforeach; ?>
           </tbody>
