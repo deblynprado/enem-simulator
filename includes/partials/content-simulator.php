@@ -74,12 +74,12 @@
     <div class="simulator-result">
       <div class="col-12">
         <h3><?php echo __( 'Simulator Result', 'enem-simulator' ) ?></h3>
-        <h4><?php echo __( 'Knowledge areas', 'enem-simulator' ) ?></h4>
         <ul class="mb-5">
           <li class="text-success"><?php echo __( 'Correct', 'enem-simulator' ) ?></li>
           <li class="text-danger"><?php echo __( 'Wrong', 'enem-simulator' ) ?></li>
           <li class="text-warning"><?php echo __( 'Not answered', 'enem-simulator' ) ?></li>
         </ul>
+        <h4><?php echo __( 'Knowledge areas', 'enem-simulator' ) ?></h4>
         <table class="simulator-result-table table">
           <thead>
             <tr>
