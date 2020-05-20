@@ -91,8 +91,8 @@ jQuery(document).ready(function( $ ) {
 
     scroollTo($('.entry-content'));
 
-    let categoryIndex = $('.question:visible').parent().attr('data-category-index');
-    let questionIndex = $('.question:visible .question-options').attr('data-question-index');
+    let categoryIndex = $('.question:visible').next().parent().attr('data-category-index');
+    let questionIndex = $('.question:visible').next().find('.question-options').attr('data-question-index');
 
     setVisitedQuestion(categoryIndex, questionIndex);
 
@@ -115,8 +115,6 @@ jQuery(document).ready(function( $ ) {
 
     if ($('.question:visible').prev().prev().length == 0)
       $(this).parent().addClass('disabled');      
-
-    
 
   });
 
