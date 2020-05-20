@@ -18,7 +18,7 @@
         <select class="custom-select" name="question_category" id="question_category">
           <?php
           $categories = enem_simulator_get_categories(); 
-          foreach ($categories as $value) : var_dump($categories);?>
+          foreach ($categories as $value) : ?>
           <option value="<?php echo $value[ 'slug' ] ?>"><?php echo $value[ 'name' ] ?></option>
           <?php endforeach; ?>
         </select>
@@ -50,9 +50,9 @@
 </div>
 <div class="container">
   <div class="row">
-    <!-- nav -->
-    <div class="row simulator-nav" style="display: none;">
-      <div class="col-10">
+    <!-- simulator-nav -->
+    <div class="simulator-nav" style="display: none;">
+      <div class="col-12">
         <h3><?php echo __( 'Browse in the test', 'enem-simulator' ) ?></h3>
         <ul>
           <li class="text-success">RESPONDEU</li>
@@ -61,16 +61,52 @@
         </ul>
         <h4><?php echo __( 'Knowledge areas', 'enem-simulator' ) ?></h4>
       </div>
-      <div class="col-10">
+      <div class="col-12">
         <div class="simulator-nav-categories">
 
         </div>
       </div>
     </div>
-    <!-- /nav -- -->
+    <!-- /simulator-nav -- -->
   </div>
 </div>
-<!-- modal -- -->
+<div class="container">
+  <div class="row">
+    <!-- simulator-result -->
+    <div class="simulator-result">
+      <div class="col-12">
+        <h3><?php echo __( 'Simulator Result', 'enem-simulator' ) ?></h3>
+        <h4><?php echo __( 'Knowledge areas', 'enem-simulator' ) ?></h4>
+        <?php $categories = enem_simulator_get_categories(); ?>
+        <table class="simulator-result-table table">
+          <thead>
+            <tr>
+              <th style="width:100%;"><?php echo __( 'Description', 'enem-simulator' ) ?></th>
+              <th><?php echo __( 'Rate', 'enem-simulator' ) ?></th>
+              <th><?php echo __( 'Successes', 'enem-simulator' ) ?></th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php foreach ($categories as $value) : ?>
+            <tr>
+              <td><?php echo $value[ 'name' ] ?></td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+          <?php endforeach; ?>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12">
+        <div class="simulator-result-categories">
+
+        </div>
+      </div>
+    </div>
+    <!-- /simulator-result -- -->
+  </div>
+</div>
+<!-- enem-simulator-modal -- -->
 <div class="modal enem-simulator-modal" tabindex="-1" role="dialog" id="enem-simulator-modal-finish">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -90,4 +126,4 @@
     </div>
   </div>
 </div>
-<!-- /modal -- -->
+<!-- /enem-simulator-modal -- -->
