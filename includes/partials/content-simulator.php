@@ -84,7 +84,7 @@
         <p><?php echo __( 'Do you really want end the current simulator and see the results?', 'enem-simulator' ) ?></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary"><?php echo __( 'Finish', 'enem-simulator' ) ?></button>
+        <button type="button" class="btn btn-primary" id="finisish-simulator"><?php echo __( 'Finish', 'enem-simulator' ) ?></button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo __( 'Back', 'enem-simulator' ) ?></button>
       </div>
     </div>
