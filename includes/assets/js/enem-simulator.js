@@ -99,6 +99,8 @@ jQuery(document).ready(function( $ ) {
   $('#previous-question').on('click', function(e) {
     e.preventDefault();
     
+    scroollTo($('.entry-content'));
+    
     if ($('.question:visible').prev().length != 0)
       $('.question:visible').prev().show('fast').next().hide('fast');
     else {
@@ -112,7 +114,7 @@ jQuery(document).ready(function( $ ) {
     if ($('.question:visible').prev().prev().length == 0)
       $(this).parent().addClass('disabled');      
 
-    scroollTo($('.entry-content'));
+    
 
   });
 
