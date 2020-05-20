@@ -55,12 +55,15 @@ jQuery(document).ready(function( $ ) {
     });
   });
 
-  $('#revise-question').on('click', function(e) {
+  $('#finisish-simulator').on('click', function(e) {
     e.preventDefault();
-    $(this).parent().addClass('disabled');
+
+    $('#enem-simulator-revise').parent().addClass('disabled');
+    $('#enem-simulator-modal-finish').modal('toggle');
 
     stopTimer(); 
     checkAnswers();
+    scroollTo($('.entry-content'));
 
   });
 
