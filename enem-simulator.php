@@ -143,7 +143,7 @@ function enem_simulator_get_nav_callback() {
           <div class="progress-bar progress-bar-nav" id="propress-bar-<?php echo $key ?>" role="progressbar" style="width: 0%;" 
             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-category-name="<?php echo $value['slug']; ?>">0%</div>
         </div>
-        <p class="mt-3"><?php echo __('Click on the question to navigate', 'enem-simulator') ?></p>
+        <p class="mt-3 text-uppercase"><?php echo __('Click on the question to navigate', 'enem-simulator') ?></p>
         <div class="question-nav">
         <?php $qIds = array(); ?>
       <?php while ( $questions->have_posts() ) : $questions->the_post(); 
