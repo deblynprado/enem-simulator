@@ -51,6 +51,8 @@ jQuery(document).ready(function( $ ) {
       },
       success: function(response){
         $('.simulator-nav-categories').empty().html(response);
+        $('.simulator-result-categories').empty().html(response);
+        $('.simulator-result-categories .progress').remove();
       }
     });
   });
