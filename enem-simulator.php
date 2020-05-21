@@ -39,21 +39,31 @@ function enqueue_scripts() {
   wp_enqueue_style( 'font-awesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', null );
   wp_enqueue_style( 'enem-simulator', plugins_url( 'includes/assets/css/enem-simulator.css', __FILE__ ) );
   wp_enqueue_script( 'bootstrap-js', plugins_url( 'includes/assets/bootstrap/js/bootstrap.min.js', __FILE__ ), array( 'jquery' ), null, true );
-  wp_enqueue_script( 'enem-simulator', plugins_url( 'includes/assets/js/enem-simulator.js', __FILE__ ), array( 'jquery', 'bootstrap-js'), null, true );
+  wp_register_script( 'enem-simulator', plugins_url( 'includes/assets/js/enem-simulator.js', __FILE__ ), array( 'jquery', 'bootstrap-js'), null, true );
+}
+add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
+
+function enem_simulator_setting_name( $name = null ) {
+  static $settingName = '';
+  if ( is_null( $name ) ) return $settingName;
+  $settingName = $name;
+  return $settingName;
+}
+
+function enem_simulator_shortcode( $atts ) {
+  enem_simulator_setting_name( $atts[ 'name' ] );
+  wp_enqueue_script('enem-simulator');
   wp_localize_script( 'enem-simulator', 'enem_simulator',
       array( 
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
         'maximum_time' => enem_simulator_get_option( 'maximum_time' ),
         'alert_time' => enem_simulator_get_option( 'alert_time' ),
-        'end_test_alert' => enem_simulator_get_option( 'end_test_alert' ),
-        'test_change_alert' => enem_simulator_get_option( 'test_change_alert' ),  
+        'end_test_alert' => enem_simulator_get_option( 'end_test_alert'),
+        'test_change_alert' => enem_simulator_get_option( 'test_change_alert'),  
         'the_ids' => enem_simulator_get_posts_id(),
+        'categories' => enem_simulator_get_categories(),
       )
   );
-}
-add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
-
-function enem_simulator_shortcode( $atts ) {
   $categories = enem_simulator_get_categories();
   ob_start();
   include ( 'includes/partials/content-simulator.php' );
@@ -62,7 +72,13 @@ function enem_simulator_shortcode( $atts ) {
 add_shortcode( 'enem-simulator', 'enem_simulator_shortcode' );
 
 function enem_simulator_get_option( $name ) {
-  return get_field( $name , 'option' );
+  $filds = get_field( 'enem_simulator_settings', 'option' );
+  $settingName = enem_simulator_setting_name();
+  foreach ($filds as $value) {
+   if ( $value[ 'setting_slug' ] == $settingName )
+    $fild = $value;
+  }
+  return $fild[ $name ];
 }
 
 function enem_simulator_get_posts_id() {
@@ -117,8 +133,9 @@ function enem_simulator_get_questions($slug, $orderby = 'name', $limit = 0) {
 }
 
 function enem_simulator_get_question_category_callback() {
-  $categories = enem_simulator_get_categories();
-  
+  if ( isset($_POST['categories'] )) 
+    $categories = $_POST['categories'];
+
   if ( isset($_POST['category'] )) 
     $category = $_POST['category'];
 
@@ -152,7 +169,8 @@ add_action( 'wp_ajax_enem_simulator_get_question_category', 'enem_simulator_get_
 add_action( 'wp_ajax_nopriv_enem_simulator_get_question_category', 'enem_simulator_get_question_category_callback' );
 
 function enem_simulator_get_nav_callback() {
-  $categories = enem_simulator_get_categories();
+  if ( isset($_POST['categories'] )) 
+    $categories = $_POST['categories'];
 
   if ( isset( $_POST['the_ids'] ))
     $theIDs = $_POST['the_ids'];
