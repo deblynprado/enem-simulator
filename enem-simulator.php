@@ -45,7 +45,8 @@ function enqueue_scripts() {
         'maximum_time' => enem_simulator_get_option( 'maximum_time' ),
         'alert_time' => enem_simulator_get_option( 'alert_time' ),
         'end_test_alert' => enem_simulator_get_option( 'end_test_alert' ),
-        'test_change_alert' => enem_simulator_get_option( 'test_change_alert' ),
+        'test_change_alert' => enem_simulator_get_option( 'test_change_alert' ),  
+        'the_ids' => enem_simulator_get_posts(),
       )
   );
 }
@@ -63,11 +64,27 @@ function enem_simulator_get_option( $name ) {
   return get_field( $name , 'option' );
 }
 
+function enem_simulator_get_posts() {
+  $categories = enem_simulator_get_categories();
+  $theIDs = [];
+  foreach ($categories as $key => $value) :
+    $questions = enem_simulator_get_questions( $value['slug'], 'rand', $value['category_amount'] );
+    if ( $questions->have_posts( ) ) : 
+      while ( $questions->have_posts() ) :  
+        $questions->the_post();
+        $theIDs[$value['slug']][] = get_the_ID(); 
+      endwhile; 
+    endif;
+    wp_reset_postdata();
+  endforeach;
+  return $theIDs;
+}
+
 function enem_simulator_get_categories() {
   $option = enem_simulator_get_option( 'question_categories' ); 
 
   $categories = [];
-
+  
   foreach ($option as $value) {
     $questions = enem_simulator_get_questions( $value[ 'question_category' ]->slug );
     if ( $questions->have_posts( ) ) 
@@ -100,34 +117,32 @@ function enem_simulator_get_questions($slug, $orderby = 'name', $limit = 0) {
 
 function enem_simulator_get_question_category_callback() {
   $categories = enem_simulator_get_categories();
-
+  
   if ( isset($_POST['category'] )) 
     $category = $_POST['category'];
 
-  foreach ($categories as $key => $value) {
-    
-    $questions = enem_simulator_get_questions( $value['slug'], 'name', $value['category_amount'] );
-  
-    if ( $questions->have_posts( ) ) : 
-      $index = 0;
-      $categoryName = $value['name'];
-    ?>
-      <div class="content-question" data-category-index="<?php echo $key ?>" 
-        id="<?php echo $value['slug'] ?>" <?php echo $category == $value[ 'slug' ] ? '' : 'style="display:none;"' ?> >
-      <?php while ( $questions->have_posts() ) :  
-        $questions->the_post();
+  if ( isset( $_POST['the_ids'] ))
+    $theIDs = $_POST['the_ids'];
 
-        $fields = get_field( 'text_options', get_the_ID() ); 
-        shuffle( $fields );
-  
-        include ( 'includes/partials/content-question.php' );
-        
-        $index++;
-      endwhile; ?>
-      </div>
-    <?php endif;
-    wp_reset_postdata();
-  }
+  foreach ($categories as $key => $value) :
+    $index = 0;
+    $categoryName = $value['name'];
+    $slug = $value[ 'slug' ];
+    $posts = $theIDs[ $value[ 'slug' ] ];
+  ?>
+    <div class="content-question" data-category-index="<?php echo $key ?>" 
+      id="<?php echo $slug ?>" <?php echo $category == $slug ? '' : 'style="display:none;"' ?> >
+    <?php foreach ( $posts as $value ) : 
+      global $post;
+      $post = get_post($value);
+      $fields = get_field( 'text_options', get_the_ID() ); 
+      shuffle( $fields );
+      include ( 'includes/partials/content-question.php' );
+      $index++;
+    endforeach; ?>
+    </div>
+    <?php wp_reset_postdata();
+  endforeach;
 
   wp_die();
 }
@@ -137,34 +152,36 @@ add_action( 'wp_ajax_nopriv_enem_simulator_get_question_category', 'enem_simulat
 
 function enem_simulator_get_nav_callback() {
   $categories = enem_simulator_get_categories();
-  
-  foreach ($categories as $key => $value) {
-    
-    $questions = enem_simulator_get_questions( $value['slug'], 'name', $value['category_amount'] );
-  
-    if ( $questions->have_posts( ) ) : $index = 0;?>
-      <div class="content-category m-4" data-category-index="<?php echo $key ?>">
-        <h5><?php echo $value['name'] ?></h5>
-        <div class="progress mt-4 progress-category">
-          <div class="progress-bar progress-bar-nav" id="propress-bar-<?php echo $key ?>" role="progressbar" style="width: 0%;" 
-            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-category-name="<?php echo $value['slug']; ?>">0%</div>
-        </div>
-        <p class="mt-3 text-uppercase"><?php echo __('Click on the question to navigate', 'enem-simulator') ?></p>
-        <div class="question-nav">
-        <?php $qIds = array(); ?>
-      <?php while ( $questions->have_posts() ) : $questions->the_post(); 
-      array_push( $qIds, get_the_id() ); ?>
-        <a href="#" class="question-nav-item p-4 border <?php echo $index == 0 ? 'rounded-left' : ''; ?> <?php echo ($index+1) == $questions->found_posts ? 'rounded-right' : ''; ?>" data-question-id="<?php echo get_the_ID(); ?>" 
-            data-category-name="<?php echo $value['slug']; ?>"><?php echo $index+1; ?></a>
+
+  if ( isset( $_POST['the_ids'] ))
+    $theIDs = $_POST['the_ids'];
+
+  foreach ($categories as $key => $value) :
+    $index = 0;
+    $posts = $theIDs[ $value[ 'slug' ] ];
+    $slug = $value[ 'slug' ];
+    $name = $value[ 'name' ];
+  ?>
+    <div class="content-category m-4" data-category-index="<?php echo $key ?>">
+      <h5><?php echo $name ?></h5>
+      <div class="progress mt-4 progress-category">
+        <div class="progress-bar progress-bar-nav" id="propress-bar-<?php echo $key ?>" role="progressbar" style="width: 0%;" 
+          aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-category-name="<?php echo $slug; ?>">0%</div>
+      </div>
+      <p class="mt-3 text-uppercase"><?php echo __('Click on the question to navigate', 'enem-simulator') ?></p>
+      <div class="question-nav">
+      <?php foreach ( $posts as $value ) :  
+        global $post;
+        $post = get_post($value); ?>
+        <a href="#" class="question-nav-item p-4 border" data-question-id="<?php echo get_the_ID(); ?>" 
+          data-category-name="<?php echo $slug; ?>"><?php echo $index+1; ?></a>
         <?php
         $index++;
-      endwhile; ?>
-        </div>
+      endforeach; ?>
       </div>
-    <?php endif;
-    
-    wp_reset_postdata();
-  }
+    </div>
+    <?php wp_reset_postdata();
+  endforeach;
 
   wp_die();
 }
