@@ -46,7 +46,7 @@ function enqueue_scripts() {
         'alert_time' => enem_simulator_get_option( 'alert_time' ),
         'end_test_alert' => enem_simulator_get_option( 'end_test_alert' ),
         'test_change_alert' => enem_simulator_get_option( 'test_change_alert' ),  
-        'the_ids' => enem_simulator_get_posts(),
+        'the_ids' => enem_simulator_get_posts_id(),
       )
   );
 }
@@ -64,7 +64,7 @@ function enem_simulator_get_option( $name ) {
   return get_field( $name , 'option' );
 }
 
-function enem_simulator_get_posts() {
+function enem_simulator_get_posts_id() {
   $categories = enem_simulator_get_categories();
   $theIDs = [];
   foreach ($categories as $key => $value) :
