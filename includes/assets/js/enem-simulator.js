@@ -120,25 +120,52 @@ jQuery(document).ready(function( $ ) {
 
     let $box = $(this);
 
-    if ($box.is(':checked')) {
-      var group = 'input:checkbox[name=' + $box.attr("name") + ']';
-      $(group).prop('checked', false);
-      $box.prop('checked', true);
+    if($box.is(':checked')) {
+
+      var group = $('input:checkbox[name=' + $box.attr("name") + ']:checked');
+      
+      if(enem_simulator.test_change_alert && group.length > 1) {
+        const modal = new Promise(function(resolve, reject){
+          $('#enem-simulator-modal-alter').modal('toggle');  
+          $('#alter-simulator').click(function(){
+            resolve();
+          });
+          $('#alter-simulator-dismiss').click(function(){
+            reject();
+          });
+          $('.close').click(function(){
+            resolve();
+          });
+        }).then(function(){
+          group.prop('checked', false);
+          $box.prop('checked', true);
+          checkboxChecked($box);
+        }).catch(function(err){
+          $box.prop('checked', false);
+          console.log(err);
+        });
+      } else {
+        group.prop('checked', false);
+        $box.prop('checked', true);
+        checkboxChecked(this);
+      }
     } else {
       $box.prop('checked', false);
     }
 
-    let categoryIndex = $(this).parents('.content-question').attr('data-category-index');
-    let questionIndex = $(this).parents('.question-options').attr('data-question-index');
+  });
+
+  function checkboxChecked(element) {
+    let categoryIndex = $(element).parents('.content-question').attr('data-category-index');
+    let questionIndex = $(element).parents('.question-options').attr('data-question-index');
     let question = getQuestion(categoryIndex, questionIndex);
 
-    question.user_answer.number = $(this).val();
+    question.user_answer.number = $(element).val();
 
     setQuestion(categoryIndex, questionIndex, question);
     
-    setProgressbar($(this).parents('.content-question'), $(".progress-bar"));
-
-  });
+    setProgressbar($(element).parents('.content-question'), $(".progress-bar"));
+  }
 
   $('.simulator-category-list').on('click', function(e){
     e.preventDefault();
