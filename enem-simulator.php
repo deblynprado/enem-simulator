@@ -24,6 +24,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
 */
 
+include ( 'install.php' );
 include ( 'acf-settings.php' );
 include ( 'cpt-settings.php' );
 include ( 'acf-options.php' );
@@ -188,3 +189,32 @@ function enem_simulator_get_nav_callback() {
 
 add_action( 'wp_ajax_enem_simulator_get_nav', 'enem_simulator_get_nav_callback' );
 add_action( 'wp_ajax_nopriv_enem_simulator_get_nav', 'enem_simulator_get_nav_callback' );
+
+function enem_simulator_add_user_register_callback() {
+  global $wpdb;
+
+  if ( isset( $_POST[ 'name' ] ) ) 
+    $name = sanitize_text_field( $_POST[ 'name' ] );
+
+  if ( isset( $_POST[ 'mail' ] ) ) 
+    $mail = sanitize_text_field( $_POST[ 'mail' ] );
+
+  if ( isset( $_POST[ 'whatsapp' ] ) ) 
+    $whatsapp = sanitize_text_field( $_POST[ 'whatsapp' ] );
+
+  $tableName = get_option( 'enem_simulator_user_table_name' );
+
+  $result = $wpdb->insert( $tableName, 
+                array( 
+                  'name' => $name,
+                  'mail' => $mail,
+                  'whatsapp' => $whatsapp,
+                  'created_at' => current_time( 'mysql' )
+                ),
+                array( '%s',  '%s', '%s', '%s')
+              );
+  echo $result;
+}
+
+add_action( 'wp_ajax_enem_simulator_add_user_register', 'enem_simulator_add_user_register_callback' );
+add_action( 'wp_ajax_nopriv_enem_simulator_add_user_register', 'enem_simulator_add_user_register_callback' );
