@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-21 13:56+0000\n"
-"PO-Revision-Date: 2020-05-21 13:57+0000\n"
+"POT-Creation-Date: 2020-05-21 15:56+0000\n"
+"PO-Revision-Date: 2020-05-21 15:56+0000\n"
 "Language-Team: Português do Brasil\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -135,6 +135,10 @@ msgstr "Adicionar Questão"
 msgid "Click on the question to navigate"
 msgstr "Clique sobre a questão para navegar"
 
+#: includes/partials/content-question.php:5
+msgid "Question"
+msgstr "Questão"
+
 #: includes/partials/content-simulator.php:9
 msgid ""
 "Do as many simulated tests wish for you to have a good performance on the "
@@ -226,6 +230,7 @@ msgid "Alteration"
 msgstr "Alteração"
 
 #: includes/partials/content-simulator.php:144
+#: includes/partials/content-simulator.php:165
 msgid "Do you really want alter this question?"
 msgstr "Você realmente deseja alterar essa questão?"
 
@@ -236,6 +241,18 @@ msgstr "Sim"
 #: includes/partials/content-simulator.php:148
 msgid "No"
 msgstr "Não"
+
+#: includes/partials/content-simulator.php:159
+msgid "Register"
+msgstr "cadastro"
+
+#: includes/partials/content-simulator.php:168
+msgid "Save"
+msgstr "Salvar"
+
+#: includes/partials/content-simulator.php:169
+msgid "Skip"
+msgstr "Pular"
 
 #: includes/partials/simulator-footer.php:14
 msgid "New Simulator"
