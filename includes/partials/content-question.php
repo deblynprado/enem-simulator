@@ -2,7 +2,7 @@
 
 <div class="question" style="display:none" id="<?php echo get_the_ID(); ?>">
   <h3 class="question-category"><?php echo $categoryName; ?></h4>
-	<h4 class="question-title"><?php __( 'Question', 'enem-simulator' ); echo (' '); echo $index+1; ?></h4>
+	<h4 class="question-title"><?php echo __( 'Question', 'enem-simulator' ); echo (' '); echo $index+1; ?></h4>
   <p class="question-message"> <?php the_content() ?> </p>
   <div class="figure question-thumbnail">
     <?php the_post_thumbnail( 'post-thumbnail', 
