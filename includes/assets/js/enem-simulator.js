@@ -5,7 +5,26 @@ var endSimulator = false;
 jQuery(document).ready(function( $ ) {
 
 	$('#start-simulator').on('click', function() {
+    $('#enem-simulator-modal-register').modal('toggle');
+  });
 
+  $('#register-simulator').on('click', function() {
+    $.ajax({
+      type: 'POST',
+      url:enem_simulator.ajaxurl,
+      data: {
+        action: 'enem_simulator_add_user_register',
+        name: $('#name').val(),
+        mail: $('#mail').val(),
+        whatsapp: $('#whatsapp').val()
+      },
+      success: function(response) {
+        console.log(response);
+      }
+    })
+  })
+
+  $('#enem-simulator-modal-register').on('hide.bs.modal', function() {
     var category = $('#question_category').children('option:selected').val();
     var theIDS = enem_simulator.the_ids;
 
@@ -13,9 +32,9 @@ jQuery(document).ready(function( $ ) {
       type: 'POST',
       url: enem_simulator.ajaxurl,
       data: {
-          action : 'enem_simulator_get_question_category',
-          category: category,
-          the_ids: theIDS,
+        action : 'enem_simulator_get_question_category',
+        category: category,
+        the_ids: theIDS,
       },
       success: function(response) {
 
