@@ -131,7 +131,7 @@
 </div>
 <!-- /enem-simulator-modal-finish -- -->
 <!-- enem-simulator-modal-alter -- -->
-<div class="modal enem-simulator-modal-alter" tabindex="-1" role="dialog" id="enem-simulator-modal-alter">
+<div class="modal enem-simulator-modal" tabindex="-1" role="dialog" id="enem-simulator-modal-alter">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -144,8 +144,8 @@
         <p><?php echo __( 'Do you really want alter this question?', 'enem-simulator' ) ?></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="alter-simulator"><?php echo __( 'Yes', 'enem-simulator' ) ?></button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo __( 'No', 'enem-simulator' ) ?></button>
+        <button type="button" class="btn btn-primary" id="alter-simulator" data-dismiss="modal"><?php echo __( 'Yes', 'enem-simulator' ) ?></button>
+        <button type="button" class="btn btn-secondary" id="alter-simulator-dismiss" data-dismiss="modal"><?php echo __( 'No', 'enem-simulator' ) ?></button>
       </div>
     </div>
   </div>
