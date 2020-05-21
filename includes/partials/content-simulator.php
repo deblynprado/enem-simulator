@@ -151,3 +151,37 @@
   </div>
 </div>
 <!-- /enem-simulator-modal-alter -- -->
+<!-- enem-simulator-modal-register -- -->
+<div class="modal enem-simulator-modal" tabindex="-1" role="dialog" id="enem-simulator-modal-register">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><?php echo __( 'Register', 'enem-simulator' ) ?></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="form-group">
+            <label for="name"><?php __( 'Name', 'enem-simulator' ) ?></label>
+            <input type="text" name="name" id="name" value="">
+          </div>
+          <div class="form-group">
+            <label for="mail"><?php __( 'Mail', 'enem-simulator' ) ?></label>
+            <input type="mail" name="mail" id="mail" value="">
+          </div>
+          <div class="form-group">
+            <label for="whatsapp"><?php __( 'WhatsApp', 'enem-simulator' ) ?></label>
+            <input type="tel" name="whatsapp" id="whatsapp" value="">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="register-simulator" data-dismiss="modal"><?php echo __( 'Save', 'enem-simulator' ) ?></button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo __( 'Skip', 'enem-simulator' ) ?></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /enem-simulator-modal-register -- -->
