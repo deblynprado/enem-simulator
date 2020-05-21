@@ -391,10 +391,10 @@ jQuery(document).ready(function( $ ) {
           $(this).removeClass('bg-danger');
           $(this).removeClass('bg-success');
         }
-        else if(item.user_answer.number !== item.correct_answer.number) {
+        else {
           $(this).addClass('bg-danger');
           $(this).removeClass('bg-warning');
-          $(this).removeClass('bg-danger');
+          $(this).removeClass('bg-success');
           wrong++;
         }
 
