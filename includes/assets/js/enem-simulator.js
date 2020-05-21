@@ -27,6 +27,7 @@ jQuery(document).ready(function( $ ) {
   $('#enem-simulator-modal-register').on('hide.bs.modal', function() {
     var category = $('#question_category').children('option:selected').val();
     var theIDS = enem_simulator.the_ids;
+    var categories = enem_simulator.categories;
 
     $.ajax({
       type: 'POST',
@@ -35,6 +36,7 @@ jQuery(document).ready(function( $ ) {
         action : 'enem_simulator_get_question_category',
         category: category,
         the_ids: theIDS,
+        categories: categories
       },
       success: function(response) {
 
@@ -70,6 +72,7 @@ jQuery(document).ready(function( $ ) {
       data: {
           action : 'enem_simulator_get_nav',
           the_ids: theIDS,
+          categories: categories
       },
       success: function(response){
         $('.simulator-nav-categories').empty().html(response);
