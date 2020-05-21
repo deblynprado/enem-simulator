@@ -19,6 +19,8 @@ function enem_simulator_install() {
 
   require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
   dbDelta( $sql );
+
+  add_option( 'enem_simulator_user_table_name', $table_name );
 }
 
 register_activation_hook( __FILE__, array( 'enem-simulator', 'enem_simulator_install' ) );
