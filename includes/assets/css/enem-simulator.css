@@ -19,6 +19,8 @@
 
 .enem-simulator-modal .btn-primary {
   background-color: #007bff !important;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .enem-simulator-modal .btn-primary:hover {
