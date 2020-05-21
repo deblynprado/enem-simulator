@@ -123,8 +123,8 @@
         <p><?php echo __( 'Do you really want end the current simulator and see the results?', 'enem-simulator' ) ?></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="finisish-simulator"><?php echo __( 'Finish', 'enem-simulator' ) ?></button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo __( 'Back', 'enem-simulator' ) ?></button>
+        <button type="button" class="btn btn-primary" id="finisish-simulator"><?php echo __( 'Finish', 'enem-simulator' ) ?></button>
       </div>
     </div>
   </div>
@@ -144,8 +144,8 @@
         <p><?php echo __( 'Do you really want alter this question?', 'enem-simulator' ) ?></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="alter-simulator" data-dismiss="modal"><?php echo __( 'Yes', 'enem-simulator' ) ?></button>
         <button type="button" class="btn btn-secondary" id="alter-simulator-dismiss" data-dismiss="modal"><?php echo __( 'No', 'enem-simulator' ) ?></button>
+        <button type="button" class="btn btn-primary" id="alter-simulator" data-dismiss="modal"><?php echo __( 'Yes', 'enem-simulator' ) ?></button>
       </div>
     </div>
   </div>
@@ -164,22 +164,22 @@
       <div class="modal-body">
         <form action="">
           <div class="form-group">
-            <label for="name"><?php __( 'Name', 'enem-simulator' ) ?></label>
-            <input type="text" name="name" id="name" value="">
+            <label for="name"><?php echo __( 'Name', 'enem-simulator' ) ?></label>
+            <input type="text" class="form-control" name="name" id="name" value="">
           </div>
           <div class="form-group">
-            <label for="mail"><?php __( 'Mail', 'enem-simulator' ) ?></label>
-            <input type="mail" name="mail" id="mail" value="">
+            <label for="mail"><?php echo __( 'Mail', 'enem-simulator' ) ?></label>
+            <input type="text" class="form-control" name="mail" id="mail" value="">
           </div>
           <div class="form-group">
-            <label for="whatsapp"><?php __( 'WhatsApp', 'enem-simulator' ) ?></label>
-            <input type="tel" name="whatsapp" id="whatsapp" value="">
+            <label for="whatsapp"><?php echo __( 'WhatsApp', 'enem-simulator' ) ?></label>
+            <input type="text" class="form-control" name="whatsapp" id="whatsapp" value="">
           </div>
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="register-simulator" data-dismiss="modal"><?php echo __( 'Save', 'enem-simulator' ) ?></button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo __( 'Skip', 'enem-simulator' ) ?></button>
+        <button type="submit" class="btn btn-primary" id="register-simulator" data-dismiss="modal"><?php echo __( 'Save', 'enem-simulator' ) ?></button>
       </div>
     </div>
   </div>
