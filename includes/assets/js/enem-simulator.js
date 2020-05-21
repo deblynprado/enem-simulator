@@ -128,15 +128,15 @@ jQuery(document).ready(function( $ ) {
       $box.prop('checked', false);
     }
 
-    let categoryIndex = $(this).parent().parent().parent().parent().attr('data-category-index');
-    let questionIndex = $(this).parent().parent().attr('data-question-index');
+    let categoryIndex = $(this).parents('.content-question').attr('data-category-index');
+    let questionIndex = $(this).parents('.question-options').attr('data-question-index');
     let question = getQuestion(categoryIndex, questionIndex);
 
     question.user_answer.number = $(this).val();
 
     setQuestion(categoryIndex, questionIndex, question);
     
-    setProgressbar($(this).parent().parent().parent().parent(), $(".progress-bar"));
+    setProgressbar($(this).parents('.content-question'), $(".progress-bar"));
 
   });
 
