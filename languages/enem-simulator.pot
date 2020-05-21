@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-21 15:56+0000\n"
+"POT-Creation-Date: 2020-05-21 16:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Deblyn Prado <deblynprado@gmail.com>\n"
 "Language-Team: Deblyn Prado <deblynprado@gmail.com>\n"
@@ -226,7 +226,6 @@ msgid "Alteration"
 msgstr ""
 
 #: includes/partials/content-simulator.php:144
-#: includes/partials/content-simulator.php:165
 msgid "Do you really want alter this question?"
 msgstr ""
 
@@ -242,11 +241,23 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: includes/partials/content-simulator.php:168
+#: includes/partials/content-simulator.php:167
+msgid "Name"
+msgstr ""
+
+#: includes/partials/content-simulator.php:171
+msgid "Mail"
+msgstr ""
+
+#: includes/partials/content-simulator.php:175
+msgid "WhatsApp"
+msgstr ""
+
+#: includes/partials/content-simulator.php:181
 msgid "Save"
 msgstr ""
 
-#: includes/partials/content-simulator.php:169
+#: includes/partials/content-simulator.php:182
 msgid "Skip"
 msgstr ""
 
