@@ -7,13 +7,15 @@ jQuery(document).ready(function( $ ) {
 	$('#start-simulator').on('click', function() {
 
     var category = $('#question_category').children('option:selected').val();
+    var theIDS = enem_simulator.the_ids;
 
     $.ajax({
       type: 'POST',
       url: enem_simulator.ajaxurl,
       data: {
           action : 'enem_simulator_get_question_category',
-          category: category
+          category: category,
+          the_ids: theIDS,
       },
       success: function(response) {
 
@@ -47,7 +49,8 @@ jQuery(document).ready(function( $ ) {
       type: 'POST',
       url: enem_simulator.ajaxurl,
       data: {
-          action : 'enem_simulator_get_nav'
+          action : 'enem_simulator_get_nav',
+          the_ids: theIDS,
       },
       success: function(response){
         $('.simulator-nav-categories').empty().html(response);
@@ -196,6 +199,7 @@ jQuery(document).ready(function( $ ) {
   function finishSimulator() {
     $('#enem-simulator-revise').parent().addClass('disabled');
     $('.simulator-content').hide('slow');
+    $('.simulator-nav').hide('slow');
     $('.simulator-result').show('slow');
 
     stopTimer(); 
