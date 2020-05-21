@@ -3,30 +3,9 @@
     "title": "Configurações",
     "fields": [
         {
-            "key": "field_5eb1d27b297e7",
-            "label": "Total de Questões",
-            "name": "total_question",
-            "type": "number",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": "",
-            "max": "",
-            "step": ""
-        },
-        {
-            "key": "field_5eb1d416462f6",
-            "label": "Categorias",
-            "name": "question_categories",
+            "key": "field_5ec6ba18308e9",
+            "label": "Configuração",
+            "name": "enem_simulator_settings",
             "type": "repeater",
             "instructions": "",
             "required": 1,
@@ -36,18 +15,18 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "field_5eb1d4c267fbe",
-            "min": 1,
+            "collapsed": "field_5ec6bc1a99efe",
+            "min": 0,
             "max": 0,
-            "layout": "table",
-            "button_label": "",
+            "layout": "block",
+            "button_label": "Adicionar Configuração",
             "sub_fields": [
                 {
-                    "key": "field_5eb1d53667fbf",
-                    "label": "Categoria",
-                    "name": "question_category",
-                    "type": "taxonomy",
-                    "instructions": "",
+                    "key": "field_5ec6bc1a99efe",
+                    "label": "Nome",
+                    "name": "setting_name",
+                    "type": "text",
+                    "instructions": "O nome da configuração.",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -55,21 +34,122 @@
                         "class": "",
                         "id": ""
                     },
-                    "taxonomy": "question_category",
-                    "field_type": "select",
-                    "allow_null": 0,
-                    "add_term": 1,
-                    "save_terms": 0,
-                    "load_terms": 0,
-                    "return_format": "object",
-                    "multiple": 0
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
-                    "key": "field_5eb1d4c267fbe",
-                    "label": "Quantidade",
-                    "name": "category_amount",
+                    "key": "field_5ec6bc9cc12de",
+                    "label": "Slug",
+                    "name": "setting_slug",
+                    "type": "text",
+                    "instructions": "O “slug” é uma versão amigável do URL. Normalmente, é todo em minúsculas e contém apenas letras, números e hífens.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5eb1d27b297e7",
+                    "label": "Total de Questões",
+                    "name": "total_question",
                     "type": "number",
-                    "instructions": "",
+                    "instructions": "O total de questão do simulado.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5eb1d416462f6",
+                    "label": "Categorias",
+                    "name": "question_categories",
+                    "type": "repeater",
+                    "instructions": "Selecione a categoria e sua quantidade que irá aparecer no simulado.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "field_5eb1d4c267fbe",
+                    "min": 1,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_5eb1d53667fbf",
+                            "label": "Categoria",
+                            "name": "question_category",
+                            "type": "taxonomy",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "taxonomy": "question_category",
+                            "field_type": "select",
+                            "allow_null": 0,
+                            "add_term": 1,
+                            "save_terms": 0,
+                            "load_terms": 0,
+                            "return_format": "object",
+                            "multiple": 0
+                        },
+                        {
+                            "key": "field_5eb1d4c267fbe",
+                            "label": "Quantidade",
+                            "name": "category_amount",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": 0,
+                            "max": "",
+                            "step": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_5eb29ac0e6678",
+                    "label": "Tempo Máximo de Prova (Segundos)",
+                    "name": "maximum_time",
+                    "type": "number",
+                    "instructions": "Um valor em segundos para a duração do simulado.",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -84,107 +164,86 @@
                     "min": 0,
                     "max": "",
                     "step": ""
+                },
+                {
+                    "key": "field_5eb29b71d9526",
+                    "label": "Tempo de Alerta de Fim de Prova (Segundos)",
+                    "name": "alert_time",
+                    "type": "number",
+                    "instructions": "Um valor em segundos para o disparo do alerta do fim da prova.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 0,
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5eb29c298ef2a",
+                    "label": "Ativar alerta de fim de prova",
+                    "name": "end_test_alert",
+                    "type": "true_false",
+                    "instructions": "Ativar ou desatipar o alerta de fim de prova.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "On",
+                    "ui_off_text": "Off"
+                },
+                {
+                    "key": "field_5eb29cb28ef2b",
+                    "label": "Ativar alerta de alteração de resposta",
+                    "name": "test_change_alert",
+                    "type": "true_false",
+                    "instructions": "Ativar ou desativar o alerta de alteração de questões. É exibido um popup toda vez que o usuário alterar uma questão que já foi respondida.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "On",
+                    "ui_off_text": "Off"
+                },
+                {
+                    "key": "field_5eb29dff8ef2c",
+                    "label": "Mensagem Inicial",
+                    "name": "initial_message",
+                    "type": "textarea",
+                    "instructions": "Uma breve mensagem para exibir no inicio do simulado.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
                 }
             ]
-        },
-        {
-            "key": "field_5eb29ac0e6678",
-            "label": "Tempo Máximo de Prova (Segundos)",
-            "name": "maximum_time",
-            "type": "number",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": 0,
-            "max": "",
-            "step": ""
-        },
-        {
-            "key": "field_5eb29b71d9526",
-            "label": "Tempo de Alerta de Fim de Prova (Segundos)",
-            "name": "alert_time",
-            "type": "number",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": 0,
-            "max": "",
-            "step": ""
-        },
-        {
-            "key": "field_5eb29c298ef2a",
-            "label": "Ativar alerta de fim de prova",
-            "name": "end_test_alert",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "On",
-            "ui_off_text": "Off"
-        },
-        {
-            "key": "field_5eb29cb28ef2b",
-            "label": "Ativar alerta de alteração de resposta",
-            "name": "test_change_alert",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "On",
-            "ui_off_text": "Off"
-        },
-        {
-            "key": "field_5eb29dff8ef2c",
-            "label": "Mensagem Inicial",
-            "name": "initial_message",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
         }
     ],
     "location": [
@@ -204,5 +263,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590005002
+    "modified": 1590083145
 }
