@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-20 18:49+0000\n"
+"POT-Creation-Date: 2020-05-21 13:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Deblyn Prado <deblynprado@gmail.com>\n"
 "Language-Team: Deblyn Prado <deblynprado@gmail.com>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Language: "
 
 #: acf-options.php:6 acf-options.php:7
-msgid "Settings"
+msgid "Configurações"
 msgstr ""
 
 #: cpt-settings.php:4
@@ -130,7 +130,7 @@ msgstr ""
 msgid "Add Question"
 msgstr ""
 
-#: enem-simulator.php:146
+#: enem-simulator.php:171
 msgid "Click on the question to navigate"
 msgstr ""
 
@@ -215,6 +215,22 @@ msgstr ""
 
 #: includes/partials/content-simulator.php:127
 msgid "Back"
+msgstr ""
+
+#: includes/partials/content-simulator.php:138
+msgid "Alteration"
+msgstr ""
+
+#: includes/partials/content-simulator.php:144
+msgid "Do you really want alter this question?"
+msgstr ""
+
+#: includes/partials/content-simulator.php:147
+msgid "Yes"
+msgstr ""
+
+#: includes/partials/content-simulator.php:148
+msgid "No"
 msgstr ""
 
 #: includes/partials/simulator-footer.php:14
