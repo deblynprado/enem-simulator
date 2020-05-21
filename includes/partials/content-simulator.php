@@ -109,7 +109,7 @@
     <!-- /simulator-result -- -->
   </div>
 </div>
-<!-- enem-simulator-modal -- -->
+<!-- enem-simulator-modal-finish -- -->
 <div class="modal enem-simulator-modal" tabindex="-1" role="dialog" id="enem-simulator-modal-finish">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -129,4 +129,25 @@
     </div>
   </div>
 </div>
-<!-- /enem-simulator-modal -- -->
+<!-- /enem-simulator-modal-finish -- -->
+<!-- enem-simulator-modal-alter -- -->
+<div class="modal enem-simulator-modal-alter" tabindex="-1" role="dialog" id="enem-simulator-modal-alter">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><?php echo __( 'Alteration', 'enem-simulator' ) ?></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><?php echo __( 'Do you really want alter this question?', 'enem-simulator' ) ?></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="alter-simulator"><?php echo __( 'Yes', 'enem-simulator' ) ?></button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo __( 'No', 'enem-simulator' ) ?></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /enem-simulator-modal-alter -- -->
