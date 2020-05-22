@@ -6,8 +6,8 @@
     <button type="button" class="btn btn-secondary ml-2 simulator-category-list"><i class="fa fa-list"></i></button>
   </div>
   <div class="btn-group mr-4">
-    <button type="button" class="btn btn-secondary mr-2"><i class="fa fa-font"></i></button>
-    <button type="button" class="btn btn-secondary ml-2"><i class="fa fa-lg fa-font"></i></button>
+    <button type="button" class="btn btn-secondary mr-2 decrease-font-simulator"><i class="fa fa-font"></i></button>
+    <button type="button" class="btn btn-secondary ml-2 incease-font-simulator"><i class="fa fa-lg fa-font"></i></button>
   </div>
   <div class="float-right">
     <button type="button" class="btn btn-primary new-simulator">
