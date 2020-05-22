@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-21 16:02+0000\n"
-"PO-Revision-Date: 2020-05-21 16:08+0000\n"
+"POT-Creation-Date: 2020-05-22 13:38+0000\n"
+"PO-Revision-Date: 2020-05-22 13:39+0000\n"
 "Language-Team: Português do Brasil\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,7 +25,13 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-1: includes/assets\n"
 "X-Poedit-SearchPathExcluded-2: includes/acf\n"
 
-#: acf-options.php:6 acf-options.php:7
+#. Plugin Name of the plugin/theme
+#: acf-options.php:6 cpt-settings.php:57
+#: includes/partials/content-simulator.php:6
+msgid "Enem Simulator"
+msgstr "Simulado do Enem"
+
+#: acf-options.php:7
 msgid "Configurações"
 msgstr ""
 
@@ -122,16 +128,11 @@ msgstr "Nova Categoria"
 msgid "Question Categories"
 msgstr "Categorias de Questão"
 
-#. Plugin Name of the plugin/theme
-#: cpt-settings.php:57 includes/partials/content-simulator.php:6
-msgid "Enem Simulator"
-msgstr "Simulado do Enem"
-
 #: cpt-settings.php:66
 msgid "Add Question"
 msgstr "Adicionar Questão"
 
-#: enem-simulator.php:171
+#: enem-simulator.php:195
 msgid "Click on the question to navigate"
 msgstr "Clique sobre a questão para navegar"
 
@@ -147,123 +148,127 @@ msgstr ""
 "Faça quantos testes simulados desejarem para ter um bom desempenho no dia do "
 "exame"
 
-#: includes/partials/content-simulator.php:10
+#: includes/partials/content-simulator.php:11
 msgid "Choose a desired category to start"
 msgstr "Escolha a Categoria Desejada para Iniciar"
 
-#: includes/partials/content-simulator.php:27
+#: includes/partials/content-simulator.php:32
 msgid "Start Simulator"
 msgstr "Iniciar Simulado"
 
-#: includes/partials/content-simulator.php:54
+#: includes/partials/content-simulator.php:34
+msgid "No categories found"
+msgstr "Nenhum categoria encontrada"
+
+#: includes/partials/content-simulator.php:62
 msgid "Browse in the test"
 msgstr "Navegar pela prova"
 
-#: includes/partials/content-simulator.php:56
+#: includes/partials/content-simulator.php:64
 msgid "Answered"
 msgstr "Respondido"
 
-#: includes/partials/content-simulator.php:57
+#: includes/partials/content-simulator.php:65
 msgid "Not viewed"
 msgstr "Não visualizada"
 
-#: includes/partials/content-simulator.php:58
+#: includes/partials/content-simulator.php:66
 msgid "Viewed"
 msgstr "Visualizada"
 
-#: includes/partials/content-simulator.php:60
-#: includes/partials/content-simulator.php:82
+#: includes/partials/content-simulator.php:68
+#: includes/partials/content-simulator.php:90
 msgid "Knowledge areas"
 msgstr "Áreas de conhecimento"
 
-#: includes/partials/content-simulator.php:76
+#: includes/partials/content-simulator.php:84
 msgid "Simulator Result"
 msgstr "Resultado do simulado"
 
-#: includes/partials/content-simulator.php:78
+#: includes/partials/content-simulator.php:86
 msgid "Correct"
 msgstr "Certa"
 
-#: includes/partials/content-simulator.php:79
+#: includes/partials/content-simulator.php:87
 msgid "Wrong"
 msgstr "Errada"
 
-#: includes/partials/content-simulator.php:80
+#: includes/partials/content-simulator.php:88
 msgid "Not answered"
 msgstr "Não respondida"
 
-#: includes/partials/content-simulator.php:86
+#: includes/partials/content-simulator.php:94
 msgid "Description"
 msgstr "Descrição"
 
-#: includes/partials/content-simulator.php:87
+#: includes/partials/content-simulator.php:95
 msgid "Rate"
 msgstr "Nota"
 
-#: includes/partials/content-simulator.php:88
+#: includes/partials/content-simulator.php:96
 msgid "Successes"
 msgstr "Acertos"
 
-#: includes/partials/content-simulator.php:103
+#: includes/partials/content-simulator.php:111
 msgid "Click on question and check the result"
 msgstr "Clique para ver o resultado"
 
-#: includes/partials/content-simulator.php:117
+#: includes/partials/content-simulator.php:125
 msgid "Confirmation"
 msgstr "Confirmação"
 
-#: includes/partials/content-simulator.php:123
+#: includes/partials/content-simulator.php:131
 msgid "Do you really want end the current simulator and see the results?"
 msgstr ""
 "Tem certeza que deseja encerrar a prova atual e visualizar o resultado?"
 
-#: includes/partials/content-simulator.php:126
-msgid "Finish"
-msgstr "Finalizar"
-
-#: includes/partials/content-simulator.php:127
+#: includes/partials/content-simulator.php:134
 msgid "Back"
 msgstr "Voltar"
 
-#: includes/partials/content-simulator.php:138
+#: includes/partials/content-simulator.php:135
+msgid "Finish"
+msgstr "Finalizar"
+
+#: includes/partials/content-simulator.php:146
 msgid "Alteration"
 msgstr "Alteração"
 
-#: includes/partials/content-simulator.php:144
+#: includes/partials/content-simulator.php:152
 msgid "Do you really want alter this question?"
 msgstr "Você realmente deseja alterar essa questão?"
 
-#: includes/partials/content-simulator.php:147
-msgid "Yes"
-msgstr "Sim"
-
-#: includes/partials/content-simulator.php:148
+#: includes/partials/content-simulator.php:155
 msgid "No"
 msgstr "Não"
 
-#: includes/partials/content-simulator.php:159
+#: includes/partials/content-simulator.php:156
+msgid "Yes"
+msgstr "Sim"
+
+#: includes/partials/content-simulator.php:167
 msgid "Register"
 msgstr "Cadastro"
 
-#: includes/partials/content-simulator.php:167
+#: includes/partials/content-simulator.php:175
 msgid "Name"
 msgstr "Nome"
 
-#: includes/partials/content-simulator.php:171
+#: includes/partials/content-simulator.php:179
 msgid "Mail"
 msgstr "E-Mail"
 
-#: includes/partials/content-simulator.php:175
+#: includes/partials/content-simulator.php:183
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: includes/partials/content-simulator.php:181
-msgid "Save"
-msgstr "Salvar"
-
-#: includes/partials/content-simulator.php:182
+#: includes/partials/content-simulator.php:189
 msgid "Skip"
 msgstr "Pular"
+
+#: includes/partials/content-simulator.php:190
+msgid "Save"
+msgstr "Salvar"
 
 #: includes/partials/simulator-footer.php:14
 msgid "New Simulator"
