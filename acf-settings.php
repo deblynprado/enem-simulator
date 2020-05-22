@@ -30,3 +30,16 @@ function custom_acf_json_load_point( $paths ) {
   $paths[] = ACF_PATH . '/acf-json';
   return $paths;
 }
+
+add_filter('acf/prepare_field/name=enem_simulator_shortcode', 'my_acf_prepare_field');
+function my_acf_prepare_field( $field ) {
+  $rows = get_field('enem_simulator_settings', 'options' );
+  $pos = strpos( $field['name'], 'row-' );
+  $substring = substr( $field['name'], $pos + 4 );
+  $pos = strpos( $substring, '][' );
+  $row = substr( $substring, 0, $pos );
+  $slug = $rows[ $row ]['setting_slug'];
+  $field['value'] = "[enem-simulator name=$slug]";
+  $field['readonly'] = true;
+  return $field;
+}
