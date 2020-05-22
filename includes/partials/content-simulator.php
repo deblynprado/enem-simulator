@@ -7,7 +7,9 @@
       <div class="simulator-initial-message">
         <p> <?php echo enem_simulator_get_option( 'initial_message' ) ?> </p>
         <p> <?php echo __('Do as many simulated tests wish for you to have a good performance on the day of exam.', 'enem-simulator') ?> </p>
+        <?php if( count( $categories ) > 0 ) : ?>
         <p> <?php echo __('Choose a desired category to start', 'enem-simulator') ?> </p>
+        <?php endif; ?>
       </div><!-- /.simulator-header -->
     </div>
   </div><!-- /.simulator-header -->
@@ -15,16 +17,22 @@
   <div class="row simulator-category-options">
     <?php if( get_field( 'question_categories', 'option' ) ) : ?>
       <div class="col-10">  
+        <?php if( count( $categories ) > 0 ) : ?>
         <select class="custom-select" name="question_category" id="question_category">
           <?php foreach ($categories as $value) : ?>
           <option value="<?php echo $value[ 'slug' ] ?>"><?php echo $value[ 'name' ] ?></option>
           <?php endforeach; ?>
         </select>
+        <?php endif;?>
       </div><!-- /.col -->
     <?php endif; ?>
 
     <div class="col-10 mt-4">
+      <?php if( count( $categories ) > 0 ) : ?>
       <button class="btn btn-primary" id="start-simulator"><i class="fa fa-book"></i> <?php echo __( 'Start Simulator', 'enem-simulator' ) ?></button>
+      <?php else : ?>
+      <p class="text-danger"><?php echo __( 'No categories found', 'enem-simulator' ) ?></p>
+      <?php endif; ?>
     </div><!-- /.col -->
   </div><!-- /.simulator-category-options -->
 
