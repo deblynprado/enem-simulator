@@ -114,6 +114,14 @@
             
           </div>
         </div>
+        <div class="col-12">
+          <div class="float-right">
+            <button type="button" class="btn btn-primary new-simulator">
+              <?php echo __('New Simulator', 'enem-simulator') ?> 
+              <i class="fa fa-undo"></i>
+            </button>
+          </div>
+        </div>
       </div>
       <!-- /simulator-result -- -->
     </div>
