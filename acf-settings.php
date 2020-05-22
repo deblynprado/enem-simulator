@@ -38,21 +38,8 @@ function acf_prepare_field_enem_simulator_shortcode( $field ) {
   $substring = substr( $field['name'], $pos + 4 );
   $pos = strpos( $substring, '][' );
   $row = substr( $substring, 0, $pos );
-  $slug = $rows[ $row ]['setting_slug'];
-  $field['value'] = "[enem-simulator name=$slug]";
-  $field['readonly'] = true;
-  return $field;
-}
-
-add_filter('acf/prepare_field/name=setting_slug', 'acf_prepare_field_setting_slug');
-function acf_prepare_field_setting_slug( $field ) {
-  $rows = get_field('enem_simulator_settings', 'options' );
-  $pos = strpos( $field['name'], 'row-' );
-  $substring = substr( $field['name'], $pos + 4 );
-  $pos = strpos( $substring, '][' );
-  $row = substr( $substring, 0, $pos );
-  $name = $rows[ $row ]['setting_name'];
-  $field['value'] = sanitize_title( $name );
+  $name = sanitize_title( $rows[ $row ]['setting_name'] );
+  $field['value'] = "[enem-simulator name=$name]";
   $field['readonly'] = true;
   return $field;
 }
