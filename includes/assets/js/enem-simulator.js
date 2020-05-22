@@ -5,10 +5,15 @@ var endSimulator = false;
 jQuery(document).ready(function( $ ) {
 
 	$('#start-simulator').on('click', function() {
-    $('#enem-simulator-modal-register').modal('toggle');
+    let register = localStorage.getItem('enem-simulator-register');
+    if(!register)
+      $('#enem-simulator-modal-register').modal('toggle');
+    else
+      startSimulator();
   });
 
   $('#register-simulator').on('click', function() {
+    localStorage.setItem('enem-simulator-register', 1);
     $.ajax({
       type: 'POST',
       url:enem_simulator.ajaxurl,
@@ -21,65 +26,19 @@ jQuery(document).ready(function( $ ) {
       success: function(response) {
         console.log(response);
       }
-    })
-  })
+    });
+  });
 
   $('#enem-simulator-modal-register').on('hide.bs.modal', function() {
-    var category = $('#question_category').children('option:selected').val();
-    var theIDS = enem_simulator.the_ids;
-    var categories = enem_simulator.categories;
+    startSimulator();
+  });
 
-    $.ajax({
-      type: 'POST',
-      url: enem_simulator.ajaxurl,
-      data: {
-        action : 'enem_simulator_get_question_category',
-        category: category,
-        the_ids: theIDS,
-        categories: categories
-      },
-      success: function(response) {
+  $('.new-simulator').on('click', function(){
+    $('#enem-simulator-modal-new-simulator').modal('toggle');
+  });
 
-        let container = $( '<div class="categories">' + response + '</div>' );
-        let result = setQuestionContainer( container );
-
-        $('.simulator-categories').empty().html( result );
-        
-        $('.content-question:visible .question').eq(0).show('slow');
-
-        $('.simulator-pagination').show('slow');
-        $('.simulator-progress').show('slow');
-        $('.simulator-footer').show('slow');
-
-        $('.simulator-header').hide('slow');
-        $('.simulator-category-options').hide('slow');
-
-        scroollTo($('.entry-content'));
-
-        setTimer();
-
-        let categoryIndex = $('.question:visible').parent().attr('data-category-index');
-        let questionIndex = $('.question:visible .question-options').attr('data-question-index');
-
-        setVisitedQuestion(categoryIndex, questionIndex);
-
-      }
-    });
-
-    $.ajax({
-      type: 'POST',
-      url: enem_simulator.ajaxurl,
-      data: {
-          action : 'enem_simulator_get_nav',
-          the_ids: theIDS,
-          categories: categories
-      },
-      success: function(response){
-        $('.simulator-nav-categories').empty().html(response);
-        $('.simulator-result-categories').empty().html(response);
-        $('.simulator-result-categories .progress').remove();
-      }
-    });
+  $('#new-simulator').on('click', function(){
+    location.reload(); 
   });
 
   $('#finisish-simulator').on('click', function(e) {
@@ -108,7 +67,7 @@ jQuery(document).ready(function( $ ) {
     if ($('.question:visible').next().next().length == 0)
       $(this).parent().addClass('disabled');
 
-    scroollTo($('.entry-content'));
+    scroollTo($('.simulator-content'));
 
     let categoryIndex = $('.question:visible').next().parent().attr('data-category-index');
     let questionIndex = $('.question:visible').next().find('.question-options').attr('data-question-index');
@@ -120,7 +79,7 @@ jQuery(document).ready(function( $ ) {
   $('#previous-question').on('click', function(e) {
     e.preventDefault();
     
-    scroollTo($('.entry-content'));
+    scroollTo($('.simulator-content'));
     
     if ($('.question:visible').prev().length != 0)
       $('.question:visible').prev().show('fast').next().hide('fast');
@@ -177,18 +136,6 @@ jQuery(document).ready(function( $ ) {
 
   });
 
-  function checkboxChecked(element) {
-    let categoryIndex = $(element).parents('.content-question').attr('data-category-index');
-    let questionIndex = $(element).parents('.question-options').attr('data-question-index');
-    let question = getQuestion(categoryIndex, questionIndex);
-
-    question.user_answer.number = $(element).val();
-
-    setQuestion(categoryIndex, questionIndex, question);
-    
-    setProgressbar($(element).parents('.content-question'), $(".progress-bar"));
-  }
-
   $('.simulator-category-list').on('click', function(e){
     e.preventDefault();
 
@@ -202,7 +149,7 @@ jQuery(document).ready(function( $ ) {
     } else {
       $('.simulator-result').show('slow');
     }
-    scroollTo($('.entry-content'));
+    scroollTo($('.simulator-content'));
   });
 
   $(document).on('click', '.question-nav-item', function(e){
@@ -235,7 +182,7 @@ jQuery(document).ready(function( $ ) {
     category.show('slow');
     question.show('slow');
 
-    scroollTo($('.entry-content'));
+    scroollTo($('.simulator-content'));
     setProgressbar(category, $(".progress-bar"));
 
     let categoryIndex = category.attr('data-category-index');
@@ -244,6 +191,64 @@ jQuery(document).ready(function( $ ) {
     setVisitedQuestion(categoryIndex, questionIndex);
 
   });
+
+  function startSimulator() {
+    var category = $('#question_category').children('option:selected').val();
+    var theIDS = enem_simulator.the_ids;
+    var categories = enem_simulator.categories;
+
+    $.ajax({
+      type: 'POST',
+      url: enem_simulator.ajaxurl,
+      data: {
+        action : 'enem_simulator_get_question_category',
+        category: category,
+        the_ids: theIDS,
+        categories: categories
+      },
+      success: function(response) {
+
+        let container = $( '<div class="categories">' + response + '</div>' );
+        let result = setQuestionContainer( container );
+
+        $('.simulator-categories').empty().html( result );
+        
+        $('.content-question:visible .question').eq(0).show('slow');
+
+        $('.simulator-pagination').show('slow');
+        $('.simulator-progress').show('slow');
+        $('.simulator-footer').show('slow');
+
+        $('.simulator-header').hide('slow');
+        $('.simulator-category-options').hide('slow');
+
+        scroollTo($('.simulator-content'));
+
+        setTimer();
+
+        let categoryIndex = $('.question:visible').parent().attr('data-category-index');
+        let questionIndex = $('.question:visible .question-options').attr('data-question-index');
+
+        setVisitedQuestion(categoryIndex, questionIndex);
+
+      }
+    });
+
+    $.ajax({
+      type: 'POST',
+      url: enem_simulator.ajaxurl,
+      data: {
+          action : 'enem_simulator_get_nav',
+          the_ids: theIDS,
+          categories: categories
+      },
+      success: function(response){
+        $('.simulator-nav-categories').empty().html(response);
+        $('.simulator-result-categories').empty().html(response);
+        $('.simulator-result-categories .progress').remove();
+      }
+    });
+  }
 
   function finishSimulator() {
     $('#enem-simulator-revise').parent().addClass('disabled');
@@ -254,7 +259,19 @@ jQuery(document).ready(function( $ ) {
     stopTimer(); 
     checkAnswers();
     setResults();
-    scroollTo($('.entry-content'));
+    scroollTo($('.simulator-content'));
+  }
+
+  function checkboxChecked(element) {
+    let categoryIndex = $(element).parents('.content-question').attr('data-category-index');
+    let questionIndex = $(element).parents('.question-options').attr('data-question-index');
+    let question = getQuestion(categoryIndex, questionIndex);
+
+    question.user_answer.number = $(element).val();
+
+    setQuestion(categoryIndex, questionIndex, question);
+    
+    setProgressbar($(element).parents('.content-question'), $(".progress-bar"));
   }
 
   function setProgressbar(parent, progressBar) {
