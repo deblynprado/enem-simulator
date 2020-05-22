@@ -10,7 +10,7 @@
     <button type="button" class="btn btn-secondary ml-2"><i class="fa fa-lg fa-font"></i></button>
   </div>
   <div class="float-right">
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary new-simulator">
       <?php echo __('New Simulator', 'enem-simulator') ?> 
       <i class="fa fa-undo"></i>
     </button>
