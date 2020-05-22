@@ -41,25 +41,6 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5ec6bc9cc12de",
-                    "label": "Slug",
-                    "name": "setting_slug",
-                    "type": "text",
-                    "instructions": "O “slug” é uma versão amigável do URL. Normalmente, é todo em minúsculas e contém apenas letras, números e hífens.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
                     "key": "field_5ec6e5e54152f",
                     "label": "Shortcode",
                     "name": "enem_simulator_shortcode",
@@ -282,5 +263,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590152785
+    "modified": 1590152997
 }
