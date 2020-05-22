@@ -75,9 +75,13 @@ function enem_simulator_get_option( $name ) {
   $filds = get_field( 'enem_simulator_settings', 'option' );
   $settingName = enem_simulator_setting_name();
   foreach ($filds as $value) {
-   if ( $value[ 'setting_slug' ] == $settingName )
+    $slug = sanitize_title( $value[ 'setting_name' ] );
+   if ( $slug == $settingName ) {
     $fild = $value;
+    break;
+   }
   }
+
   return $fild[ $name ];
 }
 
@@ -99,17 +103,18 @@ function enem_simulator_get_posts_id() {
 
 function enem_simulator_get_categories() {
   $option = enem_simulator_get_option( 'question_categories' ); 
-
   $categories = [];
   
-  foreach ($option as $value) {
-    $questions = enem_simulator_get_questions( $value[ 'question_category' ]->slug );
-    if ( $questions->have_posts( ) ) 
-      $categories[] = [
-                  'slug' => $value[ 'question_category' ]->slug,
-                  'name' => $value[ 'question_category' ]->name,
-                  'category_amount' => $value[ 'category_amount' ],
-      ];
+  if ( is_array( $option ) ) {
+    foreach ($option as $value) {
+      $questions = enem_simulator_get_questions( $value[ 'question_category' ]->slug );
+      if ( $questions->have_posts( ) ) 
+        $categories[] = [
+                    'slug' => $value[ 'question_category' ]->slug,
+                    'name' => $value[ 'question_category' ]->name,
+                    'category_amount' => $value[ 'category_amount' ],
+        ];
+    }
   }
 
   return $categories;
