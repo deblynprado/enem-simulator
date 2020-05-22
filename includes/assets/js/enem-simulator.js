@@ -197,7 +197,15 @@ jQuery(document).ready(function( $ ) {
       closeFullscreen();
     else
       openFullscreem(document.documentElement);
-  })
+  });
+
+  $('.incease-font-simulator').on('click', function() {
+    modifyFontSize('increase');
+  });
+
+  $('.decrease-font-simulator').on('click', function() {
+    modifyFontSize('decrease');
+  });
 
   function startSimulator() {
     var category = $('#question_category').children('option:selected').val();
@@ -571,6 +579,19 @@ jQuery(document).ready(function( $ ) {
     } else if (document.msExitFullscreen) {
       document.msExitFullscreen();
     }
+  }
+
+  function modifyFontSize(flag) {
+    let element = $('#enem-simulator');
+    let curretnFontSize = parseInt(element.css('font-size'));
+
+    if((curretnFontSize == 27 && flag == 'increase') || 
+       (curretnFontSize == 12 && flag == 'decrease')) return;
+
+    if(flag == 'increase')
+      element.css('font-size', curretnFontSize+3);
+    if(flag == 'decrease')
+      element.css('font-size', curretnFontSize-3);
   }
 
 });
