@@ -192,6 +192,13 @@ jQuery(document).ready(function( $ ) {
 
   });
 
+  $('.fullscreem-simulator').on('click', function() {
+    if(!window.screenTop && !window.screenY) 
+      closeFullscreen();
+    else
+      openFullscreem(document.documentElement);
+  })
+
   function startSimulator() {
     var category = $('#question_category').children('option:selected').val();
     var theIDS = enem_simulator.the_ids;
@@ -539,6 +546,31 @@ jQuery(document).ready(function( $ ) {
 
   function getItemStorage() {
     return JSON.parse(localStorage.getItem('enem_simulator_question'));
+  }
+
+  function openFullscreem(element) {
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { /* Firefox */
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+      element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { /* IE/Edge */
+      element.msRequestFullscreen();
+    }
+  }
+
+  function closeFullscreen() {
+    document.mozCancelFullScreen();
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
   }
 
 });
