@@ -51,6 +51,7 @@ function enem_simulator_setting_name( $name = null ) {
 }
 
 function enem_simulator_shortcode( $atts ) {
+  ob_start();
   enem_simulator_setting_name( $atts[ 'name' ] );
   wp_enqueue_script('enem-simulator');
   wp_localize_script( 'enem-simulator', 'enem_simulator',
@@ -65,7 +66,6 @@ function enem_simulator_shortcode( $atts ) {
       )
   );
   $categories = enem_simulator_get_categories();
-  ob_start();
   include ( 'includes/partials/content-simulator.php' );
   return ob_get_clean();
 }
