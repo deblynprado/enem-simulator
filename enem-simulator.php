@@ -93,6 +93,7 @@ function enem_simulator_get_posts_id() {
     if ( $questions->have_posts( ) ) : 
       while ( $questions->have_posts() ) :  
         $questions->the_post();
+        if ( !get_field( 'active_question', get_the_ID() )) continue;
         $theIDs[$value['slug']][] = get_the_ID(); 
       endwhile; 
     endif;
