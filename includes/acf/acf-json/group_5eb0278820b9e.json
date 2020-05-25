@@ -4,10 +4,10 @@
     "fields": [
         {
             "key": "field_5eb02790f5dc1",
-            "label": "Type of Answer",
+            "label": "Tipo de Resposta",
             "name": "type_of_anser",
             "type": "select",
-            "instructions": "Choose if this question has a text or image type of answer",
+            "instructions": "Escolha o tipo da questão entre imagem ou texto",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,9 +16,9 @@
                 "id": ""
             },
             "choices": {
-                "Select": "Select",
-                "Image Options": "Image Options",
-                "Text Options": "Text Options"
+                "Select": "-- Escolha --",
+                "Image Options": "Imagem",
+                "Text Options": "Texto"
             },
             "default_value": [],
             "allow_null": 0,
@@ -30,7 +30,7 @@
         },
         {
             "key": "field_5eb027fef5dc2",
-            "label": "Image Options",
+            "label": "Imagem",
             "name": "image_options",
             "type": "repeater",
             "instructions": "",
@@ -53,11 +53,11 @@
             "min": 0,
             "max": 0,
             "layout": "row",
-            "button_label": "Add Answer",
+            "button_label": "Addicionar resposta",
             "sub_fields": [
                 {
                     "key": "field_5eb02815f5dc3",
-                    "label": "Option",
+                    "label": "Alternativa",
                     "name": "image_answer",
                     "type": "image",
                     "instructions": "",
@@ -81,10 +81,10 @@
                 },
                 {
                     "key": "field_5eb02853f5dc4",
-                    "label": "Correct Answer",
+                    "label": "Resposta Correta",
                     "name": "correct_answer",
                     "type": "checkbox",
-                    "instructions": "Mark this if this option is the correct answer for this question",
+                    "instructions": "Marque essa opção se ela for a correta",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -93,7 +93,7 @@
                         "id": ""
                     },
                     "choices": {
-                        "correct": "This is the correct answer!"
+                        "correct": "Essa é a resposta correta!"
                     },
                     "allow_custom": 0,
                     "default_value": [],
@@ -106,7 +106,7 @@
         },
         {
             "key": "field_5eb028ccf5dc5",
-            "label": "Text Options",
+            "label": "Texto",
             "name": "text_options",
             "type": "repeater",
             "instructions": "",
@@ -133,7 +133,7 @@
             "sub_fields": [
                 {
                     "key": "field_5eb028e1f5dc6",
-                    "label": "Option",
+                    "label": "Alternativa",
                     "name": "text_answer",
                     "type": "text",
                     "instructions": "",
@@ -152,10 +152,10 @@
                 },
                 {
                     "key": "field_5eb02909f5dc7",
-                    "label": "Correct Answer",
+                    "label": "Resposta Correta",
                     "name": "correct_answer",
                     "type": "checkbox",
-                    "instructions": "Mark this if this option is the correct answer for this question",
+                    "instructions": "Marque essa opção se ela for a correta",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -164,7 +164,7 @@
                         "id": ""
                     },
                     "choices": {
-                        "correct": "This is the correct answer!"
+                        "correct": "Essa é a resposta correta!"
                     },
                     "allow_custom": 0,
                     "default_value": [],
