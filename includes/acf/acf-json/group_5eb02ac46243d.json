@@ -1,13 +1,13 @@
 {
     "key": "group_5eb02ac46243d",
-    "title": "Questions",
+    "title": "Status",
     "fields": [
         {
             "key": "field_5eb02ac918c41",
-            "label": "Active Question",
+            "label": "Questão Ativa",
             "name": "active_question",
             "type": "checkbox",
-            "instructions": "Mark this to activate this question",
+            "instructions": "Marque para ativar esta pergunta",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,10 +16,10 @@
                 "id": ""
             },
             "choices": {
-                "active": "Active question"
+                "active": "Ativa"
             },
             "allow_custom": 0,
-            "default_value": [],
+            "default_value": ["active"],
             "layout": "horizontal",
             "toggle": 0,
             "return_format": "value",
