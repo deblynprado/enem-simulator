@@ -159,7 +159,12 @@ function enem_simulator_get_question_category_callback() {
     <?php foreach ( $posts as $value ) : 
       global $post;
       $post = get_post($value);
-      $fields = get_field( 'text_options', get_the_ID() ); 
+      $option = get_field( 'type_of_anser', get_the_ID() );
+      if ( $option == 'Image Options' )
+        $fields = get_field( 'image_options', get_the_ID() ); 
+      else if ( $option == 'Text Options' )
+        $fields = get_field( 'text_options', get_the_ID() ); 
+      
       shuffle( $fields );
       include ( 'includes/partials/content-question.php' );
       $index++;

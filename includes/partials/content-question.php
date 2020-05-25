@@ -23,7 +23,10 @@
         <div class="custom-control custom-checkbox">
           <input type="hidden" name="answer_<?php echo $id ?>" id="answer_<?php echo $id ?>" value="<?php echo $value['correct_answer'][0] ?>">
           <input type="checkbox" class="custom-control-input" id="<?php echo $id ?>" name="<?php echo $name ?>" value="<?php echo $field ?>">
-          <label class="custom-control-label" for="<?php echo $id ?>"><?php echo chr($field + 64); ?> - <?php echo $value['text_answer'] ?></label>
+          <label class="custom-control-label" for="<?php echo $id ?>">
+            <?php echo chr($field + 64); ?> - <?php echo $value['text_answer'] ?>
+            <img src="<?php echo $value['image_answer'] ?>" class="rounded mx-auto d-block w-50 h-50">
+          </label>
         </div>
       <?php endforeach; ?>
       <?php endif; ?>
