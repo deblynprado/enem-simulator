@@ -108,6 +108,14 @@
             </tbody>
           </table>
         </div>
+        <div class="col-12 mt-5">
+          <p>
+            <?php echo __( 'You completed the test in', 'enem-simulator' ) ?>
+            <strong class="timer-simulator-result"></strong> 
+            <?php echo __( 'of', 'enem-simulator' ) ?> 
+            <strong class="timer-simulator-max-time"></strong> 
+          </p>
+        </div>
         <div class="col-12">
           <h4 class="text-uppercase"><?php echo __( 'Click on question and check the result', 'enem-simulator' ) ?></h4>
           <div class="simulator-result-categories">
