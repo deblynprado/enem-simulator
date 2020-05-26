@@ -396,7 +396,14 @@ jQuery(document).ready(function( $ ) {
       let questions = new Array();
 
       questionsOptions.each(function(e) {
+
+        let questionId = $(this).parent().attr('id');
+        let weightInput = $(this).parent().find("#weight_" + questionId);
+        let weight = weightInput.val();
+        weightInput.remove();
+
         var question = questionFactory();
+        question.weight = weight;
         var correctAnswer = $(this).find('input[type=hidden]');
 
         correctAnswer.each(function(e) {
@@ -405,7 +412,7 @@ jQuery(document).ready(function( $ ) {
               number: $(this).next().val(),
             }
           }
-        }).remove();
+        });
         questions.push(question);
       });
 
@@ -464,7 +471,6 @@ jQuery(document).ready(function( $ ) {
   function setResults() {
     $('.simulator-result .question-nav').each(function() {
       let correct = 0;
-      let wrong = 0;
       let name;
 
       $(this).find('.question-nav-item').each(function() {
@@ -542,6 +548,7 @@ jQuery(document).ready(function( $ ) {
 
   function questionFactory() {
     return {
+      weight: 0,
       correct_answer: {
         number:'',
       },
