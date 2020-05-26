@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-22 16:11+0000\n"
+"POT-Creation-Date: 2020-05-26 16:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Deblyn Prado <deblynprado@gmail.com>\n"
 "Language-Team: Deblyn Prado <deblynprado@gmail.com>\n"
@@ -26,7 +26,7 @@ msgstr ""
 
 #. Plugin Name of the plugin/theme
 #: acf-options.php:6 cpt-settings.php:57
-#: includes/partials/content-simulator.php:6
+#: includes/partials/content-simulator.php:7
 msgid "Enem Simulator"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr ""
 msgid "Add Question"
 msgstr ""
 
-#: enem-simulator.php:195
+#: enem-simulator.php:201
 msgid "Click on the question to navigate"
 msgstr ""
 
@@ -139,141 +139,150 @@ msgstr ""
 msgid "Question"
 msgstr ""
 
-#: includes/partials/content-simulator.php:9
+#: includes/partials/content-simulator.php:10
 msgid ""
 "Do as many simulated tests wish for you to have a good performance on the "
 "day of exam."
 msgstr ""
 
-#: includes/partials/content-simulator.php:11
+#: includes/partials/content-simulator.php:12
 msgid "Choose a desired category to start"
 msgstr ""
 
-#: includes/partials/content-simulator.php:32
+#: includes/partials/content-simulator.php:33
 msgid "Start Simulator"
 msgstr ""
 
-#: includes/partials/content-simulator.php:34
+#: includes/partials/content-simulator.php:35
 msgid "No categories found"
 msgstr ""
 
-#: includes/partials/content-simulator.php:62
+#: includes/partials/content-simulator.php:63
 msgid "Browse in the test"
 msgstr ""
 
-#: includes/partials/content-simulator.php:64
+#: includes/partials/content-simulator.php:65
 msgid "Answered"
 msgstr ""
 
-#: includes/partials/content-simulator.php:65
+#: includes/partials/content-simulator.php:66
 msgid "Not viewed"
 msgstr ""
 
-#: includes/partials/content-simulator.php:66
+#: includes/partials/content-simulator.php:67
 msgid "Viewed"
 msgstr ""
 
-#: includes/partials/content-simulator.php:68
-#: includes/partials/content-simulator.php:90
+#: includes/partials/content-simulator.php:69
+#: includes/partials/content-simulator.php:91
 msgid "Knowledge areas"
 msgstr ""
 
-#: includes/partials/content-simulator.php:84
+#: includes/partials/content-simulator.php:85
 msgid "Simulator Result"
 msgstr ""
 
-#: includes/partials/content-simulator.php:86
+#: includes/partials/content-simulator.php:87
 msgid "Correct"
 msgstr ""
 
-#: includes/partials/content-simulator.php:87
+#: includes/partials/content-simulator.php:88
 msgid "Wrong"
 msgstr ""
 
-#: includes/partials/content-simulator.php:88
+#: includes/partials/content-simulator.php:89
 msgid "Not answered"
 msgstr ""
 
-#: includes/partials/content-simulator.php:94
+#: includes/partials/content-simulator.php:95
 msgid "Description"
 msgstr ""
 
-#: includes/partials/content-simulator.php:95
+#: includes/partials/content-simulator.php:96
 msgid "Rate"
 msgstr ""
 
-#: includes/partials/content-simulator.php:96
+#: includes/partials/content-simulator.php:97
 msgid "Successes"
 msgstr ""
 
 #: includes/partials/content-simulator.php:111
+msgid "You completed the test in"
+msgstr ""
+
+#: includes/partials/content-simulator.php:113
+msgid "of"
+msgstr ""
+
+#: includes/partials/content-simulator.php:118
 msgid "Click on question and check the result"
 msgstr ""
 
-#: includes/partials/content-simulator.php:125
-msgid "Confirmation"
-msgstr ""
-
-#: includes/partials/content-simulator.php:131
-msgid "Do you really want end the current simulator and see the results?"
-msgstr ""
-
-#: includes/partials/content-simulator.php:134
-msgid "Back"
-msgstr ""
-
-#: includes/partials/content-simulator.php:135
-msgid "Finish"
-msgstr ""
-
-#: includes/partials/content-simulator.php:146
-msgid "Alteration"
-msgstr ""
-
-#: includes/partials/content-simulator.php:152
-msgid "Do you really want alter this question?"
-msgstr ""
-
-#: includes/partials/content-simulator.php:155
-#: includes/partials/content-simulator.php:210
-msgid "No"
-msgstr ""
-
-#: includes/partials/content-simulator.php:156
-#: includes/partials/content-simulator.php:211
-msgid "Yes"
-msgstr ""
-
-#: includes/partials/content-simulator.php:167
-msgid "Register"
-msgstr ""
-
-#: includes/partials/content-simulator.php:175
-msgid "Name"
-msgstr ""
-
-#: includes/partials/content-simulator.php:179
-msgid "Mail"
-msgstr ""
-
-#: includes/partials/content-simulator.php:183
-msgid "WhatsApp"
-msgstr ""
-
-#: includes/partials/content-simulator.php:189
-msgid "Skip"
-msgstr ""
-
-#: includes/partials/content-simulator.php:190
-msgid "Save"
-msgstr ""
-
-#: includes/partials/content-simulator.php:201
+#: includes/partials/content-simulator.php:126
+#: includes/partials/content-simulator.php:216
 #: includes/partials/simulator-footer.php:14
 msgid "New Simulator"
 msgstr ""
 
-#: includes/partials/content-simulator.php:207
+#: includes/partials/content-simulator.php:140
+msgid "Confirmation"
+msgstr ""
+
+#: includes/partials/content-simulator.php:146
+msgid "Do you really want end the current simulator and see the results?"
+msgstr ""
+
+#: includes/partials/content-simulator.php:149
+msgid "Back"
+msgstr ""
+
+#: includes/partials/content-simulator.php:150
+msgid "Finish"
+msgstr ""
+
+#: includes/partials/content-simulator.php:161
+msgid "Alteration"
+msgstr ""
+
+#: includes/partials/content-simulator.php:167
+msgid "Do you really want alter this question?"
+msgstr ""
+
+#: includes/partials/content-simulator.php:170
+#: includes/partials/content-simulator.php:225
+msgid "No"
+msgstr ""
+
+#: includes/partials/content-simulator.php:171
+#: includes/partials/content-simulator.php:226
+msgid "Yes"
+msgstr ""
+
+#: includes/partials/content-simulator.php:182
+msgid "Register"
+msgstr ""
+
+#: includes/partials/content-simulator.php:190
+msgid "Name"
+msgstr ""
+
+#: includes/partials/content-simulator.php:194
+msgid "Mail"
+msgstr ""
+
+#: includes/partials/content-simulator.php:198
+msgid "WhatsApp"
+msgstr ""
+
+#: includes/partials/content-simulator.php:204
+msgid "Skip"
+msgstr ""
+
+#: includes/partials/content-simulator.php:205
+msgid "Save"
+msgstr ""
+
+#: includes/partials/content-simulator.php:222
 msgid "Do you really want start a newly simulator?"
 msgstr ""
 
