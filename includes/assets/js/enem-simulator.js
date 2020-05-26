@@ -1,6 +1,7 @@
 var timerInterval;
 var alertTimeInterval;
 var endSimulator = false;
+var timerSimulator = 0;
 
 jQuery(document).ready(function( $ ) {
 
@@ -358,6 +359,7 @@ jQuery(document).ready(function( $ ) {
       }
 
       maxiumTime--;
+      window.timerSimulator++;
     
     }, 1000);
   }
@@ -366,6 +368,22 @@ jQuery(document).ready(function( $ ) {
     clearInterval(timerInterval);
     clearInterval(alertTimeInterval);
     window.endSimulator = true;
+  }
+
+  function displayTimer(value) {
+    let s, m, h;
+    m = parseInt(value / 60);
+    h = parseInt(m / 60);
+    s =  value % 60;
+
+    if(h < 10) 
+        h = '0' + h;
+    if(m < 10) 
+      m = '0' + m;
+    if(s < 10) 
+      s = '0' + s;
+
+    return h + ':' + m + ':' + s;
   }
 
   function setQuestionContainer(elements) {
@@ -488,6 +506,9 @@ jQuery(document).ready(function( $ ) {
     $('.simulator-result .question-nav-item').each(function() {
 
     });
+
+    $('.timer-simulator-result').html(displayTimer(window.timerSimulator));
+    $('.timer-simulator-max-time').html(displayTimer(enem_simulator.maximum_time));
 
   }
 
