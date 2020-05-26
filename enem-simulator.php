@@ -24,7 +24,9 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
 */
 
-include ( 'install.php' );
+define(PLUGIN_FILE_URL, __FILE__);
+
+include ( 'enem-simulator-install.php' );
 include ( 'acf-settings.php' );
 include ( 'cpt-settings.php' );
 include ( 'acf-options.php' );

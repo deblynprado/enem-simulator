@@ -1,6 +1,6 @@
 <?php
 
-function enem_simulator_install() {
+function activate_enem_simulator() {
   global $wpdb;
 
   $table_name = $wpdb->prefix . 'enem_simulator_users';
@@ -18,9 +18,10 @@ function enem_simulator_install() {
         ) $charset_collate";
 
   require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-  dbDelta( $sql );
 
+  dbDelta( $sql );
+    
   add_option( 'enem_simulator_user_table_name', $table_name );
 }
 
-register_activation_hook( __FILE__, array( 'enem-simulator', 'enem_simulator_install' ) );
+register_activation_hook( PLUGIN_FILE_URL,  'activate_enem_simulator' );
