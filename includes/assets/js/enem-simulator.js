@@ -2,6 +2,7 @@ var timerInterval;
 var alertTimeInterval;
 var endSimulator = false;
 var timerSimulator = 0;
+var GRADE = 1000;
 
 jQuery(document).ready(function( $ ) {
 
@@ -487,7 +488,6 @@ jQuery(document).ready(function( $ ) {
 
       let sumProduct = 0;
       let sumWeight = 0;
-      let grade = 0;
 
       let name;
 
@@ -515,7 +515,6 @@ jQuery(document).ready(function( $ ) {
           $(this).removeClass('bg-warning');
           $(this).removeClass('bg-danger');
           correct++;
-          grade = 1000;
 
           if(weight <= 3)
             easyCorrect++;
@@ -523,21 +522,20 @@ jQuery(document).ready(function( $ ) {
             normalCorret++;
           if(weight > 5)
             hardCorrect++;
+
+          sumProduct += GRADE * weight;
         }
         else if(!item.user_answer.number) {
           $(this).addClass('bg-warning');
           $(this).removeClass('bg-danger');
           $(this).removeClass('bg-success');
-          grade = 0;
         }
         else {
           $(this).addClass('bg-danger');
           $(this).removeClass('bg-warning');
           $(this).removeClass('bg-success');
-          grade = 0;
         }
 
-        sumProduct += grade * weight;
         sumWeight = sumWeight + weight;
 
       });
@@ -550,9 +548,9 @@ jQuery(document).ready(function( $ ) {
       let finalResult = 0;
 
       if(easyAverage === 1 && normalAverage === 1 && hardAverage === 1)
-        finalResult = arithmeticResult + (arithmeticResult / 100 * 10);
+        finalResult = arithmeticResult + (arithmeticResult / 100 * enem_simulator.weight_proficiency);
       else if(hardAverage > easyAverage) 
-        finalResult = arithmeticResult - (arithmeticResult / 100 * 10);
+        finalResult = arithmeticResult - (arithmeticResult / 100 * enem_simulator.weight_proficiency);
       else 
         finalResult = arithmeticResult;
 
