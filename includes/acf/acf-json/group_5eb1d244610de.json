@@ -202,8 +202,8 @@
                     "message": "",
                     "default_value": 0,
                     "ui": 1,
-                    "ui_on_text": "On",
-                    "ui_off_text": "Off"
+                    "ui_on_text": "Ligado",
+                    "ui_off_text": "Desligado"
                 },
                 {
                     "key": "field_5eb29cb28ef2b",
@@ -221,8 +221,8 @@
                     "message": "",
                     "default_value": 0,
                     "ui": 1,
-                    "ui_on_text": "On",
-                    "ui_off_text": "Off"
+                    "ui_on_text": "Ligado",
+                    "ui_off_text": "Desligado"
                 },
                 {
                     "key": "field_5eb29dff8ef2c",
@@ -263,5 +263,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590152997
+    "modified": 1590600785
 }
