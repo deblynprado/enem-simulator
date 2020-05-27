@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-26 16:35+0000\n"
-"PO-Revision-Date: 2020-05-26 16:36+0000\n"
+"POT-Creation-Date: 2020-05-27 16:44+0000\n"
+"PO-Revision-Date: 2020-05-27 16:44+0000\n"
 "Language-Team: Português do Brasil\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,17 +19,15 @@ msgstr ""
 "Last-Translator: \n"
 "Language: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"X-Loco-Version: 2.3.4; wp-5.4.1\n"
+"X-Loco-Version: 2.4.0; wp-5.4.1\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: includes/assets\n"
 "X-Poedit-SearchPathExcluded-2: includes/acf\n"
 
-#. Plugin Name of the plugin/theme
-#: acf-options.php:6 cpt-settings.php:57
-#: includes/partials/content-simulator.php:7
-msgid "Enem Simulator"
-msgstr "Simulado do Enem"
+#: acf-options.php:6
+msgid "Simulado do Enem"
+msgstr ""
 
 #: acf-options.php:7
 msgid "Configurações"
@@ -128,15 +126,20 @@ msgstr "Nova Categoria"
 msgid "Question Categories"
 msgstr "Categorias de Questão"
 
+#. Name of the plugin
+#: cpt-settings.php:57 includes/partials/content-simulator.php:7
+msgid "Enem Simulator"
+msgstr "Simulado do Enem"
+
 #: cpt-settings.php:66
 msgid "Add Question"
 msgstr "Adicionar Questão"
 
-#: enem-simulator.php:201
+#: enem-simulator.php:203
 msgid "Click on the question to navigate"
 msgstr "Clique sobre a questão para navegar"
 
-#: includes/partials/content-question.php:5
+#: includes/partials/content-question.php:6
 msgid "Question"
 msgstr "Questão"
 
@@ -202,91 +205,91 @@ msgid "Description"
 msgstr "Descrição"
 
 #: includes/partials/content-simulator.php:96
-msgid "Rate"
+msgid "Grade"
 msgstr "Nota"
 
 #: includes/partials/content-simulator.php:97
 msgid "Successes"
 msgstr "Acertos"
 
-#: includes/partials/content-simulator.php:111
+#: includes/partials/content-simulator.php:113
 msgid "You completed the test in"
 msgstr "Você concluiu a prova em"
 
-#: includes/partials/content-simulator.php:113
+#: includes/partials/content-simulator.php:115
 msgid "of"
 msgstr "de"
 
-#: includes/partials/content-simulator.php:118
+#: includes/partials/content-simulator.php:120
 msgid "Click on question and check the result"
 msgstr "Clique para ver o resultado"
 
-#: includes/partials/content-simulator.php:126
-#: includes/partials/content-simulator.php:216
+#: includes/partials/content-simulator.php:128
+#: includes/partials/content-simulator.php:218
 #: includes/partials/simulator-footer.php:14
 msgid "New Simulator"
 msgstr "Nova Prova"
 
-#: includes/partials/content-simulator.php:140
+#: includes/partials/content-simulator.php:142
 msgid "Confirmation"
 msgstr "Confirmação"
 
-#: includes/partials/content-simulator.php:146
+#: includes/partials/content-simulator.php:148
 msgid "Do you really want end the current simulator and see the results?"
 msgstr ""
 "Tem certeza que deseja encerrar a prova atual e visualizar o resultado?"
 
-#: includes/partials/content-simulator.php:149
+#: includes/partials/content-simulator.php:151
 msgid "Back"
 msgstr "Voltar"
 
-#: includes/partials/content-simulator.php:150
+#: includes/partials/content-simulator.php:152
 msgid "Finish"
 msgstr "Finalizar"
 
-#: includes/partials/content-simulator.php:161
+#: includes/partials/content-simulator.php:163
 msgid "Alteration"
 msgstr "Alteração"
 
-#: includes/partials/content-simulator.php:167
+#: includes/partials/content-simulator.php:169
 msgid "Do you really want alter this question?"
 msgstr "Você realmente deseja alterar essa questão?"
 
-#: includes/partials/content-simulator.php:170
-#: includes/partials/content-simulator.php:225
+#: includes/partials/content-simulator.php:172
+#: includes/partials/content-simulator.php:227
 msgid "No"
 msgstr "Não"
 
-#: includes/partials/content-simulator.php:171
-#: includes/partials/content-simulator.php:226
+#: includes/partials/content-simulator.php:173
+#: includes/partials/content-simulator.php:228
 msgid "Yes"
 msgstr "Sim"
 
-#: includes/partials/content-simulator.php:182
+#: includes/partials/content-simulator.php:184
 msgid "Register"
 msgstr "Cadastro"
 
-#: includes/partials/content-simulator.php:190
+#: includes/partials/content-simulator.php:192
 msgid "Name"
 msgstr "Nome"
 
-#: includes/partials/content-simulator.php:194
+#: includes/partials/content-simulator.php:196
 msgid "Mail"
 msgstr "E-Mail"
 
-#: includes/partials/content-simulator.php:198
+#: includes/partials/content-simulator.php:200
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: includes/partials/content-simulator.php:204
+#: includes/partials/content-simulator.php:206
 msgid "Skip"
 msgstr "Pular"
 
-#: includes/partials/content-simulator.php:205
+#: includes/partials/content-simulator.php:207
 msgid "Save"
 msgstr "Salvar"
 
-#: includes/partials/content-simulator.php:222
+#: includes/partials/content-simulator.php:224
 msgid "Do you really want start a newly simulator?"
 msgstr "Você realmente deseja iniciar um novo simulado?"
 
@@ -321,20 +324,20 @@ msgstr "Revisar"
 msgid "Time"
 msgstr "Tempo"
 
-#. Description of the plugin/theme
+#. Description of the plugin
 msgid "Allows your users to generate random tests and check their knowledge."
 msgstr ""
 "Permitir que seus usuários gerem testes aleatórios e verifiquem seus "
 "conhecimentos."
 
-#. Plugin URI of the plugin/theme
+#. URI of the plugin
 msgid "https://github.com/deblynprado/enem-simulator"
 msgstr "https://github.com/deblynprado/enem-simulator"
 
-#. Author of the plugin/theme
+#. Author of the plugin
 msgid "Deblyn Prado, Walfrido Oliveira"
 msgstr "Deblyn Prado, Walfrido Oliveira"
 
-#. Author URI of the plugin/theme
+#. Author URI of the plugin
 msgid "https://example.com"
 msgstr "https://example.com"
