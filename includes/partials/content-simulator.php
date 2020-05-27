@@ -93,7 +93,7 @@
             <thead>
               <tr>
                 <th><?php echo __( 'Description', 'enem-simulator' ) ?></th>
-                <th><?php echo __( 'Rate', 'enem-simulator' ) ?></th>
+                <th><?php echo __( 'Grade', 'enem-simulator' ) ?></th>
                 <th><?php echo __( 'Successes', 'enem-simulator' ) ?></th>
               </tr>
             </thead>
@@ -101,7 +101,7 @@
             <?php foreach ($categories as $value) : ?>
               <tr class="<?php echo $value['slug']; ?>">
                 <td><?php echo $value[ 'name' ] ?></td>
-                <td class="enem-simulator-rate">0</td>
+                <td class="enem-simulator-grade">0</td>
                 <td class="enem-simulator-successes">0</td>
               </tr>
             <?php endforeach; ?>
