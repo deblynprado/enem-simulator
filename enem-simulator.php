@@ -61,10 +61,11 @@ function enem_simulator_shortcode( $atts ) {
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
         'maximum_time' => enem_simulator_get_option( 'maximum_time' ),
         'alert_time' => enem_simulator_get_option( 'alert_time' ),
-        'end_test_alert' => enem_simulator_get_option( 'end_test_alert'),
-        'test_change_alert' => enem_simulator_get_option( 'test_change_alert'),  
+        'end_test_alert' => enem_simulator_get_option( 'end_test_alert' ),
+        'test_change_alert' => enem_simulator_get_option( 'test_change_alert' ),  
         'the_ids' => enem_simulator_get_posts_id(),
         'categories' => enem_simulator_get_categories(),
+        'weight_proficiency' => enem_simulator_get_option( 'weight_proficiency' ),  
       )
   );
   $categories = enem_simulator_get_categories();
