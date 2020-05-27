@@ -470,7 +470,25 @@ jQuery(document).ready(function( $ ) {
 
   function setResults() {
     $('.simulator-result .question-nav').each(function() {
+      
       let correct = 0;
+      
+      let easy = 0;
+      let easyCorrect = 0;
+      let easyAverage = 0;
+
+      let normal = 0;
+      let normalCorret = 0;
+      let normalAverage = 0;
+
+      let hard = 0;
+      let hardCorrect = 0;
+      let hardAverage = 0;
+
+      let sumProduct = 0;
+      let sumWeight = 0;
+      let grade = 0;
+
       let name;
 
       $(this).find('.question-nav-item').each(function() {
@@ -478,38 +496,68 @@ jQuery(document).ready(function( $ ) {
         name = $(this).attr('data-category-name');
         let question = $('#' + id);
         let category = $('#' + name);
-        currentCategory = name;
 
         let categoryIndex = category.attr('data-category-index');
         let questionIndex = question.find('.question-options').attr('data-question-index');
 
         let item = getQuestion(categoryIndex, questionIndex);
+        let weight = parseInt(item.weight);
+
+        if(weight <= 3)
+          easy++;
+        if(weight > 3 && weight <= 5)
+          normal++;
+        if(weight > 5)
+          hard++;
 
         if(item.user_answer.number === item.correct_answer.number) {
           $(this).addClass('bg-success');
           $(this).removeClass('bg-warning');
           $(this).removeClass('bg-danger');
           correct++;
+          grade = 1000;
+
+          if(weight <= 3)
+            easyCorrect++;
+          if(weight > 3 && weight <= 5)
+            normalCorret++;
+          if(weight > 5)
+            hardCorrect++;
         }
         else if(!item.user_answer.number) {
           $(this).addClass('bg-warning');
           $(this).removeClass('bg-danger');
           $(this).removeClass('bg-success');
+          grade = 0;
         }
         else {
           $(this).addClass('bg-danger');
           $(this).removeClass('bg-warning');
           $(this).removeClass('bg-success');
-          wrong++;
+          grade = 0;
         }
+
+        sumProduct += grade * weight;
+        sumWeight = sumWeight + weight;
 
       });
 
+      easyAverage = easyCorrect / easy;
+      normalAverage = normalCorret / normal;
+      hardAverage = hardCorrect / hard;
+
+      let arithmeticResult = sumProduct / sumWeight;
+      let finalResult = 0;
+
+      if(easyAverage === 1 && normalAverage === 1 && hardAverage === 1)
+        finalResult = arithmeticResult + (arithmeticResult / 100 * 10);
+      else if(hardAverage > easyAverage) 
+        finalResult = arithmeticResult - (arithmeticResult / 100 * 10);
+      else 
+        finalResult = arithmeticResult;
+
       $('.' + name + ' .enem-simulator-successes').html(correct);
-
-    });
-
-    $('.simulator-result .question-nav-item').each(function() {
+      $('.' + name + ' .enem-simulator-grade').html(Number(finalResult).toFixed(1));
 
     });
 
