@@ -225,6 +225,27 @@
                     "ui_off_text": "Desligado"
                 },
                 {
+                    "key": "field_5ecea8c39cfe9",
+                    "label": "Peso de Proficiência",
+                    "name": "weight_proficiency",
+                    "type": "number",
+                    "instructions": "Se o percentual de acertos do total de questões difíceis for maior do que o percentual das questões fáceis, então será subtraindo 10% (Peso de Proficiência) do valor final da disciplina, mas caso o usuário acerte 100% do simulado, será somado 10% do valor final da disciplina, caso nenhuma das opções acima seja valida, logo e o usuário vai receber a nota sem nenhum Bônus ou Ônus.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 10,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
+                },
+                {
                     "key": "field_5eb29dff8ef2c",
                     "label": "Mensagem Inicial",
                     "name": "initial_message",
@@ -263,5 +284,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590600785
+    "modified": 1590602036
 }
