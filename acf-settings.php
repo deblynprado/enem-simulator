@@ -46,6 +46,11 @@ function acf_prepare_field_enem_simulator_shortcode( $field ) {
 
 add_action('acf/input/admin_enqueue_scripts', 'admin_enqueue_scripts_enem_simulator');
 function admin_enqueue_scripts_enem_simulator() {
-	wp_register_script( 'my-admin-js', plugins_url( 'includes/assets/js/enem-simulator-admin.js', __FILE__ ) , array(), '1.0.0', true );
-  wp_enqueue_script(  'my-admin-js' );
+	wp_register_script( 'enem-simulator-admin', plugins_url( 'includes/assets/js/enem-simulator-admin.js', __FILE__ ) , array(), '1.0.0', true );
+  wp_enqueue_script(  'enem-simulator-admin' );
+  wp_localize_script( 'enem-simulator-admin', 'enem_simulator',
+      array( 
+        'ajaxurl' => admin_url( 'admin-ajax.php' ), 
+      )
+  );
 }
