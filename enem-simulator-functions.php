@@ -40,6 +40,10 @@ function enem_simulator_import_callback() {
       }
     }
   }
+  $return = array(
+    'message' => __('Posts imported successfuly!', 'enem-simulator' )
+  );
+  wp_send_json( $return );
 }
 
 add_action( 'wp_ajax_enem_simulator_import', 'enem_simulator_import_callback' );
