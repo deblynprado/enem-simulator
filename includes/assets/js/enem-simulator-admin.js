@@ -58,7 +58,26 @@
         contentType: false,
         processData: false,
         success: function(response) {
-          console.log(response);
+          let element = '<div class="acf-admin-notice notice notice-success is-dismissible">'+
+                          '<p>'+response.message+'</p>'+
+                          '<button type="button" id="my-dismiss-admin-message" class="notice-dismiss"><span class="screen-reader-text">Dispensar este aviso.</span></button>'+
+                        '</div>';
+          $(element).insertAfter('.wrap h1');
+          $("#my-dismiss-admin-message").click(function(event) {
+            event.preventDefault();
+            $('.notice-success').fadeTo(100, 0, function() {
+                $('.notice-success').slideUp(100, function() {
+                    $('.notice-success').remove();
+                });
+            });
+        });
+        },
+        error: function(response) {
+          let element = '<div class="acf-admin-notice notice notice-error is-dismissible">'+
+                          '<p>'+response.message+'</p>'+
+                          '<button type="button" class="notice-dismiss"><span class="screen-reader-text">Dispensar este aviso.</span></button>'+
+                        '</div>';
+          $('.wrap').prepend(element);
         }
       });
     });
