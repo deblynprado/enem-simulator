@@ -46,6 +46,10 @@
     })
 
     $('#import-button-enem-simulator').on('click', function() {
+
+      $(this).text('Carregando...');
+      $(this).attr('disabled', 'disabled');
+      
       let fd = new FormData();
       let file = $('#upload-enem-simulator');
       let individual_file = file[0].files[0];
@@ -58,6 +62,9 @@
         contentType: false,
         processData: false,
         success: function(response) {
+          let $button = $('#import-button-enem-simulator');
+          $button.text('Importar Questões');
+          $button.removeAttr('disabled');
           let element = '<div class="acf-admin-notice notice notice-success is-dismissible">'+
                           '<p>'+response.message+'</p>'+
                           '<button type="button" id="my-dismiss-admin-message" class="notice-dismiss"><span class="screen-reader-text">Dispensar este aviso.</span></button>'+
