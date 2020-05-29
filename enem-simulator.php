@@ -27,6 +27,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 define(PLUGIN_FILE_URL, __FILE__);
 
 include ( 'enem-simulator-install.php' );
+include ( 'enem-simulator-functions.php' );
 include ( 'acf-settings.php' );
 include ( 'cpt-settings.php' );
 include ( 'acf-options.php' );
