@@ -14,13 +14,13 @@
                             "<label for='export-enem-simulator'>Exportar</label>"+
                             "<p class='description'>Clique em exportar para salvar as questões em um arquivo csv.</p>"+
                           "</div>"+
-                          "<div class='acf-input'>"+
+                          "<div class='acf-actions'>"+
                             "<button type='button' class='button button-primary button-large' id='export-enem-simulator'>Exportar Questões</button>"+
                           "</div>";
 
     let importContainer = "<div class='acf-label'>"+
                             "<label for='import-enem-simulator'>Importar</label>"+
-                            "<p class='description'>Selecione um arquivo no formato csv.</p>"+
+                            "<p class='description'>Selecione um arquivo no formato csv para realizar a importação das questões.</p>"+
                           "</div>"+
                           "<div class='acf-input'>"+
                             "<label for='upload' id='upload-label-enem-simulator'><span>Nenhum arquivo selecionado </span>" +
@@ -28,7 +28,7 @@
                               "<input type='file' accept='.csv' id='upload-enem-simulator' style='display:none'>"+
                             "</label>" +
                           "</div>"+
-                          "<div class='acf-input'>"+
+                          "<div class='acf-actions'>"+
                             "<button type='button' class='button button-primary button-large' id='import-button-enem-simulator'>Importar Questões</button"+
                           "</div>";
 
@@ -81,7 +81,7 @@
         },
         error: function(response) {
           let element = '<div class="acf-admin-notice notice notice-error is-dismissible">'+
-                          '<p>'+response.message+'</p>'+
+                          '<p>Ocorreu um erro ao realizar a importação. Verifique o arquivo de importação e tente novamente</p>'+
                           '<button type="button" class="notice-dismiss"><span class="screen-reader-text">Dispensar este aviso.</span></button>'+
                         '</div>';
           $('.wrap').prepend(element);
