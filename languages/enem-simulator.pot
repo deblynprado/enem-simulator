@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Enem Simulator\n"
-"POT-Creation-Date: 2020-05-29 18:37+0000\n"
+"POT-Creation-Date: 2020-06-01 19:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Deblyn Prado <deblynprado@gmail.com>\n"
 "Language-Team: Deblyn Prado <deblynprado@gmail.com>\n"
@@ -24,11 +24,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: includes/acf\n"
 "Language: "
 
-#: acf-options.php:6
-msgid "Simulado do Enem"
-msgstr ""
-
-#: acf-options.php:7
+#: acf-options.php:6 acf-options.php:7
 msgid "Configurações"
 msgstr ""
 
@@ -138,8 +134,12 @@ msgstr ""
 msgid "Add Question"
 msgstr ""
 
-#: enem-simulator-functions.php:44
+#: enem-simulator-functions.php:48
 msgid "Posts imported successfuly!"
+msgstr ""
+
+#: enem-simulator-functions.php:78
+msgid "Settings imported successfuly!"
 msgstr ""
 
 #: enem-simulator.php:205
