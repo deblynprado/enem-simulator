@@ -1,6 +1,6 @@
 {
     "key": "group_5ed0f01d764cd",
-    "title": "Importar\/Exportar",
+    "title": "Questões",
     "fields": [
         {
             "key": "field_5ed0f0373edd7",
@@ -16,7 +16,7 @@
                 "id": ""
             },
             "placement": "top",
-            "endpoint": 1
+            "endpoint": 0
         },
         {
             "key": "field_5ed0f0e5631f1",
@@ -81,8 +81,23 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1590760077
+    "modified": 1591037557
 }
