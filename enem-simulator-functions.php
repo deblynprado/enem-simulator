@@ -1,6 +1,6 @@
 <?php
 
-function enem_simulator_import_callback() {
+function enem_simulator_import_questions_callback() {
   if( isset( $_FILES )) {
     $file = $_FILES[ 'file' ][ 'tmp_name' ];
   }
@@ -50,7 +50,7 @@ function enem_simulator_import_callback() {
   wp_send_json( $return );
 }
 
-add_action( 'wp_ajax_enem_simulator_import', 'enem_simulator_import_callback' );
+add_action( 'wp_ajax_enem_simulator_import_questions', 'enem_simulator_import_questions_callback' );
 
 function enem_simulator_get_question_category_ID($name) {
   global $wpdb;
