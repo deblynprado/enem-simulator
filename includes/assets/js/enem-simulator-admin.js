@@ -106,7 +106,6 @@
     });
 
     $('#import-settings-button-enem-simulator').on('click', function() {
-
       $(this).text('Carregando...');
       $(this).attr('disabled', 'disabled');
       
@@ -123,7 +122,7 @@
         processData: false,
         success: function(response) {
           let $button = $('#import-settings-button-enem-simulator');
-          $button.text('Importar Questões');
+          $button.text('Importar Configurações');
           $button.removeAttr('disabled');
           adminNotices('success', response.message);
         },
@@ -133,15 +132,23 @@
       });
     });
 
+    $('#export-questions-enem-simulator').on('click', function() {
+      window.open(enem_simulator.ajaxurl+'?action=enem_simulator_export_questions');
+    });
+
+    $('#export-settigns-enem-simulator').on('click', function() {
+      window.open(enem_simulator.ajaxurl+'?action=enem_simulator_export_settings');
+    });
+
     function adminNotices(type, message) {
       let element = '<div class="notice notice-'+type+' is-dismissible">'+
                       '<p>'+message+'</p>'+
-                      '<button type="button" id="my-dismiss-admin-message" class="notice-dismiss">'+
+                      '<button type="button" id="enem-simulator-dismiss-admin-message" class="notice-dismiss">'+
                         '<span class="screen-reader-text">Dispensar este aviso.</span>'+
                       '</button>'+
                     '</div>';
       $(element).insertAfter('.wrap h1');
-      $("#my-dismiss-admin-message").click(function(event) {
+      $("#enem-simulator-dismiss-admin-message").click(function(event) {
         event.preventDefault();
         $('.notice-'+type).fadeTo(100, 0, function() {
             $('.notice-'+type).slideUp(100, function() {
