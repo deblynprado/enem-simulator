@@ -130,6 +130,7 @@ function enem_simulator_get_questions($slug, $orderby = 'name', $limit = 0) {
     'orderby' => $orderby,
     'post_type' => 'question',
     'posts_per_page' => $limit,
+    'post_status' => 'publish',
     'tax_query' => array(
         array(
           'taxonomy' => 'question_category',
