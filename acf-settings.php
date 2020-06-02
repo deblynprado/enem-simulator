@@ -13,7 +13,7 @@ function acf_settings_url( $url ) {
   return ACF_URL;
 }
 
-#add_filter('acf/settings/show_admin', 'acf_settings_show_admin');
+add_filter('acf/settings/show_admin', 'acf_settings_show_admin');
 function acf_settings_show_admin( $show_admin ) {
   return false;
 }
