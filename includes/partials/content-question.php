@@ -20,7 +20,7 @@
         $name = substr( md5( serialize( $fields ) ), 0, 8 ); 
         $field = 0;
       ?>
-      <?php foreach( $fields as $value ): $id = substr( md5( serialize( $value ) ), 0, 8 ); $field++;  var_dump( );?>
+      <?php foreach( $fields as $value ): $id = substr( md5( serialize( $value ) ), 0, 8 ); $field++;?>
         <div class="custom-control custom-checkbox">
           <input type="hidden" name="answer_<?php echo $id ?>" id="answer_<?php echo $id ?>" value="<?php echo $value['correct_answer'][0] ?>">
           <input type="checkbox" class="custom-control-input" id="<?php echo $id ?>" name="<?php echo $name ?>" value="<?php echo $field ?>">
