@@ -108,24 +108,29 @@ function enem_simulator_get_question_category_ID($name) {
 }
 
 function enem_simulator_export_questions_callback() {
-    $filename = 'export.csv';
-    $delimiter = ";";
-    $header_row = array(
-      'NOME DA QUESTÃO',
-      'DESCRIÇÃO DA QUESTÃO',
-      'NOME DA DISCIPLINA',
-      'ALTERNATIVA (A)',
-      'ALTERNATIVA (B)',
-      'ALTERNATIVA (C)',
-      'ALTERNATIVA (D)',
-      'ALTERNATIVA (E)',
-      'ALTERNATIVA CORRETA',
-      'PESO (0 - 10)',
-      'STATUS DA QUESTÃO (ATIVO - INATIVO)',
-    );
+  $template=false;
+  if( isset( $_GET['template'] ))
+    $template = $_GET['template'];
 
-    ob_start();
+  $filename = 'export_questions.csv';
+  $delimiter = ";";
+  $header_row = array(
+    'NOME DA QUESTÃO',
+    'DESCRIÇÃO DA QUESTÃO',
+    'NOME DA DISCIPLINA',
+    'ALTERNATIVA (A)',
+    'ALTERNATIVA (B)',
+    'ALTERNATIVA (C)',
+    'ALTERNATIVA (D)',
+    'ALTERNATIVA (E)',
+    'ALTERNATIVA CORRETA',
+    'PESO (0 - 10)',
+    'STATUS DA QUESTÃO (ATIVO - INATIVO)',
+  );
 
+  ob_start();
+
+  if ( !$template ) {
     $args = array(
       'orderby' => 'name',
       'post_type' => 'question',
@@ -161,36 +166,113 @@ function enem_simulator_export_questions_callback() {
         );
       } 
     }
+  }
 
-    ob_clean();
+  ob_clean();
 
-    $fh = @fopen( 'php://output', 'w' );
-    fprintf( $fh, chr(0xEF) . chr(0xBB) . chr(0xBF) );
-    header( 'Cache-Control: must-revalidate, post-check=0, pre-check=0' );
-    header( 'Content-Description: File Transfer' );
-    header( 'Content-type: text/csv' );
-    header( "Content-Disposition: attachment; filename={$filename}" );
-    header( 'Expires: 0' );
-    header( 'Pragma: public' );
+  $fh = @fopen( 'php://output', 'w' );
+  fprintf( $fh, chr(0xEF) . chr(0xBB) . chr(0xBF) );
+  header( 'Cache-Control: must-revalidate, post-check=0, pre-check=0' );
+  header( 'Content-Description: File Transfer' );
+  header( 'Content-type: text/csv' );
+  header( "Content-Disposition: attachment; filename={$filename}" );
+  header( 'Expires: 0' );
+  header( 'Pragma: public' );
 
-    fputcsv( $fh, $header_row, $delimiter );
+  fputcsv( $fh, $header_row, $delimiter );
 
-    foreach ($content as $value) {
-      fputcsv( $fh, $value, $delimiter );   
-    }
-    
-    fclose( $fh );
-    
-    ob_end_flush();
-    
-    wp_die();
-    die();
+  foreach ($content as $value) {
+    fputcsv( $fh, $value, $delimiter );   
+  }
+  
+  fclose( $fh );
+  
+  ob_end_flush();
+  
+  wp_die();
+  die();
 }
 
 add_action( 'wp_ajax_enem_simulator_export_questions', 'enem_simulator_export_questions_callback' );
 
 function enem_simulator_export_settings_callback() {
+  $template=false;
+  if( isset( $_GET['template'] ))
+    $template = $_GET['template'];
+
+  $filename = 'export_settings.csv';
+  $delimiter = ";";
+  $header_row = array(
+    'NOME',
+    'NOME DA DISCIPLINA (1)',
+    'QTD DE QUESTÕES DA DISCIPLINA (1)',
+    'NOME DA DISCIPLINA (2)',
+    'QTD DE QUESTÕES DA DISCIPLINA (2)',
+    'NOME DA DISCIPLINA (3)',
+    'QTD DE QUESTÕES DA DISCIPLINA (3)',
+    'NOME DA DISCIPLINA (4)',
+    'QTD DE QUESTÕES DA DISCIPLINA (4)',
+    'NOME DA DISCIPLINA (5)',
+    'QTD DE QUESTÕES DA DISCIPLINA (5)',
+    'TEMPO MÁXIMO',
+    'TEMPO DE ALERTA DE FIM DE PROVA',
+    'ATIVAR ALERTA DE FIM DE PROVA',
+    'ATIVAR ALERTA DE MUDANÇA DE QUESTÃO',
+    'PESO',
+    'MENSAGEM INICIAL',
+  );
+
+  ob_start();
+
+  if ( !$template ) {
+    $filds = get_field( 'enem_simulator_settings', 'option' );
+    foreach ($filds as $value) {
+      $categories = $value[ 'question_categories' ];
+      $content[] = array(
+        $value[ 'setting_name' ],
+        $categories[0][ 'question_category' ]->slug,
+        $categories[0][ 'category_amount' ],
+        $categories[1][ 'question_category' ]->slug,
+        $categories[1][ 'category_amount' ],
+        $categories[2][ 'question_category' ]->slug,
+        $categories[2][ 'category_amount' ],
+        $categories[3][ 'question_category' ]->slug,
+        $categories[3][ 'category_amount' ],
+        $categories[4][ 'question_category' ]->slug,
+        $categories[4][ 'category_amount' ],
+        $value[ 'maximum_time' ], 
+        $value[ 'alert_time' ], 
+        $value[ 'end_test_alert' ], 
+        $value[ 'test_change_alert' ], 
+        $value[ 'weight_proficiency' ], 
+        $value[ 'initial_message' ], 
+      );
+    }
+  }
+
+  ob_clean();
+
+  $fh = @fopen( 'php://output', 'w' );
+  fprintf( $fh, chr(0xEF) . chr(0xBB) . chr(0xBF) );
+  header( 'Cache-Control: must-revalidate, post-check=0, pre-check=0' );
+  header( 'Content-Description: File Transfer' );
+  header( 'Content-type: text/csv' );
+  header( "Content-Disposition: attachment; filename={$filename}" );
+  header( 'Expires: 0' );
+  header( 'Pragma: public' );
+
+  fputcsv( $fh, $header_row, $delimiter );
+
+  foreach ($content as $value) {
+    fputcsv( $fh, $value, $delimiter );   
+  }
   
+  fclose( $fh );
+  
+  ob_end_flush();
+  
+  wp_die();
+  die();
 }
 
 add_action( 'wp_ajax_enem_simulator_export_settings', 'enem_simulator_export_settings_callback' );

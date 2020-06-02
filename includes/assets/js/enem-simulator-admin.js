@@ -28,6 +28,7 @@
 
     let importQuestionsContainer = "<div class='acf-label'>"+
                                       "<p class='description'>Selecione um arquivo no formato csv para realizar a importação das questões.</p>"+
+                                      "<p class='description'>Baixe <a href='#' id='download-questions-template'>aqui</a> o modelo do arquivo.</p>"+
                                   "</div>"+
                                   "<div class='acf-input'>"+
                                     "<label for='upload' id='upload-questions-label-enem-simulator'><span>Nenhum arquivo selecionado </span>"+
@@ -41,6 +42,7 @@
 
     let importSettignsContainer = "<div class='acf-label'>"+
                                     "<p class='description'>Selecione um arquivo no formato csv para realizar a importação das configurações.</p>"+
+                                    "<p class='description'>Baixe <a href='#' id='download-settings-template'>aqui</a> o modelo do arquivo.</p>"+
                                   "</div>"+
                                   "<div class='acf-input'>"+
                                     "<label for='upload' id='upload-settings-label-enem-simulator'><span>Nenhum arquivo selecionado </span>"+
@@ -136,8 +138,16 @@
       window.open(enem_simulator.ajaxurl+'?action=enem_simulator_export_questions');
     });
 
-    $('#export-settigns-enem-simulator').on('click', function() {
+    $('#export-settings-enem-simulator').on('click', function() {
       window.open(enem_simulator.ajaxurl+'?action=enem_simulator_export_settings');
+    });
+
+    $('#download-questions-template').on('click', function() {
+      window.open(enem_simulator.ajaxurl+'?action=enem_simulator_export_questions?template=true');
+    });
+
+    $('#download-settings-template').on('click', function() {
+      window.open(enem_simulator.ajaxurl+'?action=enem_simulator_export_settings?template=true');
     });
 
     function adminNotices(type, message) {
