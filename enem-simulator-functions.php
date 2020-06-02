@@ -100,7 +100,7 @@ add_action( 'wp_ajax_enem_simulator_import_settings', 'enem_simulator_import_set
 
 function enem_simulator_get_question_category_ID($name) {
   global $wpdb;
-  $result = $wpdb->get_results( "SELECT t.*, tt.* FROM $wpdb->terms AS t
+  $result = $wpdb->get_results( "SELECT t.term_id FROM $wpdb->terms AS t
                                 INNER JOIN $wpdb->term_taxonomy AS tt ON t.term_id = tt.term_id
                                 WHERE tt.taxonomy = 'question_category' AND t.name = '$name'" );
   if( $result[0] )
