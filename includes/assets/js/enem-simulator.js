@@ -195,10 +195,7 @@ jQuery(document).ready(function( $ ) {
   });
 
   $('.fullscreem-simulator').on('click', function() {
-    if(!window.screenTop && !window.screenY) 
-      closeFullscreen();
-    else
-      openFullscreem(document.documentElement);
+    toggleFullScreen();
   });
 
   $('.incease-font-simulator').on('click', function() {
@@ -630,30 +627,15 @@ jQuery(document).ready(function( $ ) {
     return JSON.parse(localStorage.getItem('enem_simulator_question'));
   }
 
-  function openFullscreem(element) {
-    if (element.requestFullscreen) {
-      element.requestFullscreen();
-    } else if (element.mozRequestFullScreen) { /* Firefox */
-      element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-      element.webkitRequestFullscreen();
-    } else if (element.msRequestFullscreen) { /* IE/Edge */
-      element.msRequestFullscreen();
+  function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen(); 
+      }
     }
-  }
-
-  function closeFullscreen() {
-    document.mozCancelFullScreen();
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    }
-  }
+  }  
 
   function modifyFontSize(flag) {
     let element = $('#enem-simulator');
