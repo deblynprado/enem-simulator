@@ -413,7 +413,7 @@ jQuery(document).ready(function( $ ) {
               number: $(this).next().val(),
             }
           }
-        });
+        }).remove();
         questions.push(question);
       });
 
