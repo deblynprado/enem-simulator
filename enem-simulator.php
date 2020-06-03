@@ -153,6 +153,8 @@ function enem_simulator_get_question_category_callback() {
   if ( isset( $_POST['the_ids'] ))
     $theIDs = $_POST['the_ids'];
 
+  $questionCount = 1;
+
   foreach ($categories as $key => $value) :
     $index = 0;
     $categoryName = $value['name'];
@@ -169,10 +171,10 @@ function enem_simulator_get_question_category_callback() {
         $fields = get_field( 'image_options', get_the_ID() ); 
       else if ( $option == 'Text Options' )
         $fields = get_field( 'text_options', get_the_ID() ); 
-      
       shuffle( $fields );
       include ( 'includes/partials/content-question.php' );
       $index++;
+      $questionCount++;
     endforeach; ?>
     </div>
     <?php wp_reset_postdata();
