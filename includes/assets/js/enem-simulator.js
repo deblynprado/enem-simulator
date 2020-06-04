@@ -167,7 +167,7 @@ jQuery(document).ready(function( $ ) {
     } else {
       $('.simulator-result').show('slow');
     }
-    scroollTo($('.simulator-content'));
+    scroollTo($('.simulator-nav'));
   });
 
   $(document).on('click', '.question-nav-item', function(e){
