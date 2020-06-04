@@ -50,29 +50,38 @@ jQuery(document).ready(function( $ ) {
   });
 
   $('.question').each(function(e) {
-    if (e != 0) $(this).hide('slow');
+    if (e != 0) $(this).hide();
   })
 
   $('#next-question').on('click', function(e) {
     e.preventDefault();
 
+    if ($('.question:visible').next().length == 0) {
+      let category;
+      if($('.categories .content-question:visible').next().length > 0) 
+        category = $('.categories .content-question:visible').next();
+      else if($('.categories .content-question:visible').prev().length > 0) 
+        category = $('.categories .content-question:visible').prev();
+      let id = category.find('.question').eq(0).attr('id');
+      let name = category.attr('id');
+      getNextCategory(id, name);
+      return true;
+    }
+
     if ($('.question:visible').next().length != 0)
-      $('.question:visible').next().show('slow').prev().hide('slow');
+      $('.question:visible').next().show().prev().hide();
     else {
-      $('.question:visible').hide('slow');
-      $('.question:first').show('slow');
+      $('.question:visible').hide();
+      $('.question:first').show();
     }
 
     $(this).parent().removeClass('disabled');
     $(this).parent().prev().removeClass('disabled');
 
-    if ($('.question:visible').next().next().length == 0)
-      $(this).parent().addClass('disabled');
-
     scroollTo($('.simulator-content'));
 
-    let categoryIndex = $('.question:visible').next().parent().attr('data-category-index');
-    let questionIndex = $('.question:visible').next().find('.question-options').attr('data-question-index');
+    let categoryIndex = $('.question:visible').parent().attr('data-category-index');
+    let questionIndex = $('.question:visible').find('.question-options').attr('data-question-index');
 
     setVisitedQuestion(categoryIndex, questionIndex);
 
@@ -80,21 +89,30 @@ jQuery(document).ready(function( $ ) {
 
   $('#previous-question').on('click', function(e) {
     e.preventDefault();
+
+    if ($('.question:visible').prev().length == 0) {
+      let category;
+      if($('.categories .content-question:visible').prev().length > 0) 
+        category = $('.categories .content-question:visible').prev();
+      if(typeof category !== 'undefined') {
+        let id = category.find('.question:last').eq(0).attr('id');
+        let name = category.attr('id');
+        getNextCategory(id, name);
+      } 
+      return true;
+    }
     
     scroollTo($('.simulator-content'));
     
     if ($('.question:visible').prev().length != 0)
-      $('.question:visible').prev().show('fast').next().hide('fast');
+      $('.question:visible').prev().show().next().hide();
     else {
-      $('.question:visible').hide('fast');
-      $('.question:last').show('fast');
+      $('.question:visible').hide();
+      $('.question:last').show();
     }
 
     $(this).parent().removeClass('disabled');
     $(this).parent().next().removeClass('disabled');
-
-    if ($('.question:visible').prev().prev().length == 0)
-      $(this).parent().addClass('disabled');      
 
   });
 
@@ -141,9 +159,7 @@ jQuery(document).ready(function( $ ) {
   $('.simulator-category-list').on('click', function(e){
     e.preventDefault();
 
-    $('.simulator-content').hide('slow');
-    $('.question').hide();
-    $('.content-question').hide();
+    hideQuestions(); 
 
     if(!window.endSimulator) {
       $('.simulator-nav').show('slow');
@@ -157,41 +173,7 @@ jQuery(document).ready(function( $ ) {
   $(document).on('click', '.question-nav-item', function(e){
     let id = $(this).attr('data-question-id');
     let name = $(this).attr('data-category-name');
-    let question = $('#' + id);
-    let category = $('#' + name);
-    
-    $('.simulator-content').show('slow');
-    $('.simulator-nav').hide('slow');
-    $('.question').hide();
-    $('.simulator-result').hide('slow');
-
-    if(window.endSimulator) {
-      $('.timer').hide();
-      $('.simulator-progress').hide();
-      $('.revise ').hide();
-    }
-    
-    if(question.next().length != 0) 
-      $('#next-question').parent().removeClass('disabled');
-    else
-      $('#next-question').parent().addClass('disabled');
-
-    if(question.prev().length != 0)
-      $('#previous-question').parent().removeClass('disabled');
-    else
-      $('#previous-question').parent().addClass('disabled');
-
-    category.show('slow');
-    question.show('slow');
-
-    scroollTo($('.simulator-content'));
-    setProgressbar(category, $(".progress-bar"));
-
-    let categoryIndex = category.attr('data-category-index');
-    let questionIndex = question.find('.question-options').attr('data-question-index');
-
-    setVisitedQuestion(categoryIndex, questionIndex);
-
+    getNextCategory(id, name);
   });
 
   $('.fullscreem-simulator').on('click', function() {
@@ -205,6 +187,41 @@ jQuery(document).ready(function( $ ) {
   $('.decrease-font-simulator').on('click', function() {
     modifyFontSize('decrease');
   });
+
+  function getNextCategory(questionID, categoryName) {
+    let question = $('#' + questionID);
+    let category = $('#' + categoryName);
+
+    hideQuestions();
+    
+    $('.simulator-content').show();
+    $('.simulator-nav').hide();
+    $('.question').hide();
+    $('.simulator-result').hide();
+
+    if(window.endSimulator) {
+      $('.timer').hide();
+      $('.simulator-progress').hide();
+      $('.revise ').hide();
+    }
+    
+    category.show();
+    question.show();
+
+    scroollTo($('.simulator-content'));
+    setProgressbar(category, $(".progress-bar"));
+
+    let categoryIndex = category.attr('data-category-index');
+    let questionIndex = question.find('.question-options').attr('data-question-index');
+
+    setVisitedQuestion(categoryIndex, questionIndex);
+  }
+
+  function hideQuestions() {
+    $('.simulator-content').hide();
+    $('.question').hide();
+    $('.content-question').hide();
+  }
 
   function startSimulator() {
     var category = $('#question_category').children('option:selected').val();
@@ -227,14 +244,14 @@ jQuery(document).ready(function( $ ) {
 
         $('.simulator-categories').empty().html( result );
         
-        $('.content-question:visible .question').eq(0).show('slow');
+        $('.content-question:visible .question').eq(0).show();
 
-        $('.simulator-pagination').show('slow');
-        $('.simulator-progress').show('slow');
-        $('.simulator-footer').show('slow');
+        $('.simulator-pagination').show();
+        $('.simulator-progress').show();
+        $('.simulator-footer').show();
 
-        $('.simulator-header').hide('slow');
-        $('.simulator-category-options').hide('slow');
+        $('.simulator-header').hide();
+        $('.simulator-category-options').hide();
 
         scroollTo($('.simulator-content'));
 
