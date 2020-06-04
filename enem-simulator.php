@@ -193,8 +193,9 @@ function enem_simulator_get_nav_callback() {
   if ( isset( $_POST['the_ids'] ))
     $theIDs = $_POST['the_ids'];
 
+  $questionCount = 1;
+
   foreach ($categories as $key => $value) :
-    $index = 0;
     $posts = $theIDs[ $value[ 'slug' ] ];
     $slug = $value[ 'slug' ];
     $name = $value[ 'name' ];
@@ -211,9 +212,9 @@ function enem_simulator_get_nav_callback() {
         global $post;
         $post = get_post($value); ?>
         <a href="#" class="question-nav-item p-4 border" data-question-id="<?php echo get_the_ID(); ?>" 
-          data-category-name="<?php echo $slug; ?>"><?php echo $index+1; ?></a>
+          data-category-name="<?php echo $slug; ?>"><?php echo $questionCount; ?></a>
         <?php
-        $index++;
+        $questionCount++;
       endforeach; ?>
       </div>
     </div>
