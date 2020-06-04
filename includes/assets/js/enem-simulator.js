@@ -162,10 +162,10 @@ jQuery(document).ready(function( $ ) {
     hideQuestions(); 
 
     if(!window.endSimulator) {
-      $('.simulator-nav').show('slow');
+      $('.simulator-nav').fadeIn();
       setNav();
     } else {
-      $('.simulator-result').show('slow');
+      $('.simulator-result').fadeIn();
     }
     scroollTo($('.simulator-nav'));
   });
@@ -194,7 +194,7 @@ jQuery(document).ready(function( $ ) {
 
     hideQuestions();
     
-    $('.simulator-content').show();
+    $('.simulator-content').fadeIn();
     $('.simulator-nav').hide();
     $('.question').hide();
     $('.simulator-result').hide();
@@ -205,8 +205,8 @@ jQuery(document).ready(function( $ ) {
       $('.revise ').hide();
     }
     
-    category.show();
-    question.show();
+    category.fadeIn();
+    question.fadeIn();
 
     scroollTo($('.simulator-content'));
     setProgressbar(category, $(".progress-bar"));
@@ -244,7 +244,7 @@ jQuery(document).ready(function( $ ) {
 
         $('.simulator-categories').empty().html( result );
         
-        $('.content-question:visible .question').eq(0).show();
+        $('.content-question:visible .question').eq(0).fadeIn();
 
         $('.simulator-pagination').show();
         $('.simulator-progress').show();
