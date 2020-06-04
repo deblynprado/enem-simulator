@@ -322,7 +322,7 @@ jQuery(document).ready(function( $ ) {
   function scroollTo(element) {
     $('html, body').animate({
       scrollTop: element.offset().top
-    }, 2000);
+    }, 1000);
   }
 
   function setTimer() {
