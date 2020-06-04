@@ -3,7 +3,7 @@
 <div class="col-10 simulator-pagination" style="display: none">
   <nav>
     <ul class="pagination">
-      <li class="page-item disabled">
+      <li class="page-item">
         <a class="page-link" href="#" aria-label="Previous" id="previous-question">
           <span aria-hidden="true"><i class="fa fa-chevron-left"></i> <?php echo __('Previous', 'enem-simulator'); ?></span>
           <span class="sr-only"><?php _ex( 'Previous', 'Navigation to Previous Question', 'enem-simulator') ?></span>
