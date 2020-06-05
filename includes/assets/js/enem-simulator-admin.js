@@ -143,11 +143,11 @@
     });
 
     $('#download-questions-template').on('click', function() {
-      window.open(enem_simulator.ajaxurl+'?action=enem_simulator_export_questions?template=true');
+      window.open(enem_simulator.ajaxurl+'?action=enem_simulator_export_questions&template=true');
     });
 
     $('#download-settings-template').on('click', function() {
-      window.open(enem_simulator.ajaxurl+'?action=enem_simulator_export_settings?template=true');
+      window.open(enem_simulator.ajaxurl+'?action=enem_simulator_export_settings&template=true');
     });
 
     function adminNotices(type, message) {
