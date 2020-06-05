@@ -134,7 +134,8 @@ function enem_simulator_export_questions_callback() {
     $args = array(
       'orderby' => 'name',
       'post_type' => 'question',
-      'post_status' => 'publish'
+      'post_status' => 'publish',
+      'posts_per_page' => -1,
     );
     $questions = new WP_Query( $args );
 
@@ -164,10 +165,11 @@ function enem_simulator_export_questions_callback() {
           $weight,
           $status
         );
+        $count++;
       } 
     }
+    wp_reset_postdata();
   }
-
   ob_clean();
 
   $fh = @fopen( 'php://output', 'w' );
