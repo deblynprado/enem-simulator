@@ -308,6 +308,10 @@
   margin-right: 5px;
 }
 
+.simulator-pagination .pagination .page-link {
+  text-decoration: none;
+}
+
 .simulator-pagination .pagination .page-link:hover {
   color: #0056b3;
   text-decoration: none;
@@ -355,22 +359,62 @@
 /* END FOOTER */
 
 /* NAV RESULT TESTE */
+.simulator-nav h3 {
+  margin-top: 60px;
+  font-weight: 700;
+  font-size: 40px;
+  color: rgb(55, 58, 60);
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
+}
+
+.simulator-nav h4 {
+  margin-top: 45px;
+  font-weight: 700;
+  font-size: 32px;
+  color: rgb(55, 58, 60);
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
+}
+
+.simulator-nav h5 {
+  margin-top: 45px;
+  font-weight: 700;
+  font-size: 24px;
+  color: rgb(55, 58, 60);
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
+}
+
+.simulator-nav p {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 21px;
+  color: rgb(55, 58, 60);
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
+}
+
+.simulator-nav .p-4 {
+  padding: 16px !important;
+} 
+
 .simulator-nav ul, .simulator-result ul {
   margin: 0;
 }
 
 .simulator-nav li, .simulator-result li {
-  font-size: 1.4rem;
+  font-size: 14px;
   font-weight: bolder;
   list-style-type: none;
   display: inline;
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 700;
+  margin-left: 20px;
 }
 
 .simulator-nav li:before, .simulator-result li::before {
   content: "■";
-  font-size: 4rem;
+  font-size: 40px;
   vertical-align: sub;
   line-height: 1.476;
+  font-weight: 700;
 }
 
 .question-nav .question-nav-item {
