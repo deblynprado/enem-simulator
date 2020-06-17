@@ -1,3 +1,12 @@
+.simulator-content, .simulator-nav, .simulator-modal, .simulator-result {
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
+  color: rgb(55, 58, 60) !important;
+}
+
+.simulator-content ul, ol {
+  margin: 0;
+}
+
 .simulator-content .simulator-title {
   margin: 6rem auto 3rem;
   font-size: 48px;
@@ -76,6 +85,7 @@
   overflow: visible;
 }
 
+/* MODAL */
 .simulator-modal .modal-title{
   margin: 0 ;
   line-height: 1.5;
@@ -167,88 +177,91 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
 }
+/* END MODAL */
 
-.simulator-content, .simulator-nav, .simulator-modal, .simulator-result {
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
-  color: rgb(55, 58, 60) !important;
+/* QUESTIONS */
+.simulator-categories .question h3 {
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 40px;
+  color: rgb(55, 58, 60);
+  font-weight: 700;
+  letter-spacing: -1.6625px;
+  line-height: 50px;
+  border: none;
+  padding: 0;
+  text-align: left;
+  margin: 5px 0px 5px 0px;
 }
 
-.simulator-content ul, ol {
-  margin: 0;
+.simulator-categories .question h4 {
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 32px;
+  color: rgb(55, 58, 60);
+  font-weight: 700;
+  letter-spacing: -1.33px;
+  line-height: 40px;
+  border: none;
+  padding: 0;
+  text-align: left;
+  margin: 45px 0px 25px 0px;
 }
 
-.simulator-content li {
-  margin: 0.5rem 2rem 0 0 !important;
+.simulator-categories .question p {
+  text-align: justify;
+  border: 0;
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: normal;
+  padding: 0;
+  margin: 0 0 21px 0;
+  line-height: 1.476;
+  color: rgb(55, 58, 60);
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;  
+
 }
 
-.question h4, h3 {
-  margin: .5rem auto .5rem !important;
+.simulator-categories .question .question-thumbnail {
+  width: 100%;
 }
 
-.custom-control-label {
-  font-size: 2rem;
+.simulator-categories .question .question-thumbnail img {
+  width: 100%;
 }
 
-.simulator-content .custom-control-label::before {
-  width: 2.5rem;
-  height: 2.5rem;
+.simulator-categories .question .custom-checkbox {
+  margin-bottom: 10px;
 }
 
-.simulator-content .custom-control-label::after {
-  width: 2.5rem;
-  height: 2.5rem;
+.simulator-categories .question .custom-control-label {
+  font-size: 20px;
+  margin-left: 5px;
+  padding-left: 10px;
 }
 
-.simulator-content .custom-checkbox {
-  margin-bottom: 1rem;
+.simulator-categories .question .custom-control-label::after,
+.simulator-categories .question .custom-control-label::before {
+  width: 25px;
+  height: 25px;
 }
 
-.simulator-content .custom-control-input.is-valid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:valid:checked ~ .custom-control-label::before {
+.simulator-categories .custom-control-input.is-valid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:valid:checked ~ .custom-control-label::before {
   background-color: #34ce57 !important;
 }
 
-.simulator-content .custom-control-input.is-invalid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before {
+.simulator-categories .custom-control-input.is-invalid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before {
   background-color: #e4606d !important;
 }
+/* END QUESTIONS */
 
-.simulator-content .page-link {
-  padding: 1rem .7rem 1rem .5rem;
+/* PROGRESS BAR */
+.simulator-progress .progress, .simulator-nav .progress{
+  height: 30px;
+  border-radius: 5px;
 }
 
-.simulator-content .page-item:not(.disabled) .page-link {
-  color: rgb(55, 58, 60) !important;
-}
-
-.simulator-content .page-item.disabled .page-link span {
-  color: #6c757d !important;
-}
-
-.simulator-content .page-item .page-link {
-  border-radius: .5rem !important;
-  font-size: 2rem;
-}
-
-.simulator-content .pagination a:focus, .pagination a:hover {
-  text-decoration: none !important;
-}
-
-.simulator-content .pagination {
-  margin: 0;
-}
-
-.simulator-content .pagination .revise {
-  margin-left: 8.5rem !important;
-  margin-right: 0 !important;
-}
-
-.simulator-content .progress, .simulator-nav .progress{
-  height: 3rem;
-  border-radius: .5rem;
-}
-
-.simulator-content .progress-bar, .simulator-nav .progress-bar {
-  font-size: 2rem;
- -webkit-transition: width 2.5s ease !important;
+.simulator-progress .progress-bar, .simulator-nav .progress-bar {
+  font-size: 20px;
+ -webkit-transition: width 2.5s ease;
   transition: width 2.5s ease !important;
 }
 
@@ -256,42 +269,92 @@
 .simulator-nav .progress-bar[aria-valuenow="0"], .progress-bar[aria-valuenow="2"] {
   min-width: 30px;
 }
+/* END PROGRESS BAR*/
 
-.question-thumbnail {
-  width: 100%;
-}
-
-.question-thumbnail img {
-  width: 100%;
-}
-
+/* TIMER */
 .simulator-content .timer {
-  font-weight: bolder;
-  font-size: 2.5rem;
+  font-size: 25px;
   text-align: right;
 }
 
 .simulator-content .timer p {
   margin-bottom: 0;
-  line-height: 3.5rem !important;
+  line-height: 35px;
   width: 200px;
+  border: none;
+  font-size: 25px;
+  text-align: right;
+}
+/* END TIMER*/
+
+/* NAVIGATION */
+.simulator-pagination .pagination .page-link {
+  padding: 10px 7px 10px 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 25px;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  font-weight: 400;
 }
 
-.simulator-footer button, .new-simulator {
-  padding: 1rem .7rem 1rem .7rem;
-  border-radius: .5rem !important;
+.simulator-pagination .pagination .page-item {
+  margin: 0;
+}
+
+.simulator-pagination .pagination .page-item:first-child .page-link {
+  margin-left: 0;
+  margin-right: 5px;
+}
+
+.simulator-pagination .pagination .page-link:hover {
+  color: #0056b3;
+  text-decoration: none;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.simulator-pagination .pagination .page-item:not(.disabled) .page-link {
+  color: rgb(55, 58, 60);
+}
+
+.simulator-pagination .pagination .page-item.disabled .page-link span {
+  color: #6c757d;
+}
+
+.simulator-pagination .pagination a:focus, .simulator-pagination .pagination a:hover {
+  text-decoration: none;
+}
+
+.simulator-pagination .pagination {
+  margin: 0;
+}
+
+.simulator-pagination .pagination .revise {
+  margin-left: 85px;
+  margin-right: 0;
+}
+/* END NAVIGATION */
+
+/* FOOTER */
+.simulator-footer button {
+  padding: 10px 7px 10px 7px;
+  border-radius: 5px !important;
   border: 1px solid #dee2e6 !important;
   background-color: #007bff !important;
   color: #fff;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 15px;
   text-transform: none;
 }
 
 .simulator-footer button:hover {
   background-color: #0059b9 !important;
 }
+/* END FOOTER */
 
+/* NAV RESULT TESTE */
 .simulator-nav ul, .simulator-result ul {
   margin: 0;
 }
@@ -329,4 +392,8 @@
   vertical-align: top;
   border-top: 1px solid #dee2e6;
 }
+/* END NAV RESULT TESTE */
+
+
+
 
