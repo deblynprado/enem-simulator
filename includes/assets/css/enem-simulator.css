@@ -76,65 +76,101 @@
   overflow: visible;
 }
 
-.simulator-content, .simulator-nav, .simulator-modal, .simulator-result {
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
-  color: rgb(55, 58, 60) !important;
-}
-
-.simulator-modal button {
-  padding: 1rem .7rem 1rem .7rem;
-  border-radius: .5rem !important;
-  border: 1px solid #dee2e6 !important;
-  font-weight: 400;
-  font-size: 1.5rem;
-  text-transform: none;
-}
-
-.simulator-modal .modal-header .close {
-  padding: 1rem !important;
-  margin: -1rem -1rem -1rem auto;
-}
-
-.simulator-modal .btn-primary {
-  background-color: #007bff !important;
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-
-.simulator-modal .btn-primary:hover {
-  color: #fff;
-  background-color: #0069d9 !important;
-  border-color: #0062cc !important;
-}
-
-.simulator-modal .btn-secondary:hover {
-  color: #0056b3;
-  text-decoration: none;
-  background-color: #7b8b9b !important;
-  border-color: #dee2e6 !important;
-}
-
-.simulator-modal .btn-secondary {
-  background-color: #fff !important;
-  color: rgb(55, 58, 60) !important;
-}
-
-.simulator-modal button .close {
-  background-color: #fff !important;
-}
-
-.simulator-modal .modal-title {
-  margin: 0 !important;
+.simulator-modal .modal-title{
+  margin: 0 ;
   line-height: 1.5;
   padding: 1rem;
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;  
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.9975px;
+  text-align: left;
+  color: #495057;
+  border: none;
 }
 
 .simulator-modal button.close {
-  padding: 0;
-  background-color: transparent !important;
+  padding: 10px;
+  margin: -10px -10px -10px auto;
+  background-color: transparent;
   border: 0;
   -webkit-appearance: none;
-  font-size: 3.5rem;
+  font-size: 35px;
+  letter-spacing: 1.1655px;
+  text-align: center;
+  text-transform: uppercase;
+  float: right;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.simulator-modal .modal-footer > :not(:last-child) {
+  padding-right: 7px;
+}
+
+.simulator-modal .modal-footer button {
+  padding: 10px 7px 10px 7px;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.simulator-modal .modal-footer .btn-primary {
+  background-color: #007bff;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.simulator-modal .modal-footer .btn-primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.simulator-modal .modal-footer .btn-secondary {
+  background-color: #fff;
+  color: rgb(55, 58, 60);
+}
+
+.simulator-modal .modal-footer .btn-secondary:hover {
+  color: #0056b3;
+  text-decoration: none;
+  background-color: #e2e6ea;
+  border-color: #dee2e6;
+}
+
+.simulator-modal .modal-body label {
+  font-size: 16px;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-weight: 400;
+  display: block;
+  margin: 0 0 5px 0;
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  color: rgb(55, 58, 60);
+}
+
+.simulator-modal .modal-body input {
+  padding: 10px 10px 10px 10px;
+  font-size: 16px;
+  letter-spacing: -0.24px;
+  border: 1px solid #ced4da;
+  margin: 0;
+  width: 100%;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  max-width: 100%;
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.simulator-content, .simulator-nav, .simulator-modal, .simulator-result {
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
+  color: rgb(55, 58, 60) !important;
 }
 
 .simulator-content ul, ol {
