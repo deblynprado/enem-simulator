@@ -9,7 +9,7 @@ jQuery(document).ready(function( $ ) {
 	$('#start-simulator').on('click', function() {
     let register = localStorage.getItem('enem-simulator-register');
     if(!register)
-      $('#enem-simulator-modal-register').modal('toggle');
+      $('#simulator-modal-register').modal('toggle');
     else
       startSimulator();
   });
@@ -31,12 +31,12 @@ jQuery(document).ready(function( $ ) {
     });
   });
 
-  $('#enem-simulator-modal-register').on('hide.bs.modal', function() {
+  $('#simulator-modal-register').on('hide.bs.modal', function() {
     startSimulator();
   });
 
   $('.new-simulator').on('click', function(){
-    $('#enem-simulator-modal-new-simulator').modal('toggle');
+    $('#simulator-modal-new-simulator').modal('toggle');
   });
 
   $('#new-simulator').on('click', function(){
@@ -45,7 +45,7 @@ jQuery(document).ready(function( $ ) {
 
   $('#finisish-simulator').on('click', function(e) {
     e.preventDefault();
-    $('#enem-simulator-modal-finish').modal('toggle');
+    $('#simulator-modal-finish').modal('toggle');
     finishSimulator();
   });
 
@@ -127,7 +127,7 @@ jQuery(document).ready(function( $ ) {
       
       if(enem_simulator.test_change_alert && group.length > 1) {
         const modal = new Promise(function(resolve, reject){
-          $('#enem-simulator-modal-alter').modal('toggle');  
+          $('#simulator-modal-alter').modal('toggle');  
           $('#alter-simulator').click(function(){
             resolve();
           });

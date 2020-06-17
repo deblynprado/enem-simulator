@@ -1,9 +1,87 @@
-.simulator-content, .simulator-nav, .enem-simulator-modal, .simulator-result {
+.simulator-content .simulator-title {
+  margin: 6rem auto 3rem;
+  font-size: 48px;
+  font-feature-settings: "lnum";
+  font-variant-numeric: lining-nums;
+  font-weight: 700;
+  letter-spacing: -1.995px;
+  line-height: 1.25;
+  border: none;
+  padding: 0;
+  text-align: left;
+  color: rgb(55, 58, 60);
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.simulator-content .simulator-initial-message p {
+  text-align: justify;
+  border: 0;
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: normal;
+  padding: 0;
+  margin: 0 0 21px 0;
+  line-height: 1.476;
+  color: rgb(55, 58, 60);
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;  
+}
+
+.simulator-content .simulator-category-options select {
+  display: inline-block;
+  width: 100%;
+  padding: 3.75px 7.5px 7.5px 3.75px;
+  line-height: 1.5;
+  color: #495057;
+  vertical-align: middle;
+  background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center;
+  background-size: 8px 10px;
+  border: 1px solid #ced4da;
+  border-radius: 2.5px;
+  text-transform: none;
+  letter-spacing: normal;
+  text-align: left;
+  font-weight: 400;
+  font-size: 20px;
+  height: auto;
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;  
+  margin: 0;
+}
+
+.simulator-content .simulator-category-options button {
+  padding: 0;
+  border-style: none;
+  width: 100%;
+  font-size: 20px;
+  background-color: #007bff;
+  cursor: pointer;
+  color: #fff;
+  border-color: #007bff;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 3.75px 7.5px 7.5px 3.75px;
+  line-height: 1.5;
+  border-radius: 2.5px;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  letter-spacing: 0.666px;
+  margin: 0;
+  opacity: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;  
+  overflow: visible;
+}
+
+.simulator-content, .simulator-nav, .simulator-modal, .simulator-result {
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
   color: rgb(55, 58, 60) !important;
 }
 
-.enem-simulator-modal button {
+.simulator-modal button {
   padding: 1rem .7rem 1rem .7rem;
   border-radius: .5rem !important;
   border: 1px solid #dee2e6 !important;
@@ -12,46 +90,46 @@
   text-transform: none;
 }
 
-.enem-simulator-modal .modal-header .close {
+.simulator-modal .modal-header .close {
   padding: 1rem !important;
   margin: -1rem -1rem -1rem auto;
 }
 
-.enem-simulator-modal .btn-primary {
+.simulator-modal .btn-primary {
   background-color: #007bff !important;
   padding-left: 3rem;
   padding-right: 3rem;
 }
 
-.enem-simulator-modal .btn-primary:hover {
+.simulator-modal .btn-primary:hover {
   color: #fff;
   background-color: #0069d9 !important;
   border-color: #0062cc !important;
 }
 
-.enem-simulator-modal .btn-secondary:hover {
+.simulator-modal .btn-secondary:hover {
   color: #0056b3;
   text-decoration: none;
   background-color: #7b8b9b !important;
   border-color: #dee2e6 !important;
 }
 
-.enem-simulator-modal .btn-secondary {
+.simulator-modal .btn-secondary {
   background-color: #fff !important;
   color: rgb(55, 58, 60) !important;
 }
 
-.enem-simulator-modal button .close {
+.simulator-modal button .close {
   background-color: #fff !important;
 }
 
-.enem-simulator-modal .modal-title {
+.simulator-modal .modal-title {
   margin: 0 !important;
   line-height: 1.5;
   padding: 1rem;
 }
 
-.enem-simulator-modal button.close {
+.simulator-modal button.close {
   padding: 0;
   background-color: transparent !important;
   border: 0;
@@ -65,17 +143,6 @@
 
 .simulator-content li {
   margin: 0.5rem 2rem 0 0 !important;
-}
-
-#start-simulator {
-  width: 100%;
-  font-size: 2rem;
-  background-color: #007bff !important;
-}
-
-#question_category {
-  font-size: 2rem;
-  height: auto;
 }
 
 .question h4, h3 {
@@ -211,10 +278,6 @@
   text-decoration: none !important;
   font-weight: bold;
   color: #fff !important;
-}
-
-.simulator-title {
-  margin-top: 10rem !important;
 }
 
 .simulator-result table {

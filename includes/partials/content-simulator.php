@@ -134,8 +134,8 @@
       <!-- /simulator-result -- -->
     </div>
   </div>
-  <!-- enem-simulator-modal-finish -- -->
-  <div class="modal enem-simulator-modal" tabindex="-1" role="dialog" id="enem-simulator-modal-finish">
+  <!-- simulator-modal-finish -- -->
+  <div class="modal simulator-modal" tabindex="-1" role="dialog" id="simulator-modal-finish">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -154,9 +154,9 @@
       </div>
     </div>
   </div>
-  <!-- /enem-simulator-modal-finish -- -->
-  <!-- enem-simulator-modal-alter -- -->
-  <div class="modal enem-simulator-modal" tabindex="-1" role="dialog" id="enem-simulator-modal-alter">
+  <!-- /simulator-modal-finish -- -->
+  <!-- simulator-modal-alter -- -->
+  <div class="modal simulator-modal" tabindex="-1" role="dialog" id="simulator-modal-alter">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -175,9 +175,9 @@
       </div>
     </div>
   </div>
-  <!-- /enem-simulator-modal-alter -- -->
-  <!-- enem-simulator-modal-register -- -->
-  <div class="modal enem-simulator-modal" tabindex="-1" role="dialog" id="enem-simulator-modal-register">
+  <!-- /simulator-modal-alter -- -->
+  <!-- simulator-modal-register -- -->
+  <div class="modal simulator-modal" tabindex="-1" role="dialog" id="simulator-modal-register">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -209,9 +209,9 @@
       </div>
     </div>
   </div>
-  <!-- /enem-simulator-modal-register -- -->
-  <!-- enem-simulator-modal-new-simulator -- -->
-  <div class="modal enem-simulator-modal" tabindex="-1" role="dialog" id="enem-simulator-modal-new-simulator">
+  <!-- /simulator-modal-register -- -->
+  <!-- simulator-modal-new-simulator -- -->
+  <div class="modal simulator-modal" tabindex="-1" role="dialog" id="simulator-modal-new-simulator">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -230,5 +230,5 @@
       </div>
     </div>
   </div>
-  <!-- /enem-simulator-modal-new-simulator -- -->
+  <!-- /simulator-modal-new-simulator -- -->
 </div>
