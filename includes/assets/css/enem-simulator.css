@@ -203,7 +203,7 @@
   border: none;
   padding: 0;
   text-align: left;
-  margin: 45px 0px 25px 0px;
+  margin: 20px 0px 20px 0px;
 }
 
 .simulator-categories .question p {
@@ -283,6 +283,7 @@
 .simulator-content .timer {
   font-size: 25px;
   text-align: right;
+  font-weight: bold;
 }
 
 .simulator-content .timer p {
@@ -415,6 +416,7 @@
 
 .simulator-nav ul, .simulator-result ul {
   margin: 0;
+  padding: 0;
 }
 
 .simulator-nav li, .simulator-result li {
@@ -425,6 +427,10 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 700;
   margin-left: 20px;
+}
+
+.simulator-nav li:first-child , .simulator-result li:first-child  {
+  margin-left: 0;
 }
 
 .simulator-nav li:before, .simulator-result li::before {
