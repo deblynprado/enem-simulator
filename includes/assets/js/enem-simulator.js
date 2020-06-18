@@ -35,7 +35,13 @@ jQuery(document).ready(function( $ ) {
     startSimulator();
   });
 
-  $('.new-simulator').on('click', function(){
+  $('#enem-simulator-revise').on('click', function(event){
+    event.preventDefault();
+    $('#simulator-modal-finish').modal('toggle');
+  });
+
+  $('.new-simulator').on('click', function(event){
+    event.preventDefault();
     $('#simulator-modal-new-simulator').modal('toggle');
   });
 
