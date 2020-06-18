@@ -342,7 +342,7 @@
 /* END NAVIGATION */
 
 /* FOOTER */
-.simulator-footer button {
+.simulator-footer button, .simulator-result .new-simulator {
   padding: 10px 7px 10px 7px;
   border-radius: 5px !important;
   border: 1px solid #dee2e6 !important;
@@ -356,9 +356,13 @@
 .simulator-footer button:hover {
   background-color: #0059b9 !important;
 }
+
+.simulator-footer .mr-4 {
+  margin-right: 15px !important;
+}
 /* END FOOTER */
 
-/* NAV RESULT TESTE */
+/* NAV RESULT TEST */
 .simulator-nav h3 {
   margin-top: 60px;
   font-weight: 700;
@@ -421,6 +425,11 @@
   text-decoration: none !important;
   font-weight: bold;
   color: #fff !important;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 1;
+  font-size: 13px;
 }
 
 .simulator-result table {
