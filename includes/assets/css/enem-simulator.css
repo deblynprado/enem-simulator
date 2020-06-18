@@ -251,6 +251,14 @@
 .simulator-categories .custom-control-input.is-invalid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before {
   background-color: #e4606d !important;
 }
+
+.simulator-categories .question .custom-control-label img {
+  margin-top: -50px;
+  padding: 10px;
+  height: 200px !important;
+  width: 200px !important;
+  margin-left: 60px !important;
+}
 /* END QUESTIONS */
 
 /* PROGRESS BAR */
@@ -336,12 +344,18 @@
 }
 
 .simulator-pagination .pagination .revise {
-  margin-left: 85px;
-  margin-right: 0;
+  float: right;
+  right: 0;
+  position: absolute;
 }
 /* END NAVIGATION */
 
 /* FOOTER */
+.simulator-content .simulator-footer {
+  padding-right: 0;
+  margin-top: 30px;
+}
+
 .simulator-footer button, .simulator-result .new-simulator {
   padding: 10px 7px 10px 7px;
   border-radius: 5px !important;

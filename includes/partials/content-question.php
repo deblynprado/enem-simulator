@@ -27,7 +27,7 @@
           <label class="custom-control-label" for="<?php echo $id ?>">
             <?php echo chr($field + 64); ?> - <?php echo $value['text_answer'] ?> 
             <?php if( $value[ 'image_answer' ] ) : ?>
-              <img src="<?php echo $value['image_answer'] ?>" class="rounded mx-auto d-block w-50 h-50">
+              <img src="<?php echo $value['image_answer'] ?>" class="rounded d-block">
             <?php endif; ?>
           </label>
         </div>
