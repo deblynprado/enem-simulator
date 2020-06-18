@@ -391,7 +391,7 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
 }
 
-.simulator-nav .p-4 {
+.simulator-nav .p-4, .simulator-result .p-4 {
   padding: 16px !important;
 } 
 
