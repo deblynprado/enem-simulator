@@ -181,6 +181,16 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
 }
+
+#enem-simulator .simulator-modal .modal-body p {
+  padding: 0;
+  font-size: 16px;
+  letter-spacing: -0.24px;
+  margin: 0;
+  width: 100%;
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
+}
 /* END MODAL */
 
 /* QUESTIONS */
@@ -221,7 +231,6 @@
   line-height: 1.476;
   color: rgb(55, 58, 60);
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;  
-
 }
 
 #enem-simulator .simulator-categories .question .question-thumbnail {
@@ -499,7 +508,7 @@
   vertical-align: top;
   border-top: 1px solid #dee2e6;
 }
-/* END NAV RESULT TESTE */
+/* END NAV RESULT TEST */
 
 
 
