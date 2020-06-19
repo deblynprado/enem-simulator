@@ -1,13 +1,17 @@
-.simulator-content, .simulator-nav, .simulator-modal, .simulator-result {
+#enem-simulator  .simulator-content, 
+#enem-simulator  .simulator-nav, 
+#enem-simulator  .simulator-modal, 
+#enem-simulator  .simulator-result {
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
   color: rgb(55, 58, 60) !important;
 }
 
-.simulator-content ul, ol {
+#enem-simulator .simulator-content ul, 
+#enem-simulator .simulator-content ol {
   margin: 0;
 }
 
-.simulator-content .simulator-title {
+#enem-simulator .simulator-content .simulator-title {
   margin: 6rem auto 3rem;
   font-size: 48px;
   font-feature-settings: "lnum";
@@ -22,7 +26,7 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-.simulator-content .simulator-initial-message p {
+#enem-simulator .simulator-content .simulator-initial-message p {
   text-align: justify;
   border: 0;
   font-size: 21px;
@@ -35,7 +39,7 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;  
 }
 
-.simulator-content .simulator-category-options select {
+#enem-simulator .simulator-content .simulator-category-options select {
   display: inline-block;
   width: 100%;
   padding: 3.75px 7.5px 7.5px 3.75px;
@@ -56,7 +60,7 @@
   margin: 0;
 }
 
-.simulator-content .simulator-category-options button {
+#enem-simulator .simulator-content .simulator-category-options button {
   padding: 0;
   border-style: none;
   width: 100%;
@@ -86,7 +90,7 @@
 }
 
 /* MODAL */
-.simulator-modal .modal-title{
+#enem-simulator .simulator-modal .modal-title{
   margin: 0 ;
   line-height: 1.5;
   padding: 1rem;
@@ -99,7 +103,7 @@
   border: none;
 }
 
-.simulator-modal button.close {
+#enem-simulator .simulator-modal button.close {
   padding: 10px;
   margin: -10px -10px -10px auto;
   background-color: transparent;
@@ -116,11 +120,11 @@
   text-shadow: 0 1px 0 #fff;
 }
 
-.simulator-modal .modal-footer > :not(:last-child) {
+#enem-simulator .simulator-modal .modal-footer > :not(:last-child) {
   padding-right: 7px;
 }
 
-.simulator-modal .modal-footer button {
+#enem-simulator .simulator-modal .modal-footer button {
   padding: 10px 7px 10px 7px;
   border-radius: 5px;
   border: 1px solid #dee2e6;
@@ -129,31 +133,31 @@
   text-transform: none;
 }
 
-.simulator-modal .modal-footer .btn-primary {
+#enem-simulator .simulator-modal .modal-footer .btn-primary {
   background-color: #007bff;
   padding-left: 30px;
   padding-right: 30px;
 }
 
-.simulator-modal .modal-footer .btn-primary:hover {
+#enem-simulator .simulator-modal .modal-footer .btn-primary:hover {
   color: #fff;
   background-color: #0069d9;
   border-color: #0062cc;
 }
 
-.simulator-modal .modal-footer .btn-secondary {
+#enem-simulator .simulator-modal .modal-footer .btn-secondary {
   background-color: #fff;
   color: rgb(55, 58, 60);
 }
 
-.simulator-modal .modal-footer .btn-secondary:hover {
+#enem-simulator .simulator-modal .modal-footer .btn-secondary:hover {
   color: #0056b3;
   text-decoration: none;
   background-color: #e2e6ea;
   border-color: #dee2e6;
 }
 
-.simulator-modal .modal-body label {
+#enem-simulator .simulator-modal .modal-body label {
   font-size: 16px;
   border: none;
   padding: 0;
@@ -165,7 +169,7 @@
   color: rgb(55, 58, 60);
 }
 
-.simulator-modal .modal-body input {
+#enem-simulator .simulator-modal .modal-body input {
   padding: 10px 10px 10px 10px;
   font-size: 16px;
   letter-spacing: -0.24px;
@@ -180,7 +184,7 @@
 /* END MODAL */
 
 /* QUESTIONS */
-.simulator-categories .question h3 {
+#enem-simulator .simulator-categories .question h3 {
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 40px;
   color: rgb(55, 58, 60);
@@ -193,7 +197,7 @@
   margin: 5px 0px 5px 0px;
 }
 
-.simulator-categories .question h4 {
+#enem-simulator .simulator-categories .question h4 {
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 32px;
   color: rgb(55, 58, 60);
@@ -206,7 +210,7 @@
   margin: 20px 0px 20px 0px;
 }
 
-.simulator-categories .question p {
+#enem-simulator .simulator-categories .question p {
   text-align: justify;
   border: 0;
   font-size: 21px;
@@ -220,39 +224,41 @@
 
 }
 
-.simulator-categories .question .question-thumbnail {
+#enem-simulator .simulator-categories .question .question-thumbnail {
   width: 100%;
 }
 
-.simulator-categories .question .question-thumbnail img {
+#enem-simulator .simulator-categories .question .question-thumbnail img {
   width: 100%;
 }
 
-.simulator-categories .question .custom-checkbox {
+#enem-simulator .simulator-categories .question .custom-checkbox {
   margin-bottom: 10px;
 }
 
-.simulator-categories .question .custom-control-label {
+#enem-simulator .simulator-categories .question .custom-control-label {
   font-size: 20px;
   margin-left: 5px;
   padding-left: 10px;
 }
 
-.simulator-categories .question .custom-control-label::after,
-.simulator-categories .question .custom-control-label::before {
+#enem-simulator .simulator-categories .question .custom-control-label::after,
+#enem-simulator .simulator-categories .question .custom-control-label::before {
   width: 25px;
   height: 25px;
 }
 
-.simulator-categories .custom-control-input.is-valid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:valid:checked ~ .custom-control-label::before {
+#enem-simulator .simulator-categories .custom-control-input.is-valid:checked ~ .custom-control-label::before, 
+.was-validated .custom-control-input:valid:checked ~ .custom-control-label::before {
   background-color: #34ce57 !important;
 }
 
-.simulator-categories .custom-control-input.is-invalid:checked ~ .custom-control-label::before, .was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before {
+#enem-simulator .simulator-categories .custom-control-input.is-invalid:checked ~ .custom-control-label::before, 
+.was-validated .custom-control-input:invalid:checked ~ .custom-control-label::before {
   background-color: #e4606d !important;
 }
 
-.simulator-categories .question .custom-control-label img {
+#enem-simulator .simulator-categories .question .custom-control-label img {
   margin-top: -50px;
   padding: 10px;
   height: 200px !important;
@@ -262,36 +268,41 @@
 /* END QUESTIONS */
 
 /* PROGRESS BAR */
-.simulator-progress .progress, .simulator-nav .progress{
+#enem-simulator .simulator-progress .progress, 
+#enem-simulator .simulator-nav .progress{
   height: 30px;
   border-radius: 5px;
 }
 
-.simulator-progress .progress .progress-bar, .simulator-nav .progress .progress-bar{
+#enem-simulator .simulator-progress .progress .progress-bar, 
+#enem-simulator .simulator-nav .progress .progress-bar{
   background-color: #007bff;
   color: #fff;
 }
 
-.simulator-progress .progress-bar, .simulator-nav .progress-bar {
+#enem-simulator .simulator-progress .progress-bar, 
+#enem-simulator .simulator-nav .progress-bar {
   font-size: 20px;
  -webkit-transition: width 2.5s ease;
   transition: width 2.5s ease !important;
 }
 
-.simulator-content .progress-bar[aria-valuenow="0"], .progress-bar[aria-valuenow="2"],
-.simulator-nav .progress-bar[aria-valuenow="0"], .progress-bar[aria-valuenow="2"] {
+#enem-simulator .simulator-content .progress-bar[aria-valuenow="0"], 
+.progress-bar[aria-valuenow="2"],
+#enem-simulator .simulator-nav .progress-bar[aria-valuenow="0"], 
+.progress-bar[aria-valuenow="2"] {
   min-width: 30px;
 }
 /* END PROGRESS BAR*/
 
 /* TIMER */
-.simulator-content .timer {
+#enem-simulator .simulator-content .timer {
   font-size: 25px;
   text-align: right;
   font-weight: bold;
 }
 
-.simulator-content .timer p {
+#enem-simulator .simulator-content .timer p {
   margin-bottom: 0;
   line-height: 35px;
   width: 200px;
@@ -302,7 +313,7 @@
 /* END TIMER*/
 
 /* NAVIGATION */
-.simulator-pagination .pagination .page-link {
+#enem-simulator .simulator-pagination .pagination .page-link {
   padding: 10px 7px 10px 5px;
   border-radius: 5px;
   font-size: 20px;
@@ -313,43 +324,44 @@
   font-weight: 400;
 }
 
-.simulator-pagination .pagination .page-item {
+#enem-simulator .simulator-pagination .pagination .page-item {
   margin: 0;
 }
 
-.simulator-pagination .pagination .page-item:first-child .page-link {
+#enem-simulator .simulator-pagination .pagination .page-item:first-child .page-link {
   margin-left: 0;
   margin-right: 5px;
 }
 
-.simulator-pagination .pagination .page-link {
+#enem-simulator .simulator-pagination .pagination .page-link {
   text-decoration: none;
 }
 
-.simulator-pagination .pagination .page-link:hover {
+#enem-simulator .simulator-pagination .pagination .page-link:hover {
   color: #0056b3;
   text-decoration: none;
   background-color: #e9ecef;
   border-color: #dee2e6;
 }
 
-.simulator-pagination .pagination .page-item:not(.disabled) .page-link {
+#enem-simulator .simulator-pagination .pagination .page-item:not(.disabled) .page-link {
   color: rgb(55, 58, 60);
 }
 
-.simulator-pagination .pagination .page-item.disabled .page-link span {
+#enem-simulator .simulator-pagination .pagination .page-item.disabled .page-link span {
   color: #6c757d;
 }
 
-.simulator-pagination .pagination a:focus, .simulator-pagination .pagination a:hover {
+#enem-simulator .simulator-pagination .pagination a:focus, 
+#enem-simulator .simulator-pagination .pagination a:hover {
   text-decoration: none;
 }
 
-.simulator-pagination .pagination {
+#enem-simulator .simulator-pagination .pagination {
   margin: 0;
 }
 
-.simulator-pagination .pagination .revise {
+#enem-simulator .simulator-pagination .pagination .revise {
   float: right;
   right: 0;
   position: absolute;
@@ -357,12 +369,13 @@
 /* END NAVIGATION */
 
 /* FOOTER */
-.simulator-content .simulator-footer {
+#enem-simulator .simulator-content .simulator-footer {
   padding-right: 0;
   margin-top: 30px;
 }
 
-.simulator-footer button, .simulator-result .new-simulator {
+#enem-simulator .simulator-footer button, 
+#enem-simulator .simulator-result .new-simulator {
   padding: 10px 7px 10px 7px;
   border-radius: 5px !important;
   border: 1px solid #dee2e6 !important;
@@ -373,17 +386,18 @@
   text-transform: none;
 }
 
-.simulator-footer button:hover {
+#enem-simulator .simulator-footer button:hover {
   background-color: #0059b9 !important;
 }
 
-.simulator-footer .mr-4 {
+#enem-simulator .simulator-footer .mr-4 {
   margin-right: 15px !important;
 }
 /* END FOOTER */
 
 /* NAV RESULT TEST */
-#enem-simulator .simulator-nav h3, #enem-simulator .simulator-result h3 {
+#enem-simulator .simulator-nav h3, 
+#enem-simulator .simulator-result h3 {
   margin-top: 60px;
   font-weight: 700;
   font-size: 40px;
@@ -391,7 +405,8 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
 }
 
-#enem-simulator .simulator-nav h4, #enem-simulator .simulator-result h4 {
+#enem-simulator .simulator-nav h4, 
+#enem-simulator .simulator-result h4 {
   margin-top: 45px;
   font-weight: 700;
   font-size: 32px;
@@ -399,7 +414,8 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
 }
 
-#enem-simulator .simulator-nav h5, #enem-simulator .simulator-result h5 {
+#enem-simulator .simulator-nav h5, 
+#enem-simulator .simulator-result h5 {
   margin-top: 45px;
   font-weight: 700;
   font-size: 24px;
@@ -407,7 +423,8 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
 }
 
-#enem-simulator .simulator-nav p, #enem-simulator .simulator-result p {
+#enem-simulator .simulator-nav p, 
+#enem-simulator .simulator-result p {
   margin-top: 10px;
   font-weight: 400;
   font-size: 21px;
@@ -415,16 +432,19 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
 }
 
-#enem-simulator .simulator-nav .p-4, #enem-simulator .simulator-result .p-4 {
+#enem-simulator .simulator-nav .p-4, 
+#enem-simulator .simulator-result .p-4 {
   padding: 16px !important;
 } 
 
-#enem-simulator .simulator-nav ul, #enem-simulator .simulator-result ul {
+#enem-simulator .simulator-nav ul, 
+#enem-simulator .simulator-result ul {
   margin: 0;
   padding: 0;
 }
 
-#enem-simulator .simulator-nav li, #enem-simulator .simulator-result li {
+#enem-simulator .simulator-nav li, 
+#enem-simulator .simulator-result li {
   font-size: 14px;
   font-weight: bolder;
   list-style-type: none;
@@ -434,11 +454,13 @@
   margin-left: 20px;
 }
 
-#enem-simulator .simulator-nav li:first-child , #enem-simulator .simulator-result li:first-child  {
+#enem-simulator .simulator-nav li:first-child , 
+#enem-simulator .simulator-result li:first-child  {
   margin-left: 0;
 }
 
-#enem-simulator .simulator-nav li:before, #enem-simulator .simulator-result li::before {
+#enem-simulator .simulator-nav li:before, 
+#enem-simulator .simulator-result li::before {
   content: "■";
   font-size: 40px;
   vertical-align: sub;
@@ -446,11 +468,13 @@
   font-weight: 700;
 }
 
-#enem-simulator .simulator-nav .question-nav .row, #enem-simulator .simulator-result .question-nav .row {
+#enem-simulator .simulator-nav .question-nav .row, 
+#enem-simulator .simulator-result .question-nav .row {
   margin-left: 2px;
 }
 
-#enem-simulator .question-nav .question-nav-item, #enem-simulator .simulator-result .question-nav-item  {
+#enem-simulator .question-nav .question-nav-item, 
+#enem-simulator .simulator-result .question-nav-item  {
   text-decoration: none !important;
   font-weight: bold;
   color: #fff !important;
@@ -466,7 +490,8 @@
   border-collapse: collapse !important;
 }
 
-#enem-simulator .simulator-result th, .simulator-result td {
+#enem-simulator .simulator-result th, 
+#enem-simulator .simulator-result td {
   border: none;
   vertical-align: bottom;
   border-bottom: 2px solid #dee2e6;
