@@ -661,16 +661,21 @@ jQuery(document).ready(function( $ ) {
   }  
 
   function modifyFontSize(flag) {
-    let element = $('#enem-simulator');
-    let curretnFontSize = parseInt(element.css('font-size'));
+    let elements = [];
+    elements.push($('#enem-simulator .question-message'));
+    elements.push($('#enem-simulator .custom-control-label'));
+    elements.push($('#enem-simulator .modal-body p'));
+    
+    elements.forEach(element => {
+      let curretnFontSize = parseInt(element.css('font-size'));
+      if((curretnFontSize > 27 && flag == 'increase') || 
+        (curretnFontSize < 12 && flag == 'decrease')) return;
 
-    if((curretnFontSize == 27 && flag == 'increase') || 
-       (curretnFontSize == 12 && flag == 'decrease')) return;
-
-    if(flag == 'increase')
-      element.css('font-size', curretnFontSize+3);
-    if(flag == 'decrease')
-      element.css('font-size', curretnFontSize-3);
+      if(flag == 'increase')
+        element.css('font-size', curretnFontSize+3);
+      if(flag == 'decrease')
+        element.css('font-size', curretnFontSize-3);
+    });
   }
 
 });
