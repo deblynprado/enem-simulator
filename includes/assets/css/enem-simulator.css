@@ -331,6 +331,7 @@
   background-color: #fff;
   border: 1px solid #dee2e6;
   font-weight: 400;
+  box-shadow: none;
 }
 
 #enem-simulator .simulator-pagination .pagination .page-item {
@@ -492,6 +493,7 @@
   text-align: center;
   line-height: 1;
   font-size: 15px;
+  box-shadow: none;
 }
 
 #enem-simulator .simulator-result table {
