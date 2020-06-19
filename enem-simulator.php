@@ -206,7 +206,7 @@ function enem_simulator_get_nav_callback() {
         <div class="progress-bar progress-bar-nav" id="propress-bar-<?php echo $key ?>" role="progressbar" style="width: 0%;" 
           aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-category-name="<?php echo $slug; ?>">0%</div>
       </div>
-      <p class="mt-3 text-uppercase"><?php echo __('Click on the question to navigate', 'enem-simulator') ?></p>
+      <p class="text-uppercase"><?php echo __('Click on the question to navigate', 'enem-simulator') ?></p>
       <div class="question-nav">
         <?php foreach ( $posts as $key => $value ) : 
           if ( ($key + 1) % 10 == 0 || $key == 0) : ?> 
