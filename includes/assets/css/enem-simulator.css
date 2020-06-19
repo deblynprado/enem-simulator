@@ -267,6 +267,11 @@
   border-radius: 5px;
 }
 
+.simulator-progress .progress .progress-bar, .simulator-nav .progress .progress-bar{
+  background-color: #007bff;
+  color: #fff;
+}
+
 .simulator-progress .progress-bar, .simulator-nav .progress-bar {
   font-size: 20px;
  -webkit-transition: width 2.5s ease;
@@ -378,7 +383,7 @@
 /* END FOOTER */
 
 /* NAV RESULT TEST */
-.simulator-nav h3 {
+#enem-simulator .simulator-nav h3, #enem-simulator .simulator-result h3 {
   margin-top: 60px;
   font-weight: 700;
   font-size: 40px;
@@ -386,7 +391,7 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
 }
 
-.simulator-nav h4 {
+#enem-simulator .simulator-nav h4, #enem-simulator .simulator-result h4 {
   margin-top: 45px;
   font-weight: 700;
   font-size: 32px;
@@ -394,7 +399,7 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
 }
 
-.simulator-nav h5 {
+#enem-simulator .simulator-nav h5, #enem-simulator .simulator-result h5 {
   margin-top: 45px;
   font-weight: 700;
   font-size: 24px;
@@ -402,7 +407,7 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
 }
 
-.simulator-nav p {
+#enem-simulator .simulator-nav p, #enem-simulator .simulator-result p {
   margin-top: 10px;
   font-weight: 400;
   font-size: 21px;
@@ -410,16 +415,16 @@
   font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
 }
 
-.simulator-nav .p-4, .simulator-result .p-4 {
+#enem-simulator .simulator-nav .p-4, #enem-simulator .simulator-result .p-4 {
   padding: 16px !important;
 } 
 
-.simulator-nav ul, .simulator-result ul {
+#enem-simulator .simulator-nav ul, #enem-simulator .simulator-result ul {
   margin: 0;
   padding: 0;
 }
 
-.simulator-nav li, .simulator-result li {
+#enem-simulator .simulator-nav li, #enem-simulator .simulator-result li {
   font-size: 14px;
   font-weight: bolder;
   list-style-type: none;
@@ -429,11 +434,11 @@
   margin-left: 20px;
 }
 
-.simulator-nav li:first-child , .simulator-result li:first-child  {
+#enem-simulator .simulator-nav li:first-child , #enem-simulator .simulator-result li:first-child  {
   margin-left: 0;
 }
 
-.simulator-nav li:before, .simulator-result li::before {
+#enem-simulator .simulator-nav li:before, #enem-simulator .simulator-result li::before {
   content: "■";
   font-size: 40px;
   vertical-align: sub;
@@ -441,23 +446,27 @@
   font-weight: 700;
 }
 
-.question-nav .question-nav-item {
+#enem-simulator .simulator-nav .question-nav .row, #enem-simulator .simulator-result .question-nav .row {
+  margin-left: 2px;
+}
+
+#enem-simulator .question-nav .question-nav-item, #enem-simulator .simulator-result .question-nav-item  {
   text-decoration: none !important;
   font-weight: bold;
   color: #fff !important;
-  width: 50px;
+  width: 55px;
   height: 50px;
   text-align: center;
   line-height: 1;
-  font-size: 13px;
+  font-size: 15px;
 }
 
-.simulator-result table {
+#enem-simulator .simulator-result table {
   border: none;
   border-collapse: collapse !important;
 }
 
-.simulator-result th, .simulator-result td {
+#enem-simulator .simulator-result th, .simulator-result td {
   border: none;
   vertical-align: bottom;
   border-bottom: 2px solid #dee2e6;
@@ -466,7 +475,6 @@
   border-top: 1px solid #dee2e6;
 }
 /* END NAV RESULT TESTE */
-
 
 
 
