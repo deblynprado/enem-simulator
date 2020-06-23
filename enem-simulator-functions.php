@@ -102,7 +102,7 @@ function enem_simulator_get_question_category_ID($name) {
   global $wpdb;
   $result = $wpdb->get_results( "SELECT t.term_id FROM $wpdb->terms AS t
                                 INNER JOIN $wpdb->term_taxonomy AS tt ON t.term_id = tt.term_id
-                                WHERE tt.taxonomy = 'question_category' AND t.name = '$name'" );
+                                WHERE tt.taxonomy = 'question_category' AND t.slug = '$name'" );
   if( $result[0] )
     return $result[0]->term_id;
 }
