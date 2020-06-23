@@ -16,17 +16,15 @@
     </div><!-- /.simulator-header -->
       
     <div class="row simulator-category-options">
-      <?php if( get_field( 'question_categories', 'option' ) ) : ?>
         <div class="col-10">  
           <?php if( count( $categories ) > 0 ) : ?>
-          <select class="custom-select" name="question_category" id="question_category">
-            <?php foreach ($categories as $value) : ?>
-            <option value="<?php echo $value[ 'slug' ] ?>"><?php echo $value[ 'name' ] ?></option>
-            <?php endforeach; ?>
-          </select>
+            <select class="custom-select" name="question_category" id="question_category">
+              <?php foreach ($categories as $value) : ?>
+              <option value="<?php echo $value[ 'slug' ] ?>"><?php echo $value[ 'name' ] ?></option>
+              <?php endforeach; ?>
+            </select>
           <?php endif;?>
         </div><!-- /.col -->
-      <?php endif; ?>
 
       <div class="col-10 mt-4">
         <?php if( count( $categories ) > 0 ) : ?>
