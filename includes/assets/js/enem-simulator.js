@@ -384,22 +384,6 @@ jQuery(document).ready(function( $ ) {
     window.endSimulator = true;
   }
 
-  function displayTimer(value) {
-    let s, m, h;
-    m = parseInt(value / 60);
-    h = parseInt(m / 60);
-    s =  value % 60;
-
-    if(h < 10) 
-        h = '0' + h;
-    if(m < 10) 
-      m = '0' + m;
-    if(s < 10) 
-      s = '0' + s;
-
-    return h + ':' + m + ':' + s;
-  }
-
   function setQuestionContainer(elements) {
 
     let categories = new Array();
@@ -572,8 +556,8 @@ jQuery(document).ready(function( $ ) {
 
     });
 
-    $('.timer-simulator-result').html(displayTimer(window.timerSimulator));
-    $('.timer-simulator-max-time').html(displayTimer(enem_simulator.maximum_time));
+    $('.timer-simulator-result').html(String(window.timerSimulator).toHHMMSS());
+    $('.timer-simulator-max-time').html(String(enem_simulator.maximum_time).toHHMMSS());
 
   }
 
