@@ -331,28 +331,30 @@ jQuery(document).ready(function( $ ) {
     }, 1000);
   }
 
+  String.prototype.toHHMMSS = function () {
+    var sec_num = parseInt(this, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    return hours+':'+minutes+':'+seconds;
+  }
+
   function setTimer() {
     let timer = $('.timer');
+    let p = timer.find('p');
 
     timer.show();
 
-    let s, m, h;
     let maxiumTime = enem_simulator.maximum_time;
     let alertTime = enem_simulator.alert_time;
-
-    mAlertTime = parseInt(alertTime / 60);
-    hAlertTime = parseInt(mAlertTime / 60);
-    sAlertTime =  alertTime % 60;
-
+    
     timerInterval = setInterval(function() {
      
-      m = parseInt(maxiumTime / 60);
-      h = parseInt(m / 60);
-      s =  maxiumTime % 60;
-
-      let p = timer.find('p');
-
-      if(hAlertTime === h && mAlertTime === m && sAlertTime === s && enem_simulator.end_test_alert) {
+      if(alertTime == maxiumTime && enem_simulator.end_test_alert) {
         p.stop(true, true).addClass('text-danger', 1000);
         if(!alertTimeInterval) {
           alertTimeInterval = setInterval(function() {
@@ -362,16 +364,7 @@ jQuery(document).ready(function( $ ) {
         }
       }
 
-      if(h < 10) 
-        h = '0' + h;
-      if(m < 10) 
-        m = '0' + m;
-      if(s < 10) 
-        s = '0' + s;
-
-      result = h + ':' + m + ':' + s;
-
-      p.html(result);
+      p.html(String(maxiumTime).toHHMMSS());
 
       if(maxiumTime == 0) {
         window.endSimulator = true;
