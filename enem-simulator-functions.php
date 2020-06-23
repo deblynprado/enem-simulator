@@ -153,8 +153,8 @@ function enem_simulator_export_questions_callback() {
           }
         } 
         $content[] = array(
-          wp_strip_all_tags( get_the_title() ),
-          wp_strip_all_tags( get_the_content() ),
+          str_replace(array("\n", "\r"), '', wp_strip_all_tags( get_the_title() ) ),
+          str_replace(array("\n", "\r"), '', wp_strip_all_tags( get_the_content() ) ),
           $category,
           $options[0]['text_answer'],
           $options[1]['text_answer'],
