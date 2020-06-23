@@ -218,7 +218,7 @@ function enem_simulator_get_nav_callback() {
             $questionCount++;
             if ( ($key + 1) % 8 == 0 ) :  ?> 
               </div><div class="row">
-            <?php $count = 0; endif;
+            <?php endif;
         endforeach; ?>
       </div>
     </div>
