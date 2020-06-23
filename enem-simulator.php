@@ -208,8 +208,9 @@ function enem_simulator_get_nav_callback() {
       </div>
       <p class="text-uppercase"><?php echo __('Click on the question to navigate', 'enem-simulator') ?></p>
       <div class="question-nav">
-        <?php foreach ( $posts as $key => $value ) : 
-          if ( ($key + 1) % 8 == 0 || $key == 0) : ?> 
+        <?php $count = 0;
+          foreach ( $posts as $key => $value ) : 
+          if ( $count == 0) : ?> 
             <div class="row">
           <?php endif;
           global $post;
@@ -217,10 +218,11 @@ function enem_simulator_get_nav_callback() {
             <a href="#" class="question-nav-item p-4 border" data-question-id="<?php echo get_the_ID(); ?>" 
               data-category-name="<?php echo $slug; ?>"><?php echo $questionCount; ?></a>
           <?php
-          $questionCount++;
-          if ( ($key + 2) % 8 == 0 || count( $posts ) == ( $key + 1) ) : ?> 
-            </div>
-          <?php endif;
+            $questionCount++;
+            $count++;
+            if ($count == 8 || count( $posts ) == ( $key + 1) ) :  ?> 
+              </div>
+            <?php $count = 0; endif;
         endforeach; ?>
       </div>
     </div>
