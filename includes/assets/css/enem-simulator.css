@@ -469,15 +469,6 @@
   margin-left: 0;
 }
 
-#enem-simulator .simulator-nav li:before, 
-#enem-simulator .simulator-result li::before {
-  content: "■";
-  font-size: 40px;
-  vertical-align: sub;
-  line-height: 1.476;
-  font-weight: 700;
-}
-
 #enem-simulator .simulator-nav .question-nav .row, 
 #enem-simulator .simulator-result .question-nav .row {
   margin-left: 2px;

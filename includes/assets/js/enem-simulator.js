@@ -68,10 +68,12 @@ jQuery(document).ready(function( $ ) {
         category = $('.categories .content-question:visible').next();
       else if($('.categories .content-question:visible').prev().length > 0) 
         category = $('.categories .content-question:visible').prev();
-      let id = category.find('.question').eq(0).attr('id');
-      let name = category.attr('id');
-      getNextCategory(id, name);
-      return true;
+      if (category) {
+        let id = category.find('.question').eq(0).attr('id');
+        let name = category.attr('id');
+        getNextCategory(id, name);
+        return true;
+      }
     }
 
     if ($('.question:visible').next().length != 0)
