@@ -1,9 +1,14 @@
+:root {
+  --es-main-fonty-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  --es-main-color: rgb(55, 58, 60);
+}
+
 #enem-simulator  .simulator-content, 
 #enem-simulator  .simulator-nav, 
 #enem-simulator  .simulator-modal, 
 #enem-simulator  .simulator-result {
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
-  color: rgb(55, 58, 60) !important;
+  font-family: var(--es-main-fonty-family);
+  color: var(--es-main-color);
 }
 
 #enem-simulator .simulator-content ul, 
@@ -22,8 +27,8 @@
   border: none;
   padding: 0;
   text-align: left;
-  color: rgb(55, 58, 60);
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  color: var(--es-main-color);
+  font-family: var(--es-main-fonty-family);
 }
 
 #enem-simulator .simulator-content .simulator-initial-message p {
@@ -35,8 +40,8 @@
   padding: 0;
   margin: 0 0 21px 0;
   line-height: 1.476;
-  color: rgb(55, 58, 60);
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;  
+  color: var(--es-main-color);
+  font-family: var(--es-main-fonty-family);
 }
 
 #enem-simulator .simulator-content .simulator-category-options select {
@@ -56,7 +61,7 @@
   font-weight: 400;
   font-size: 20px;
   height: auto;
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;  
+  font-family: var(--es-main-fonty-family);
   margin: 0;
 }
 
@@ -85,7 +90,7 @@
   opacity: 1;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;  
+  font-family: var(--es-main-fonty-family); 
   overflow: visible;
 }
 
@@ -94,7 +99,7 @@
   margin: 0 ;
   line-height: 1.5;
   padding: 1rem;
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;  
+  font-family: var(--es-main-fonty-family);
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.9975px;
@@ -147,7 +152,7 @@
 
 #enem-simulator .simulator-modal .modal-footer .btn-secondary {
   background-color: #fff;
-  color: rgb(55, 58, 60);
+  color: var(--es-main-color);
 }
 
 #enem-simulator .simulator-modal .modal-footer .btn-secondary:hover {
@@ -165,8 +170,8 @@
   font-weight: 400;
   display: block;
   margin: 0 0 5px 0;
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
-  color: rgb(55, 58, 60);
+  font-family: var(--es-main-fonty-family);
+  color: var(--es-main-color);
 }
 
 #enem-simulator .simulator-modal .modal-body input {
@@ -178,7 +183,7 @@
   width: 100%;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   max-width: 100%;
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: var(--es-main-fonty-family);
   font-weight: 400;
 }
 
@@ -188,16 +193,16 @@
   letter-spacing: -0.24px;
   margin: 0;
   width: 100%;
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: var(--es-main-fonty-family);
   font-weight: 400;
 }
 /* END MODAL */
 
 /* QUESTIONS */
 #enem-simulator .simulator-categories .question h3 {
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: var(--es-main-fonty-family);
   font-size: 40px;
-  color: rgb(55, 58, 60);
+  color: var(--es-main-color);
   font-weight: 700;
   letter-spacing: -1.6625px;
   line-height: 50px;
@@ -208,9 +213,9 @@
 }
 
 #enem-simulator .simulator-categories .question h4 {
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: var(--es-main-fonty-family);
   font-size: 32px;
-  color: rgb(55, 58, 60);
+  color: var(--es-main-color);
   font-weight: 700;
   letter-spacing: -1.33px;
   line-height: 40px;
@@ -229,8 +234,8 @@
   padding: 0;
   margin: 0 0 21px 0;
   line-height: 1.476;
-  color: rgb(55, 58, 60);
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;  
+  color: var(--es-main-color);
+  font-family: var(--es-main-fonty-family);
 }
 
 #enem-simulator .simulator-categories .question .question-thumbnail {
@@ -355,7 +360,7 @@
 }
 
 #enem-simulator .simulator-pagination .pagination .page-item:not(.disabled) .page-link {
-  color: rgb(55, 58, 60);
+  color: var(--es-main-color);
 }
 
 #enem-simulator .simulator-pagination .pagination .page-item.disabled .page-link span {
@@ -411,8 +416,8 @@
   margin-top: 60px;
   font-weight: 700;
   font-size: 40px;
-  color: rgb(55, 58, 60);
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
+  color: var(--es-main-color);
+  font-family: var(--es-main-fonty-family);
 }
 
 #enem-simulator .simulator-nav h4, 
@@ -420,8 +425,8 @@
   margin-top: 45px;
   font-weight: 700;
   font-size: 32px;
-  color: rgb(55, 58, 60);
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
+  color: var(--es-main-color);
+  font-family: var(--es-main-fonty-family);
 }
 
 #enem-simulator .simulator-nav h5, 
@@ -429,8 +434,8 @@
   margin-top: 45px;
   font-weight: 700;
   font-size: 24px;
-  color: rgb(55, 58, 60);
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
+  color: var(--es-main-color);
+  font-family: var(--es-main-fonty-family);
 }
 
 #enem-simulator .simulator-nav p, 
@@ -438,8 +443,8 @@
   margin-top: 10px;
   font-weight: 400;
   font-size: 21px;
-  color: rgb(55, 58, 60);
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif
+  color: var(--es-main-color);
+  font-family: var(--es-main-fonty-family);
 }
 
 #enem-simulator .simulator-nav .p-4, 
@@ -459,7 +464,7 @@
   font-weight: bolder;
   list-style-type: none;
   display: inline;
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: var(--es-main-fonty-family);
   font-weight: 700;
   margin-left: 20px;
 }
